@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title id="page-title">BOOK — JUJUBE BOOKS</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="nav-grid">
+  <a href="about.html">ABOUT</a>
+  <a href="books.html" class="active">BOOK</a>
+  <a href="goods.html">AND MORE</a>
+  <a href="news.html">NEWS</a>
+</header>
+
+<main>
+  <section class="detail-hero">
+    <div class="detail-cover" id="detail-cover"></div>
+    <div class="detail-kicker" id="detail-kicker"></div>
+    <h1 id="detail-title"></h1>
+    <div class="detail-meta" id="detail-meta"></div>
+  </section>
+
+  <div class="detail-tags" id="detail-tags"></div>
+
+  <section class="detail-body">
+    <h2 id="synopsis-title"></h2>
+    <p id="synopsis-text"></p>
+  </section>
+
+  <div class="detail-image">
+    <div class="cover-block" id="detail-image-block"></div>
+  </div>
+
+  <section class="detail-body">
+    <h2 id="body2-title"></h2>
+    <p id="body2-text"></p>
+  </section>
+
+  <a class="back-link" href="books.html">← 목록으로</a>
+</main>
+
+<footer class="footer-grid">
+  <a href="contact.html" class="footer-cell">CONTACT</a>
+  <a href="catalog.html" class="footer-cell">CATALOG</a>
+  <div class="foot-empty"></div>
+  <div class="footer-cell">
+    <div class="lang-toggle">
+      <button data-lang="ko">KOR</button>
+      <button data-lang="en">ENG</button>
+    </div>
+    
+  </div>
+</footer>
+
+<a class="brand-mark" href="index.html">JUJUBE BOOKS</a>
+
+<div id="google_translate_element" style="display:none"></div>
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({ pageLanguage: "ko", includedLanguages: "en,ko", autoDisplay: false }, "google_translate_element");
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script src="script.js"></script>
+<script>
+  const book = findBySlug(BOOKS, getSlugFromQuery());
+  renderDetail(book, {
+    kicker: book.category,
+    meta: book.author + " 지음 · " + book.date + " · " + book.category
+  });
+</script>
+</body>
+</html>
