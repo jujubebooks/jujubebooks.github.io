@@ -445,16 +445,47 @@ function renderHomeBookImages(containerId) {
   // uniform size for every item, matched to "to say I love you.png" (790 x 1242px)
   const ITEM_WIDTH = 220;
   const ITEM_HEIGHT = 346;
+  const ASPECT = ITEM_HEIGHT / ITEM_WIDTH;
+
+  // on mobile, start as a neat 2-column list instead of a random scatter —
+  // dragging still works exactly the same afterwards
+  const mobile = window.matchMedia("(max-width: 640px)").matches;
+  const gap = 16;
+  const colWidth = mobile ? (container.clientWidth - gap * 3) / 2 : 0;
+  const colHeight = mobile ? colWidth * ASPECT : 0;
+
+  const stage = container.closest(".hero-stage");
+  if (mobile) {
+    const rows = Math.ceil(HOME_BOOK_IMAGES.length / 2);
+    const neededHeight = rows * (colHeight + gap) + gap;
+    container.style.height = neededHeight + "px";
+    if (stage) stage.style.minHeight = neededHeight + "px";
+  } else {
+    container.style.height = "";
+    if (stage) stage.style.minHeight = "";
+  }
 
   container.innerHTML = HOME_BOOK_IMAGES.map((filename, i) => {
     const src = "이미지/BOOK/" + encodeURIComponent(filename);
-    const left = randomBetween(0, 74);
-    const top = randomBetween(0, 68);
-    const rotate = randomBetween(-9, 9).toFixed(1);
-    const style =
-      "left:" + left + "%; top:" + top + "%; " +
-      "width:" + ITEM_WIDTH + "px; height:" + ITEM_HEIGHT + "px; " +
-      "transform: rotate(" + rotate + "deg); z-index:" + (i + 1) + ";";
+    let style;
+    if (mobile) {
+      const col = i % 2;
+      const row = Math.floor(i / 2);
+      const left = gap + col * (colWidth + gap);
+      const top = gap + row * (colHeight + gap);
+      style =
+        "left:" + left + "px; top:" + top + "px; " +
+        "width:" + Math.round(colWidth) + "px; height:" + Math.round(colHeight) + "px; " +
+        "transform: rotate(0deg); z-index:" + (i + 1) + ";";
+    } else {
+      const left = randomBetween(0, 74);
+      const top = randomBetween(0, 68);
+      const rotate = randomBetween(-9, 9).toFixed(1);
+      style =
+        "left:" + left + "%; top:" + top + "%; " +
+        "width:" + ITEM_WIDTH + "px; height:" + ITEM_HEIGHT + "px; " +
+        "transform: rotate(" + rotate + "deg); z-index:" + (i + 1) + ";";
+    }
     return (
       '<div class="drag-item" style="' + style + '">' +
       '<img src="' + src + '" alt="" draggable="false"></div>'

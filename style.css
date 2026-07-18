@@ -165,10 +165,18 @@ main { flex: 1; width: 100%; }
    Home hero
    -------------------------------------------------------------------------- */
 
+.hero-stage {
+  position: relative;
+  min-height: clamp(520px, 78vh, 780px);
+}
+
 .hero {
+  position: relative;
+  z-index: 2;
   padding: 72px 28px 40px;
   max-width: var(--maxw);
   margin: 0 auto;
+  pointer-events: none; /* text has no links — let clicks/drags reach the images behind it */
 }
 
 .hero h1 {
@@ -189,11 +197,12 @@ main { flex: 1; width: 100%; }
 /* free-form draggable scatter of book covers, à la readymag.com/designs/greennation —
    each image is randomly placed on load and can be dragged anywhere by the visitor. */
 .collage-canvas {
-  position: relative;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   max-width: var(--maxw);
-  margin: 8px auto 0;
+  margin: 0 auto;
   padding: 0 28px;
-  height: clamp(520px, 78vh, 780px);
 }
 
 .drag-item {
@@ -220,11 +229,6 @@ main { flex: 1; width: 100%; }
 }
 .drag-item.dragging img {
   filter: drop-shadow(0 20px 30px rgba(0,0,0,0.22));
-}
-
-@media (max-width: 640px) {
-  .collage-canvas { height: clamp(440px, 90vh, 620px); }
-  .drag-item { max-width: 60vw; max-height: 40vh; }
 }
 
 /* generic placeholder "cover" block used everywhere in place of real images —
