@@ -465,6 +465,11 @@ function renderHomeBookImages(containerId) {
     if (stage) stage.style.minHeight = "";
   }
 
+  // desktop: scatter within the container's actual measured size, in pixels,
+  // so items always land fully inside it — no overflow, no page scroll
+  const maxLeft = Math.max(0, container.clientWidth - ITEM_WIDTH);
+  const maxTop = Math.max(0, container.clientHeight - ITEM_HEIGHT);
+
   container.innerHTML = HOME_BOOK_IMAGES.map((filename, i) => {
     const src = "이미지/BOOK/" + encodeURIComponent(filename);
     let style;
@@ -478,11 +483,11 @@ function renderHomeBookImages(containerId) {
         "width:" + Math.round(colWidth) + "px; height:" + Math.round(colHeight) + "px; " +
         "transform: rotate(0deg); z-index:" + (i + 1) + ";";
     } else {
-      const left = randomBetween(0, 74);
-      const top = randomBetween(0, 68);
+      const left = randomBetween(0, maxLeft);
+      const top = randomBetween(0, maxTop);
       const rotate = randomBetween(-9, 9).toFixed(1);
       style =
-        "left:" + left + "%; top:" + top + "%; " +
+        "left:" + left + "px; top:" + top + "px; " +
         "width:" + ITEM_WIDTH + "px; height:" + ITEM_HEIGHT + "px; " +
         "transform: rotate(" + rotate + "deg); z-index:" + (i + 1) + ";";
     }

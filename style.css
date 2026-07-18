@@ -170,6 +170,17 @@ main { flex: 1; width: 100%; }
   min-height: clamp(520px, 78vh, 780px);
 }
 
+/* on PC, cap the hero to exactly one screen (nav + hero + footer, no scroll) —
+   matches the reference layout. Mobile keeps the flexible min-height above,
+   since the 2-column start can legitimately run longer than one screen. */
+@media (min-width: 641px) {
+  .hero-stage {
+    height: calc(100vh - var(--nav-h) - var(--footer-h));
+    min-height: 0;
+    overflow: hidden; /* guarantee no page scroll, even mid-drag */
+  }
+}
+
 .hero {
   position: relative;
   z-index: 2;
