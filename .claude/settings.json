@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c ' *)",
+      "Bash(SCRATCH=/private/tmp/claude-502/-Users-yeojuneyoon-Desktop--------yeojune--MacBook-Pro-jujube-books-website/ed85deea-477b-4805-9bb1-22413e1d0f49/scratchpad python3 /private/tmp/claude-502/-Users-yeojuneyoon-Desktop--------yeojune--MacBook-Pro-jujube-books-website/ed85deea-477b-4805-9bb1-22413e1d0f49/scratchpad/list_andmore.py)",
+      "Bash(SCRATCH=/private/tmp/claude-502/-Users-yeojuneyoon-Desktop--------yeojune--MacBook-Pro-jujube-books-website/ed85deea-477b-4805-9bb1-22413e1d0f49/scratchpad python3 /private/tmp/claude-502/-Users-yeojuneyoon-Desktop--------yeojune--MacBook-Pro-jujube-books-website/ed85deea-477b-4805-9bb1-22413e1d0f49/scratchpad/find_ext.py)",
+      "Bash(SCRATCH=/private/tmp/claude-502/-Users-yeojuneyoon-Desktop--------yeojune--MacBook-Pro-jujube-books-website/ed85deea-477b-4805-9bb1-22413e1d0f49/scratchpad python3 /private/tmp/claude-502/-Users-yeojuneyoon-Desktop--------yeojune--MacBook-Pro-jujube-books-website/ed85deea-477b-4805-9bb1-22413e1d0f49/scratchpad/wire_images.py)",
+      "Bash(SCRATCH=/private/tmp/claude-502/-Users-yeojuneyoon-Desktop--------yeojune--MacBook-Pro-jujube-books-website/ed85deea-477b-4805-9bb1-22413e1d0f49/scratchpad python3 -c ' *)",
+      "Bash(SCRATCH=/private/tmp/claude-502/-Users-yeojuneyoon-Desktop--------yeojune--MacBook-Pro-jujube-books-website/ed85deea-477b-4805-9bb1-22413e1d0f49/scratchpad python3 /private/tmp/claude-502/-Users-yeojuneyoon-Desktop--------yeojune--MacBook-Pro-jujube-books-website/ed85deea-477b-4805-9bb1-22413e1d0f49/scratchpad/fix_shadow_and_thumb.py)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --window-size=700,1400 --screenshot=/private/tmp/claude-502/-Users-yeojuneyoon-Desktop--------yeojune--MacBook-Pro-jujube-books-website/ed85deea-477b-4805-9bb1-22413e1d0f49/scratchpad/goods_thumb_scaled.png --virtual-time-budget=3000 http://127.0.0.1:5500/goods.html)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --enable-logging=stderr --v=1 --virtual-time-budget=3000 --dump-dom http://127.0.0.1:5500/goods-detail.html?slug=jujube-ceramic-paperweight)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --window-size=800,900 --screenshot=/private/tmp/claude-502/-Users-yeojuneyoon-Desktop--------yeojune--MacBook-Pro-jujube-books-website/ed85deea-477b-4805-9bb1-22413e1d0f49/scratchpad/gd_noshadow.png --virtual-time-budget=3000 http://127.0.0.1:5500/goods-detail.html?slug=jujube-ceramic-paperweight)"
+    ]
+  }
+}

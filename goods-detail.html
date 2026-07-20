@@ -31,14 +31,12 @@
     <p id="synopsis-text"></p>
   </section>
 
-  <div class="detail-image">
-    <div class="cover-block" id="detail-image-block"></div>
-  </div>
-
   <section class="detail-body">
     <h2 id="body2-title"></h2>
     <p id="body2-text"></p>
   </section>
+
+  <div class="detail-rich" id="detail-image-block"></div>
 
   <a class="back-link" href="goods.html" data-ko="← 목록으로" data-en="← Back to list">← 목록으로</a>
 </main>
@@ -60,10 +58,31 @@
 <script src="script.js"></script>
 <script>
   const good = findBySlug(GOODS, getSlugFromQuery());
+  const goodCategory = pickText(good, "category", "categoryEn");
+  const goodPrice = pickText(good, "price", "priceEn");
   renderDetail(good, {
-    kicker: good.category,
-    meta: good.category + " · " + good.price
+    kicker: goodCategory,
+    meta: goodPrice ? goodCategory + " · " + goodPrice : goodCategory
   });
+
+  if (good.detailCoverScale) {
+    document.getElementById("detail-cover").style.width =
+      "calc(min(360px, 70vw) * " + good.detailCoverScale + ")";
+  }
+
+  // extra product photos from the item's own folder (thumbnail/main image excluded —
+  // that one already appears once, in the hero cover above the title)
+  const galleryEl = document.getElementById("detail-image-block");
+  if (galleryEl) {
+    if (good.folder && good.galleryImages && good.galleryImages.length) {
+      galleryEl.innerHTML =
+        '<div class="detail-inside-gallery">' +
+        good.galleryImages.map((name) => realImageTag(good.folder, name)).join("") +
+        "</div>";
+    } else {
+      galleryEl.style.display = "none";
+    }
+  }
 </script>
 </body>
 </html>

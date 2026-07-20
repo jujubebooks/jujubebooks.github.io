@@ -19,13 +19,14 @@
 <main>
   <div class="news-layout">
     <aside class="news-sidebar">
-      <h1 data-ko-html="쥬쥬베북스의 소식을<br>가장 먼저 전해드립니다." data-en-html="Be the first to hear<br>what's new at Jujube Books.">쥬쥬베북스의 소식을<br>가장 먼저 전해드립니다.</h1>
-      <p data-ko="신간 출시, 북토크와 행사, 서점 입고 소식까지 — 쥬쥬베북스와 관련된 크고 작은 소식을 이곳에 모아둡니다." data-en="New releases, book talks and events, bookstore updates — every piece of Jujube Books news, big or small, lives here.">
-        신간 출시, 북토크와 행사, 서점 입고 소식까지 — 쥬쥬베북스와 관련된 크고 작은 소식을 이곳에 모아둡니다.
+      <h1 data-ko-html="쥬쥬베북스의<br>소식" data-en-html="Jujube Books News">쥬쥬베북스의<br>소식</h1>
+      <p data-ko-html="크고 작은 소식을 전합니다." data-en-html="We share Jujube Books' news,<br>big and small.">
+        크고 작은 소식을 전합니다.
       </p>
     </aside>
     <div class="news-list" id="news-list"></div>
   </div>
+  <div class="news-pagination" id="news-pagination"></div>
 </main>
 
 <footer class="footer-grid">
@@ -44,7 +45,13 @@
 
 <script src="script.js"></script>
 <script>
-  renderNewsList("news-list", NEWS, (item) => "news-detail.html?slug=" + item.slug);
+  const NEWS_PAGE_SIZE = 14;
+  loadNews().then((allNews) => {
+    const newsPage = Math.max(1, parseInt(new URLSearchParams(location.search).get("page") || "1", 10));
+    const newsStart = (newsPage - 1) * NEWS_PAGE_SIZE;
+    renderNewsRows("news-list", allNews.slice(newsStart, newsStart + NEWS_PAGE_SIZE));
+    renderNewsPagination("news-pagination", allNews.length, NEWS_PAGE_SIZE, newsPage);
+  });
 </script>
 </body>
 </html>

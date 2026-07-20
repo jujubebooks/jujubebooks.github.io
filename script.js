@@ -4,6 +4,7 @@
    every "cover" is just a CSS color block with a title, no image files needed.
    ========================================================================== */
 
+const BOOKS = [
   {
     slug: "tree",
     image: "tree_re_01",
@@ -31,6 +32,14 @@
     body2En: "The author's note will be updated soon.",
     detailImage: "나는정말나무가되었다_상세이미지_수정.png",
     detailHtmlEn: `
+<div class="contact-row"><span>Title</span><span>I Have Become A Tree</span></div>
+<div class="contact-row"><span>Author</span><span>Hana Oh, Siya Hong</span></div>
+<div class="contact-row"><span>Publication date</span><span>April 5, 2026</span></div>
+<div class="contact-row"><span>Design</span><span>Studio Gomin</span></div>
+<div class="contact-row"><span>Format</span><span>170 &times; 250mm</span></div>
+<div class="contact-row"><span>Pages</span><span>104p</span></div>
+<div class="contact-row"><span>Price</span><span>20,500 KRW</span></div>
+<div class="contact-row"><span>ISBN</span><span>979-11-93344-21-7(77810)</span></div>
 <h3>The story of a person who became a tree</h3>
 <blockquote><p>&ldquo;What does a tree feel like?<br>What is it to live as a tree?&rdquo;</p></blockquote>
 <p>I Have Become A Tree is a story that begins when a person who longed to become a tree truly becomes one. Reborn as a tree, it grows in the darkness when night falls, yields itself to the wind when it blows, and receives sunlight and rain just as it is\u2212slowly living out the time of a tree.</p>
@@ -48,6 +57,7 @@
 <p>Living in Jeju, the author grows tangerines while working as a writer. Though called a farmer, she sees herself as a friend, caretaker, and student of the tangerine trees. She is the author of the poetry collections <em>The Wind Is a Triangle, the Little Bird a Piccolo</em>, <em>The Star Candy Shop</em>, and <em>Agapul and Norubyeol</em>, as well as the essay collection <em>As the Seasons Sing</em>.</p>
 <h4>Siya Hong</h4>
 <p>An artist who paints in the hope of becoming a small joy and a quiet source of hope for someone. Following an inner journey toward freedom, she continues an expansive artistic practice that moves across painting, writing, and sound. She sees painting trees as a way of connecting with the world through its slowest breath and continues to paint them. The author's previous books include <em>Tree Heart, Tree Soul</em>, <em>Building a Home There</em>, <em>Being Happy Today</em>, <em>A Peaceful Summer at Thirty</em>, and <em>Living Alone</em>.</p>
+<div class="detail-inside-gallery"><img src="이미지/BOOK/eng_inside image/%EB%82%98%EB%8A%94%20%EC%A0%95%EB%A7%90%20%EB%82%98%EB%AC%B4%EA%B0%80%20%EB%90%98%EC%97%88%EB%8B%A4/%E1%84%82%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%86%E1%85%A1%E1%86%AF%20%E1%84%82%E1%85%A1%E1%84%86%E1%85%AE%E1%84%80%E1%85%A1%20%E1%84%83%E1%85%AC%E1%84%8B%E1%85%A5%E1%86%BB%E1%84%83%E1%85%A1_%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8E%E1%85%A6_%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_small_%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_06.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EB%82%98%EB%8A%94%20%EC%A0%95%EB%A7%90%20%EB%82%98%EB%AC%B4%EA%B0%80%20%EB%90%98%EC%97%88%EB%8B%A4/%E1%84%82%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%86%E1%85%A1%E1%86%AF%20%E1%84%82%E1%85%A1%E1%84%86%E1%85%AE%E1%84%80%E1%85%A1%20%E1%84%83%E1%85%AC%E1%84%8B%E1%85%A5%E1%86%BB%E1%84%83%E1%85%A1_%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8E%E1%85%A6_%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_small_%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_07.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EB%82%98%EB%8A%94%20%EC%A0%95%EB%A7%90%20%EB%82%98%EB%AC%B4%EA%B0%80%20%EB%90%98%EC%97%88%EB%8B%A4/%E1%84%82%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%86%E1%85%A1%E1%86%AF%20%E1%84%82%E1%85%A1%E1%84%86%E1%85%AE%E1%84%80%E1%85%A1%20%E1%84%83%E1%85%AC%E1%84%8B%E1%85%A5%E1%86%BB%E1%84%83%E1%85%A1_%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8E%E1%85%A6_%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_small_%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_08.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EB%82%98%EB%8A%94%20%EC%A0%95%EB%A7%90%20%EB%82%98%EB%AC%B4%EA%B0%80%20%EB%90%98%EC%97%88%EB%8B%A4/%E1%84%82%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%86%E1%85%A1%E1%86%AF%20%E1%84%82%E1%85%A1%E1%84%86%E1%85%AE%E1%84%80%E1%85%A1%20%E1%84%83%E1%85%AC%E1%84%8B%E1%85%A5%E1%86%BB%E1%84%83%E1%85%A1_%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8E%E1%85%A6_%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_small_%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_09.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EB%82%98%EB%8A%94%20%EC%A0%95%EB%A7%90%20%EB%82%98%EB%AC%B4%EA%B0%80%20%EB%90%98%EC%97%88%EB%8B%A4/%E1%84%82%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%86%E1%85%A1%E1%86%AF%20%E1%84%82%E1%85%A1%E1%84%86%E1%85%AE%E1%84%80%E1%85%A1%20%E1%84%83%E1%85%AC%E1%84%8B%E1%85%A5%E1%86%BB%E1%84%83%E1%85%A1_%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8E%E1%85%A6_%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_small_%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_10.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EB%82%98%EB%8A%94%20%EC%A0%95%EB%A7%90%20%EB%82%98%EB%AC%B4%EA%B0%80%20%EB%90%98%EC%97%88%EB%8B%A4/%E1%84%82%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%86%E1%85%A1%E1%86%AF%20%E1%84%82%E1%85%A1%E1%84%86%E1%85%AE%E1%84%80%E1%85%A1%20%E1%84%83%E1%85%AC%E1%84%8B%E1%85%A5%E1%86%BB%E1%84%83%E1%85%A1_%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8E%E1%85%A6_%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_small_%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_25.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EB%82%98%EB%8A%94%20%EC%A0%95%EB%A7%90%20%EB%82%98%EB%AC%B4%EA%B0%80%20%EB%90%98%EC%97%88%EB%8B%A4/%E1%84%82%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%86%E1%85%A1%E1%86%AF%20%E1%84%82%E1%85%A1%E1%84%86%E1%85%AE%E1%84%80%E1%85%A1%20%E1%84%83%E1%85%AC%E1%84%8B%E1%85%A5%E1%86%BB%E1%84%83%E1%85%A1_%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8E%E1%85%A6_%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_small_%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_26.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EB%82%98%EB%8A%94%20%EC%A0%95%EB%A7%90%20%EB%82%98%EB%AC%B4%EA%B0%80%20%EB%90%98%EC%97%88%EB%8B%A4/%E1%84%82%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%86%E1%85%A1%E1%86%AF%20%E1%84%82%E1%85%A1%E1%84%86%E1%85%AE%E1%84%80%E1%85%A1%20%E1%84%83%E1%85%AC%E1%84%8B%E1%85%A5%E1%86%BB%E1%84%83%E1%85%A1_%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8E%E1%85%A6_%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_small_%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_27.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EB%82%98%EB%8A%94%20%EC%A0%95%EB%A7%90%20%EB%82%98%EB%AC%B4%EA%B0%80%20%EB%90%98%EC%97%88%EB%8B%A4/%E1%84%82%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%8C%E1%85%A5%E1%86%BC%E1%84%86%E1%85%A1%E1%86%AF%20%E1%84%82%E1%85%A1%E1%84%86%E1%85%AE%E1%84%80%E1%85%A1%20%E1%84%83%E1%85%AC%E1%84%8B%E1%85%A5%E1%86%BB%E1%84%83%E1%85%A1_%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%8E%E1%85%A6_%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_small_%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_28.jpg" alt="" class="detail-inside-image"></div>
 `,
     detailBibKo: "<div class=\"contact-row\"><span>지은이</span><span>오하나, 홍시야</span></div><div class=\"contact-row\"><span>펴낸날</span><span>2026년 4월 5일</span></div><div class=\"contact-row\"><span>디자인</span><span>스튜디오 고민</span></div><div class=\"contact-row\"><span>판형</span><span>170×250mm</span></div><div class=\"contact-row\"><span>쪽수</span><span>104쪽</span></div><div class=\"contact-row\"><span>가격</span><span>20,500원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-93344-21-7(77810)</span></div>"
   },
@@ -64,8 +74,9 @@
     category: "그림책",
     categoryEn: "Picturebook",
     summary: "혼자 남은 할아버지의 성실한 일상과, 그 곁에 가지런히 놓인 그리움을 그린 그림책.",
-    summaryEn: "The devoted daily life of a grandfather who is alone, and the longing neatly placed beside it — a heartwarming picture book.",
-    tags: ["미정"],
+    summaryEn: "A picture book portraying the devoted daily life of a grandfather living alone, and the quiet longing that sits beside it.",
+    tags: ["그림책", "따듯한", "위로", "용기", "글 없는 그림책"],
+    tagsEn: ["Picture Book", "Warmth", "Comfort", "Courage", "Wordless Picture Book"],
     synopsisTitle: "줄거리",
     synopsis: "책 소개가 곧 업데이트됩니다.",
     body2Title: "작가의 말",
@@ -90,6 +101,7 @@
 <p>Seniors find comfort in pictures rather than text. This book aims to convey stories through pictures to make it easier for seniors to read. In a time when the senior population living alone is increasing, we hope that this book provides warm comfort to seniors living alone, as well as those who find their solitary life daunting.</p>
 <h3>Eco-Friendly Paper and Delicate Design</h3>
 <p>Produced with DongSinSa's design, &ldquo;Is there Warm&rdquo; highlights its warmth through a limited first edition binding, and the silver ink printing adds a sparkling winter feel. The different charms of the front and back covers are also a unique feature of this book. Additionally, the inner pages of the book are made from 100% recycled paper called &ldquo;ReCico,&rdquo; contributing to environmental sustainability by taking a step toward eco-friendliness.</p>
+<div class="detail-inside-gallery"><img src="이미지/BOOK/eng_inside image/%EA%B7%B8%EA%B3%B3%EC%9D%80%20%EB%94%B0%EB%93%AF%ED%95%9C%EA%B0%80%EC%9A%94/%E1%84%87%E1%85%A9%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5_1.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EA%B7%B8%EA%B3%B3%EC%9D%80%20%EB%94%B0%EB%93%AF%ED%95%9C%EA%B0%80%EC%9A%94/%E1%84%87%E1%85%A9%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5_2.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EA%B7%B8%EA%B3%B3%EC%9D%80%20%EB%94%B0%EB%93%AF%ED%95%9C%EA%B0%80%EC%9A%94/%E1%84%87%E1%85%A9%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5_3.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EA%B7%B8%EA%B3%B3%EC%9D%80%20%EB%94%B0%EB%93%AF%ED%95%9C%EA%B0%80%EC%9A%94/%E1%84%87%E1%85%A9%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5_4.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EA%B7%B8%EA%B3%B3%EC%9D%80%20%EB%94%B0%EB%93%AF%ED%95%9C%EA%B0%80%EC%9A%94/%E1%84%87%E1%85%A9%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5_5.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EA%B7%B8%EA%B3%B3%EC%9D%80%20%EB%94%B0%EB%93%AF%ED%95%9C%EA%B0%80%EC%9A%94/%E1%84%87%E1%85%A9%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5_6.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EA%B7%B8%EA%B3%B3%EC%9D%80%20%EB%94%B0%EB%93%AF%ED%95%9C%EA%B0%80%EC%9A%94/%E1%84%87%E1%85%A9%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5_7.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EA%B7%B8%EA%B3%B3%EC%9D%80%20%EB%94%B0%EB%93%AF%ED%95%9C%EA%B0%80%EC%9A%94/%E1%84%87%E1%85%A9%E1%86%AB%E1%84%86%E1%85%AE%E1%86%AB%20%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5_8.png" alt="" class="detail-inside-image"></div>
 `,
     detailBibKo: "<div class=\"contact-row\"><span>작가</span><span>윤여준</span></div><div class=\"contact-row\"><span>디자인</span><span>동신사</span></div><div class=\"contact-row\"><span>판형</span><span>18.2×24cm</span></div><div class=\"contact-row\"><span>페이지</span><span>52페이지</span></div><div class=\"contact-row\"><span>가격</span><span>19,500원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-978313-1-7 (07810)</span></div>"
   },
@@ -105,9 +117,10 @@
     date: "2024",
     category: "그림책",
     categoryEn: "Picture Book / Illustrated Dictionary",
-    summary: "일러스트레이터 잉아가 2년간 그려온 순우리말 42개를 모은 그림사전.",
-    summaryEn: "42 pure Korean words gathered and illustrated by Ina Lee (Inga) over two years.",
-    tags: ["미정"],
+    summary: "일러스트레이터 잉아의 42개의 순우리말 그림 사전. 유쾌한 그림과 다정한 이야기로 구성된 그림 사전",
+    summaryEn: "42 pure Korean words gathered into a picture dictionary by illustrator Inga, told through playful art and warm stories.",
+    tags: ["그림사전", "일러스트사전", "순우리말", "한국어교육"],
+    tagsEn: ["Picture Dictionary", "Illustrated Dictionary", "Pure Korean Words", "Korean Language Education"],
     synopsisTitle: "줄거리",
     synopsis: "책 소개가 곧 업데이트됩니다.",
     body2Title: "작가의 말",
@@ -137,6 +150,7 @@
 <li>Euggak: emotional friction or disagreement</li>
 <li>Garangmeori: a hairstyle braided into two strands</li>
 </ul>
+<div class="detail-inside-gallery"><img src="이미지/BOOK/eng_inside image/%EC%9E%89%EC%95%84%EC%9D%98%20%EC%88%9C%EC%9A%B0%EB%A6%AC%EB%A7%90%20%EA%B7%B8%EB%A6%BC%20%EC%82%AC%EC%A0%84/1.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%9E%89%EC%95%84%EC%9D%98%20%EC%88%9C%EC%9A%B0%EB%A6%AC%EB%A7%90%20%EA%B7%B8%EB%A6%BC%20%EC%82%AC%EC%A0%84/2.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%9E%89%EC%95%84%EC%9D%98%20%EC%88%9C%EC%9A%B0%EB%A6%AC%EB%A7%90%20%EA%B7%B8%EB%A6%BC%20%EC%82%AC%EC%A0%84/3.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%9E%89%EC%95%84%EC%9D%98%20%EC%88%9C%EC%9A%B0%EB%A6%AC%EB%A7%90%20%EA%B7%B8%EB%A6%BC%20%EC%82%AC%EC%A0%84/4.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%9E%89%EC%95%84%EC%9D%98%20%EC%88%9C%EC%9A%B0%EB%A6%AC%EB%A7%90%20%EA%B7%B8%EB%A6%BC%20%EC%82%AC%EC%A0%84/5.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%9E%89%EC%95%84%EC%9D%98%20%EC%88%9C%EC%9A%B0%EB%A6%AC%EB%A7%90%20%EA%B7%B8%EB%A6%BC%20%EC%82%AC%EC%A0%84/6.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%9E%89%EC%95%84%EC%9D%98%20%EC%88%9C%EC%9A%B0%EB%A6%AC%EB%A7%90%20%EA%B7%B8%EB%A6%BC%20%EC%82%AC%EC%A0%84/7.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%9E%89%EC%95%84%EC%9D%98%20%EC%88%9C%EC%9A%B0%EB%A6%AC%EB%A7%90%20%EA%B7%B8%EB%A6%BC%20%EC%82%AC%EC%A0%84/8.png" alt="" class="detail-inside-image"></div>
 `,
     detailBibKo: "<div class=\"contact-row\"><span>지은이</span><span>이인아</span></div><div class=\"contact-row\"><span>펴낸날</span><span>2024년 11월 20일</span></div><div class=\"contact-row\"><span>디자인</span><span>장원호</span></div><div class=\"contact-row\"><span>판형</span><span>110×170mm</span></div><div class=\"contact-row\"><span>쪽수</span><span>192쪽</span></div><div class=\"contact-row\"><span>무게</span><span>256g</span></div><div class=\"contact-row\"><span>가격</span><span>20,500원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-93344-08-8(02710)</span></div>"
   },
@@ -153,8 +167,9 @@
     category: "그래픽노블",
     categoryEn: "Graphic Novel",
     summary: "대통령이 '앉는 것을 금지한다'고 선언하자, 의자에서 내려오길 거부하는 소녀의 이야기를 그린 유쾌하고 강렬한 그래픽노블.",
-    summaryEn: "A witty and powerful graphic novel about a girl who refuses to stand after a president declares sitting forbidden.",
-    tags: ["미정"],
+    summaryEn: "When a president declares sitting forbidden, a girl refuses to leave her chair — a witty, powerful graphic novel.",
+    tags: ["그래픽노블", "민주주의", "풍자만화", "시민의추천사"],
+    tagsEn: ["Graphic Novel", "Democracy", "Satirical Comic", "Citizen Endorsements"],
     synopsisTitle: "줄거리",
     synopsis: "책 소개가 곧 업데이트됩니다.",
     body2Title: "작가의 말",
@@ -172,6 +187,7 @@
 <p>With sharp humor and warm empathy, Dulchae turns absurd authority into scenes of collective courage &mdash; showing that to &ldquo;sit&rdquo; can also mean to stand together.</p>
 <p>Blending playful illustrations with a deeply human message, this book invites readers of all ages to remember how freedom was reclaimed &mdash; not by standing taller, but by never stopping to sit.</p>
 <p>In addition, the book features endorsements from twelve citizens who were actually present in the square. With their voices included, it becomes a work truly completed together with the people.</p>
+<div class="detail-inside-gallery"><img src="이미지/BOOK/eng_inside image/%EC%95%89%EB%8A%94%20%EA%B1%B8%20%EB%A9%88%EC%B6%94%EC%A7%80%20%EB%A7%88/%E1%84%8B%E1%85%A1%E1%86%AC%E1%84%86%E1%85%A5%E1%86%B7_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5%20%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5_1.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%95%89%EB%8A%94%20%EA%B1%B8%20%EB%A9%88%EC%B6%94%EC%A7%80%20%EB%A7%88/%E1%84%8B%E1%85%A1%E1%86%AC%E1%84%86%E1%85%A5%E1%86%B7_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5%20%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5_2.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%95%89%EB%8A%94%20%EA%B1%B8%20%EB%A9%88%EC%B6%94%EC%A7%80%20%EB%A7%88/%E1%84%8B%E1%85%A1%E1%86%AC%E1%84%86%E1%85%A5%E1%86%B7_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5%20%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5_3.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%95%89%EB%8A%94%20%EA%B1%B8%20%EB%A9%88%EC%B6%94%EC%A7%80%20%EB%A7%88/%E1%84%8B%E1%85%A1%E1%86%AC%E1%84%86%E1%85%A5%E1%86%B7_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5%20%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5_4.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%95%89%EB%8A%94%20%EA%B1%B8%20%EB%A9%88%EC%B6%94%EC%A7%80%20%EB%A7%88/%E1%84%8B%E1%85%A1%E1%86%AC%E1%84%86%E1%85%A5%E1%86%B7_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5%20%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5_5.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%95%89%EB%8A%94%20%EA%B1%B8%20%EB%A9%88%EC%B6%94%EC%A7%80%20%EB%A7%88/%E1%84%8B%E1%85%A1%E1%86%AC%E1%84%86%E1%85%A5%E1%86%B7_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5%20%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5_6.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%95%89%EB%8A%94%20%EA%B1%B8%20%EB%A9%88%EC%B6%94%EC%A7%80%20%EB%A7%88/%E1%84%8B%E1%85%A1%E1%86%AC%E1%84%86%E1%85%A5%E1%86%B7_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5%20%E1%84%8B%E1%85%B5%E1%84%86%E1%85%B5%E1%84%8C%E1%85%B5_7.jpg" alt="" class="detail-inside-image"></div>
 `,
     detailBibKo: "<div class=\"contact-row\"><span>지은이</span><span>둘채</span></div><div class=\"contact-row\"><span>펴낸날</span><span>2025년 11월 10일</span></div><div class=\"contact-row\"><span>디자인</span><span>샌드위치 프레스</span></div><div class=\"contact-row\"><span>판형</span><span>240×180mm</span></div><div class=\"contact-row\"><span>쪽수</span><span>80쪽</span></div><div class=\"contact-row\"><span>가격</span><span>19,500원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-93344-16-3 (77300)</span></div>"
   },
@@ -187,9 +203,10 @@
     date: "2024",
     category: "그림책",
     categoryEn: "Picture Book",
-    summary: "가수 황푸하의 노래와 일러스트레이터 엄주의 그림이 만나, 다양한 존재의 사랑을 그린 그림책.",
-    summaryEn: "A picture book pairing Pu-ha Hwang's song with Eom Ju's illustrations, portraying love across diverse ages, abilities, and identities.",
-    tags: ["미정"],
+    summary: "싱어송라이터 황푸하의 노랫말과 일러스트레이터 엄주의 그림으로 이루어진 노랫말 그림책. 욕심이 아닌 존중의 사랑을 담은 책",
+    summaryEn: "A picture book built from singer-songwriter Pu-ha Hwang's lyrics and illustrator Eom Ju's art — a story of love rooted in respect, not desire.",
+    tags: ["노랫말그림책", "그림책", "사랑", "LGBTQ"],
+    tagsEn: ["Song Picture Book", "Picture Book", "Love", "LGBTQ"],
     synopsisTitle: "줄거리",
     synopsis: "책 소개가 곧 업데이트됩니다.",
     body2Title: "작가의 말",
@@ -211,6 +228,7 @@
 <p>He is a folk musician who sings stories&mdash;sometimes of emotions, sometimes of the world, and occasionally of other worlds. Always contemplating how to sing in tune with the times, Pu-ha released the 3rd album <em>Two Faces</em> with the Self-Portrait Trio and the improvisational band TEHO in 2022, embracing new challenges.</p>
 <h4>Eom Ju</h4>
 <p>She understands the world in her own way and expresses it through drawings and words. From the joy of drawing in early childhood to the present, she continues to seek the pleasure of drawing. She wrote and illustrated the graphic novel <em>Dream Collector</em> (2021, Morning Moon).</p>
+<div class="detail-inside-gallery"><img src="이미지/BOOK/eng_inside image/%EC%82%AC%EB%9E%91%EC%9D%84%20%ED%95%9C%EB%8B%A4%EB%8A%94%20%EA%B1%B4/%E1%84%89%E1%85%A1%E1%84%85%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%B3%E1%86%AF%20%E1%84%92%E1%85%A1%E1%86%AB%E1%84%83%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A5%E1%86%AB_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5_1.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%82%AC%EB%9E%91%EC%9D%84%20%ED%95%9C%EB%8B%A4%EB%8A%94%20%EA%B1%B4/%E1%84%89%E1%85%A1%E1%84%85%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%B3%E1%86%AF%20%E1%84%92%E1%85%A1%E1%86%AB%E1%84%83%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A5%E1%86%AB_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5_2.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%82%AC%EB%9E%91%EC%9D%84%20%ED%95%9C%EB%8B%A4%EB%8A%94%20%EA%B1%B4/%E1%84%89%E1%85%A1%E1%84%85%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%B3%E1%86%AF%20%E1%84%92%E1%85%A1%E1%86%AB%E1%84%83%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A5%E1%86%AB_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5_3.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%82%AC%EB%9E%91%EC%9D%84%20%ED%95%9C%EB%8B%A4%EB%8A%94%20%EA%B1%B4/%E1%84%89%E1%85%A1%E1%84%85%E1%85%A1%E1%86%BC%E1%84%8B%E1%85%B3%E1%86%AF%20%E1%84%92%E1%85%A1%E1%86%AB%E1%84%83%E1%85%A1%E1%84%82%E1%85%B3%E1%86%AB%20%E1%84%80%E1%85%A5%E1%86%AB_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5_5.png" alt="" class="detail-inside-image"></div>
 `,
     detailBibKo: "<div class=\"contact-row\"><span>지은이</span><span>황푸하, 엄주</span></div><div class=\"contact-row\"><span>펴낸날</span><span>2024년 1월 15일</span></div><div class=\"contact-row\"><span>디자인</span><span>나이스프레스</span></div><div class=\"contact-row\"><span>판형</span><span>130×210mm</span></div><div class=\"contact-row\"><span>쪽수</span><span>40p</span></div><div class=\"contact-row\"><span>가격</span><span>21,500원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-93344-00-2(07810)</span></div>"
   },
@@ -226,9 +244,10 @@
     date: "2025",
     category: "아트북",
     categoryEn: "Art Book",
-    summary: "요가와 드로잉을 통해 균형을 잃은 뒤 다시 서는 과정을 담담히 그린 아트북.",
-    summaryEn: "A delicate art book tracing the quiet process of standing again after losing one's balance, through yoga and drawing.",
-    tags: ["미정"],
+    summary: "무너진 하루를 담담히 일으켜 세우는 하루를 그린 그림책. 차분한 시간을 함께해 주는 그림책.",
+    summaryEn: "A picture book that quietly rebuilds a day that has fallen apart — a calm companion for unsteady time.",
+    tags: ["그림책", "요가 그림책", "글없는 그림책", "힐링 그림책"],
+    tagsEn: ["Picture Book", "Yoga Picture Book", "Wordless Picture Book", "Healing Picture Book"],
     synopsisTitle: "줄거리",
     synopsis: "책 소개가 곧 업데이트됩니다.",
     body2Title: "작가의 말",
@@ -246,6 +265,7 @@
 <p>Through yoga and drawing, Yoonju Lee slowly rebuilds her rhythm, capturing the calm and the ache of solitude in gentle colors and restrained lines.</p>
 <p>This book invites readers to sit still within their own empty spaces &mdash; to breathe, to listen inward, and to rediscover a center that was never truly lost.</p>
 <p>It is a tender meditation on the act of staying, and on the quiet strength that rises from stillness.</p>
+<div class="detail-inside-gallery"><img src="이미지/BOOK/eng_inside image/%EB%B9%88%EC%9E%90%EB%A6%AC%EC%97%90%20%EB%A8%B8%EB%AC%B4%EB%A5%B4%EA%B8%B0/%E1%84%87%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%85%E1%85%B5_%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_1.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EB%B9%88%EC%9E%90%EB%A6%AC%EC%97%90%20%EB%A8%B8%EB%AC%B4%EB%A5%B4%EA%B8%B0/%E1%84%87%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%85%E1%85%B5_%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_2.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EB%B9%88%EC%9E%90%EB%A6%AC%EC%97%90%20%EB%A8%B8%EB%AC%B4%EB%A5%B4%EA%B8%B0/%E1%84%87%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%85%E1%85%B5_%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_3.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EB%B9%88%EC%9E%90%EB%A6%AC%EC%97%90%20%EB%A8%B8%EB%AC%B4%EB%A5%B4%EA%B8%B0/%E1%84%87%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%85%E1%85%B5_%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_4.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EB%B9%88%EC%9E%90%EB%A6%AC%EC%97%90%20%EB%A8%B8%EB%AC%B4%EB%A5%B4%EA%B8%B0/%E1%84%87%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%85%E1%85%B5_%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_5.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EB%B9%88%EC%9E%90%EB%A6%AC%EC%97%90%20%EB%A8%B8%EB%AC%B4%EB%A5%B4%EA%B8%B0/%E1%84%87%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%85%E1%85%B5_%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_6.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EB%B9%88%EC%9E%90%EB%A6%AC%EC%97%90%20%EB%A8%B8%EB%AC%B4%EB%A5%B4%EA%B8%B0/%E1%84%87%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%85%E1%85%B5_%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_7.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EB%B9%88%EC%9E%90%EB%A6%AC%EC%97%90%20%EB%A8%B8%EB%AC%B4%EB%A5%B4%EA%B8%B0/%E1%84%87%E1%85%B5%E1%86%AB%E1%84%8C%E1%85%A1%E1%84%85%E1%85%B5_%E1%84%89%E1%85%B3%E1%84%91%E1%85%B3%E1%84%85%E1%85%A6%E1%84%83%E1%85%B3_8.png" alt="" class="detail-inside-image"></div>
 `,
     detailBibKo: "<div class=\"contact-row\"><span>지은이</span><span>이윤주</span></div><div class=\"contact-row\"><span>출간일</span><span>2025.12.10</span></div><div class=\"contact-row\"><span>판형</span><span>228×160mm</span></div><div class=\"contact-row\"><span>페이지</span><span>44p</span></div><div class=\"contact-row\"><span>디자인</span><span>혜정 백</span></div><div class=\"contact-row\"><span>제작</span><span>357제작소</span></div><div class=\"contact-row\"><span>정가</span><span>20,500원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-93344-17-0</span></div>"
   },
@@ -261,9 +281,10 @@
     date: "2022",
     category: "그림책",
     categoryEn: "Picture Book",
-    summary: "생일을 온전히 즐기기엔 너무 자라버린 어른을 위한, 작은 빛에 관한 그림책.",
-    summaryEn: "A picture book celebrating the birthday of an adult who has grown too far to enjoy their own birthday.",
-    tags: ["미정"],
+    summary: "생일을 즐기기엔 너무 커버린 어른을 위한 생일축하 그림책.",
+    summaryEn: "A birthday picture book for adults who have grown too old to fully enjoy their own birthday.",
+    tags: ["그림책", "생일축하 그림책", "선물그림책", "글없는 그림책"],
+    tagsEn: ["Picture Book", "Birthday Picture Book", "Gift Picture Book", "Wordless Picture Book"],
     synopsisTitle: "줄거리",
     synopsis: "책 소개가 곧 업데이트됩니다.",
     body2Title: "작가의 말",
@@ -285,6 +306,7 @@
 <p><em>After becoming an adult, birthdays have become more awkward than other ordinary days. On a day called &lsquo;Birthday&rsquo;, sometimes grownups feel too shy to celebrate the day to the fullest like they once did when they were young. Perhaps, for adults, birthday is a day that is remembered as a small light that one meets at the end of the day.</em></p>
 <p><em>From the sunlight coming through the window in the morning, to the light from the computer monitor, to the sunset in the evening sky, to the street lamps in the black night, we live an ordinary day filled with small lights. And at the end of the day, sometimes we meet a small light of our loved ones which is the greatest comfort.</em></p>
 <p><em>Hand a &#12298;A Small Light&#12299; to your loved ones (or yourself) and I hope a small light will rise in you and your lover&rsquo;s hearts.</em></p>
+<div class="detail-inside-gallery"><img src="이미지/BOOK/eng_inside image/%EC%9E%91%EC%9D%80%20%EB%B9%9B/%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%87%E1%85%B5%E1%86%BE_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5_1.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%9E%91%EC%9D%80%20%EB%B9%9B/%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%87%E1%85%B5%E1%86%BE_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5_2.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%9E%91%EC%9D%80%20%EB%B9%9B/%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%87%E1%85%B5%E1%86%BE_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5_3.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%9E%91%EC%9D%80%20%EB%B9%9B/%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%87%E1%85%B5%E1%86%BE_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5_4.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%9E%91%EC%9D%80%20%EB%B9%9B/%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%87%E1%85%B5%E1%86%BE_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5_5.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%9E%91%EC%9D%80%20%EB%B9%9B/%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%87%E1%85%B5%E1%86%BE_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5_6.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%9E%91%EC%9D%80%20%EB%B9%9B/%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%87%E1%85%B5%E1%86%BE_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5_7.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%9E%91%EC%9D%80%20%EB%B9%9B/%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%87%E1%85%B5%E1%86%BE_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5_8.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%9E%91%EC%9D%80%20%EB%B9%9B/%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%87%E1%85%B5%E1%86%BE_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5_9.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%9E%91%EC%9D%80%20%EB%B9%9B/%E1%84%8C%E1%85%A1%E1%86%A8%E1%84%8B%E1%85%B3%E1%86%AB%20%E1%84%87%E1%85%B5%E1%86%BE_%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5_10.png" alt="" class="detail-inside-image"></div>
 `,
     detailBibKo: "<div class=\"contact-row\"><span>출간일</span><span>2022년 9월 14일</span></div><div class=\"contact-row\"><span>지은이</span><span>윤여준</span></div><div class=\"contact-row\"><span>편집</span><span>윤여준</span></div><div class=\"contact-row\"><span>디자인</span><span>혜정 백</span></div><div class=\"contact-row\"><span>판형</span><span>11×17cm</span></div><div class=\"contact-row\"><span>페이지</span><span>48p</span></div><div class=\"contact-row\"><span>가격</span><span>14,500원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-978313-0-0 / 979-11-978313-2-4 (세트)</span></div>"
   },
@@ -300,9 +322,10 @@
     date: "2026",
     category: "희곡",
     categoryEn: "Play",
-    summary: "17살의 상처를 34살이 되어 되돌아보는 네 친구, '거절하는 법'을 배우며 서로를 알아가는 희곡.",
-    summaryEn: "Four friends look back on being seventeen, learning how to decline in order to protect themselves and truly know one another.",
-    tags: ["미정"],
+    summary: "무심한 시선에 가려져 있던 여성/퀴어 청소년의 지워지지 않는 존재 증명. 여성 퀴어 청소년의 까슬거리는 고민, 상처 입은 마음, 머뭇거리는 찰나, 그리고 따듯한 연대를 담은 희곡.",
+    summaryEn: "An undeniable proof of existence for female and queer youth overlooked by indifferent eyes — a play of prickly worries, wounded hearts, hesitant moments, and warm solidarity.",
+    tags: ["희곡", "청소년", "여성", "퀴어"],
+    tagsEn: ["Play", "Youth", "Women", "Queer"],
     synopsisTitle: "줄거리",
     synopsis: "책 소개가 곧 업데이트됩니다.",
     body2Title: "작가의 말",
@@ -330,6 +353,8 @@
 </ul>
 <p>A subtle crack forms among these four teenagers the moment Ria falls for Hyeon&mdash;who was running across the schoolyard&mdash;and confesses her feelings. Within the school boundaries, amidst silent bystander adults, spreading rumors, and feelings of envy and discomfort, they experience unexpected wounds.</p>
 <p>At the sharp outcry, &ldquo;Refusing didn&rsquo;t mean agreeing,&rdquo; the four gather in an empty classroom to begin a lesson on &lsquo;how to decline&rsquo; in order to protect themselves and convey their true hearts. This is a grounded, lyrical chronicle of young female solidarity as they learn about themselves, recognize one another, and find their own pace.</p>
+<h3>Table of Contents</h3>
+<p>[Preface] To You, Who Will Meet Your Own &lt;Lesson 1: Decline How to&gt; Through Play-Reading &mdash; Bae So-hyun<br>[Main Text] Chapters 1&ndash;12<br>[Review] On Growing Up Together, We Who Cannot Say No &mdash; Yeon Hye-won</p>
 <h3>Publisher&rsquo;s Review &amp; Key Themes</h3>
 <h4>A Clear Proof of Existence for Female/Queer Youth</h4>
 <p>Set in Sunwoo Girls&rsquo; High School, this play squarely confronts the realities of characters with diverse identities, including female youth, queer youth, and single-parent households. Without exaggerating or denying their intersecting identities, the story places them as they are. By gathering in an empty classroom, running on the track, and eating tteokbokki together, the four main characters prove their vibrant presence.</p>
@@ -339,8 +364,6 @@
 <p>In a world where their voices often lack weight, saying &ldquo;no&rdquo; is an essential skill never taught at home or school. By exploring how to decline, they uncover what they truly desire and rewrite their own timetables. Looking back as 34-year-olds, they come to understand and embrace their awkward 17-year-old selves and their friends.</p>
 <h4>Tender Goodness Behind Defensive Thorns</h4>
 <p>The sharp thorns grown to protect themselves in youth were rooted in a desire not to ruin relationships and a gentle wish not to hurt others. The thirty-four-year-old monologues offering comfort&mdash;&ldquo;It&rsquo;s okay, no matter how you live&rdquo;&mdash;warmly embrace the vulnerabilities of those who navigated youth&rsquo;s clumsy passages.</p>
-<h3>Table of Contents</h3>
-<p>[Preface] To You, Who Will Meet Your Own &lt;Lesson 1: Decline How to&gt; Through Play-Reading &mdash; Bae So-hyun<br>[Main Text] Chapters 1&ndash;12<br>[Review] On Growing Up Together, We Who Cannot Say No &mdash; Yeon Hye-won</p>
 <h3>Quotes &amp; Recommendation</h3>
 <blockquote><p>&ldquo;If theater allows us to re-live life&rsquo;s irreversible moments, this play invites us to laugh, cry, and release unexpressed feelings alongside Miso, Hyeon, Ria, and Seon-ju. Closing this book leaves you feeling clear and light, like someone who has just run with all their might.&rdquo;<br>&mdash; Bae Sun-hee (Actor)</p></blockquote>
 <blockquote><p>&ldquo;We do not grow alone&hellip; What this play relentlessly demonstrates is that while we can only grow through others, those very others can wound us most deeply. Being together is not a safe state, but a constant tension&mdash;a tension through which we finally recognize ourselves.&rdquo;<br>&mdash; From the Review by Yeon Hye-won</p></blockquote>
@@ -349,13 +372,20 @@
 <p>A theater artist who writes and directs in Playwright Group Y. A person who trusts those around her more than herself, gets easily swayed, and re-centers through love. Wishing for days filled with small tenderness and warmth.</p>
 <h4>Publisher: Jujube Books</h4>
 <p>Jujube Books creates tender books that serve as starting points for a better world. We pause our eyes on quiet corners and listen to modest voices. Like the jujube (date) fruit that bears fruit on every blossom without waste, Jujube Books strives to create meaningful and solid publishing activities.</p>
-<h3>Dialogue Highlights (대사 모음)</h3>
+<h3>Highlights</h3>
+<h4>From the Preface</h4>
+<blockquote><p>&ldquo;Thinking back to when I first read this play: Women. Young girls. I imagined a stage with an ordinary school, a classroom, a large blackboard, a dusty sports field, and an indifferent intersection. It was there that I met the characters&mdash;thirty-four-year-old women and seventeen-year-old girls. As I read the words they offered to themselves and to each other across their present, past, and future, an imaginative sensory experience unfolded within me. Simply reading the printed text sparked vivid images and voices.&rdquo;</p>
+<p>&ldquo;Reading this play, you will encounter coordinates of memory somewhere between seventeen and thirty-four, or perhaps beyond. Moments when brilliant beginnings clumsy arrived, afternoons wrapped in indescribable feelings, friends who felt like the entire world, and physical emotions that seemed eternal at the time though they were fleeting in hindsight&hellip; Reading through, I re-experienced feelings layered inside my body. Sometimes I bumped shoulders with someone in the play; other times, fearing we might drift apart forever, I took a bold step back and chose to trust my future self&mdash;believing we wouldn&rsquo;t grow apart, or that it would be okay even if we did.&rdquo;</p></blockquote>
+
 <h4>Seon-ju &amp; Hyeon on Thorns and Goodness</h4>
 <p><strong>Seon-ju:</strong> &ldquo;To Seon-ju&mdash;who couldn&rsquo;t raise a single thorn out of fear of being disliked.&rdquo;<br><strong>Hyeon:</strong> &ldquo;To myself back then. To Hyeon.&rdquo;<br><strong>Seon-ju:</strong> &ldquo;Those thorns of yours back then&hellip;&rdquo;<br><strong>Hyeon:</strong> &ldquo;&hellip;were actually your goodness. Your gentle goodness that didn&rsquo;t want to ruin anything or hurt anyone&rsquo;s feelings.&rdquo;</p>
 <h4>On the Meaning of Agreement and Saying &ldquo;No&rdquo;</h4>
 <p><strong>Seon-ju:</strong> &ldquo;Look&hellip; if I don&rsquo;t decline, will people like me? If I don&rsquo;t decline, will they not hate me?&rdquo;<br><strong>Miso:</strong> &ldquo;&hellip;I hate myself. I hate myself for not declining, for being unable to say no.&rdquo;<br><strong>Seon-ju:</strong> &ldquo;You don&rsquo;t get it. Not saying no doesn&rsquo;t mean I agreed.&rdquo;<br><strong>Ria:</strong> &ldquo;What?&rdquo;<br><strong>Seon-ju:</strong> &ldquo;Saying I would do it doesn&rsquo;t mean I agreed, either.&rdquo;<br><strong>Ria:</strong> &ldquo;What are you talking about? You didn&rsquo;t decline, and you said you would. How was I supposed to know you didn&rsquo;t agree? Hey, Park Seon-ju, how could I have known?&rdquo;<br><strong>Seon-ju:</strong> &ldquo;Because you&rsquo;re Kang Ria. You&hellip; you were the same! Back in the karaoke room! Not saying no didn&rsquo;t mean you agreed!&rdquo;</p>
 <h4>Reflections from Age 34</h4>
 <p><strong>Ria:</strong> &ldquo;I often think&hellip; I wish I had known how to answer more wisely back then. The truth is, I wasn&rsquo;t some shining person. I was just an ordinary kid who inflated her presence only to avoid getting hurt.&rdquo;<br><strong>Seon-ju:</strong> &ldquo;I liked Ria so much, yet I hated her so much.&rdquo;<br><strong>Ria:</strong> &ldquo;I liked Seon-ju so much, yet I hated her too.&rdquo;<br><strong>Seon-ju:</strong> &ldquo;How could these emotions exist at the very same time?&rdquo;<br><strong>Ria:</strong> &ldquo;There was no need to cause pain, but I wanted to hurt her. I knew I was causing pain, yet I didn&rsquo;t know; I didn&rsquo;t know, yet I knew.&rdquo;<br><strong>Hyeon:</strong> &ldquo;Because a single refusal felt like it would end the relationship forever.&rdquo;<br><strong>Miso:</strong> &ldquo;If I just didn&rsquo;t get hurt, I thought we could stay friends forever.&rdquo;<br><strong>Ria:</strong> &ldquo;It&rsquo;s okay, no matter how you live.&rdquo;</p>
+<h4>From the Book Review</h4>
+<blockquote><p>&ldquo;The starting point of growth in this play is desire, which is quite intriguing. The feeling of liking someone, wanting to get closer, and the state of not knowing what to do with that heart creates a turning point for the characters. Ria pushes her love forward, Hyeon cannot turn her down, Miso crumbles while trying to connect the two, and Seon-ju ultimately fails to speak her mind. Although these four enter relationships in different ways, what they face is identical: not knowing what they truly want, and having to collide with others in that very state.&rdquo;</p></blockquote>
+<div class="detail-inside-gallery"><img src="이미지/BOOK/eng_inside image/%EC%A0%9C1%EA%B0%95%EA%B1%B0%EC%A0%88%ED%95%98%EB%8A%94%20%EB%B0%94%EC%97%85/%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5__%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_01.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%A0%9C1%EA%B0%95%EA%B1%B0%EC%A0%88%ED%95%98%EB%8A%94%20%EB%B0%94%EC%97%85/%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5__%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_02.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%A0%9C1%EA%B0%95%EA%B1%B0%EC%A0%88%ED%95%98%EB%8A%94%20%EB%B0%94%EC%97%85/%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5__%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_03.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%A0%9C1%EA%B0%95%EA%B1%B0%EC%A0%88%ED%95%98%EB%8A%94%20%EB%B0%94%EC%97%85/%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5__%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_04.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%A0%9C1%EA%B0%95%EA%B1%B0%EC%A0%88%ED%95%98%EB%8A%94%20%EB%B0%94%EC%97%85/%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5__%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_05.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%A0%9C1%EA%B0%95%EA%B1%B0%EC%A0%88%ED%95%98%EB%8A%94%20%EB%B0%94%EC%97%85/%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5__%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_06.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%A0%9C1%EA%B0%95%EA%B1%B0%EC%A0%88%ED%95%98%EB%8A%94%20%EB%B0%94%EC%97%85/%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5__%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_07.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%A0%9C1%EA%B0%95%EA%B1%B0%EC%A0%88%ED%95%98%EB%8A%94%20%EB%B0%94%EC%97%85/%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5__%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_08.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EC%A0%9C1%EA%B0%95%EA%B1%B0%EC%A0%88%ED%95%98%EB%8A%94%20%EB%B0%94%EC%97%85/%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5__%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_09.jpg" alt="" class="detail-inside-image"></div>
 `,
     detailBibKo: "<div class=\"contact-row\"><span>지은이</span><span>강윤지</span></div><div class=\"contact-row\"><span>펴낸날</span><span>2026년 7월 1일</span></div><div class=\"contact-row\"><span>디자인</span><span>굿퀘스천</span></div><div class=\"contact-row\"><span>판형</span><span>105×148mm</span></div><div class=\"contact-row\"><span>쪽수</span><span>120쪽</span></div><div class=\"contact-row\"><span>가격</span><span>14,500원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-93344-24-8 [00810]</span></div>"
   },
@@ -371,14 +401,23 @@
     category: "에세이",
     categoryEn: "Essay",
     summary: "며느리와 시어머니가 3년간 주고받은 교환일기 — 가족을 넘어 서로를 사람으로 마주하는 기록.",
-    summaryEn: "A three-year exchange diary between a Korean daughter-in-law and her mother-in-law, meeting each other not just as family, but as people.",
-    tags: ["미정"],
+    summaryEn: "A three-year exchange diary between a daughter-in-law and mother-in-law — a record of meeting each other as people, beyond family roles.",
+    tags: ["에세이", "고부관계", "서간문", "교환일기"],
+    tagsEn: ["Essay", "Mother/Daughter-in-Law", "Correspondence", "Exchange Diary"],
     synopsisTitle: "줄거리",
     synopsis: "책 소개가 곧 업데이트됩니다.",
     body2Title: "작가의 말",
     body2: "작가의 말이 곧 업데이트됩니다.",
     detailImage: "가족으로 만나 친구가 되었습니다_상세페이지_수정.png",
     detailHtmlEn: `
+<div class="contact-row"><span>Title</span><span>Almost Friends, Always Family</span></div>
+<div class="contact-row"><span>Author</span><span>Hyunmi Kwon, Yeojune Yoon</span></div>
+<div class="contact-row"><span>Publication date</span><span>June 30, 2025</span></div>
+<div class="contact-row"><span>Design</span><span>Three Circle</span></div>
+<div class="contact-row"><span>Format</span><span>128 &times; 185mm</span></div>
+<div class="contact-row"><span>Pages</span><span>256p</span></div>
+<div class="contact-row"><span>Price</span><span>19,500 KRW</span></div>
+<div class="contact-row"><span>ISBN</span><span>979-11-93344-13-2(03810)</span></div>
 <p style="font-style:italic; color:var(--ink-soft);">What We Wrote to Each Other: Mother-in-Law &times; Daughter-in-Law</p>
 <p>This book is a three-year exchange diary between a Korean daughter-in-law and her mother-in-law&mdash;two women connected not by choice, but by marriage. Set against the backdrop of Korean family traditions, their letters traverse a wide range of topics, from literature, philosophy, and art to personal emotions, daily struggles, and social expectations. With courage and care, they confront sensitive subjects often left unspoken: childbearing decisions, living with in-laws, ancestral rites, and complex family hierarchies.</p>
 <p>Rather than reinforcing roles or assumptions, this book offers a rare, intimate portrait of how two women from different generations strive to meet each other not just as family, but as people. It redefines one of Korea&rsquo;s most rigid familial dynamics with honesty, tenderness, and unexpected warmth.</p>
@@ -392,6 +431,7 @@
 <p>I happened to watch recently on YouTube&mdash;an episode of <em>My Little Old Boy</em>. The mothers said, &ldquo;When my son gets married, I want to treat my daughter-in-law like my own daughter.&rdquo; But then a comedian guest said, &ldquo;I&rsquo;ve never seen a daughter-in-law who actually wants to be treated like a daughter! They don&rsquo;t want that, and they don&rsquo;t like mothers-in-law trying too hard!&rdquo;</p>
 <h3>There&rsquo;s No Such Thing as a Mother-in-law Who Feels Like a Real Mother</h3>
 <p>I once came across a saying: &ldquo;There&rsquo;s no daughter-in-law who&rsquo;s like a real daughter.&rdquo; I suppose the same could be said for &ldquo;There&rsquo;s no mother-in-law who&rsquo;s like a real mother.&rdquo; When I think of my mother, I see the little girl I once was meeting her again. But when I think of you, it feels like the thirty-something me is meeting you as I am now.</p>
+<div class="detail-inside-gallery"><img src="이미지/BOOK/eng_inside image/%EA%B0%80%EC%A1%B1%EC%9C%BC%EB%A1%9C%20%EB%A7%8C%EB%82%98%20%EC%B9%9C%EA%B5%AC%EA%B0%80%20%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4/%E1%84%86%E1%85%B5%E1%84%85%E1%85%B5%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5__%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_01.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EA%B0%80%EC%A1%B1%EC%9C%BC%EB%A1%9C%20%EB%A7%8C%EB%82%98%20%EC%B9%9C%EA%B5%AC%EA%B0%80%20%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4/%E1%84%86%E1%85%B5%E1%84%85%E1%85%B5%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5__%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_02.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EA%B0%80%EC%A1%B1%EC%9C%BC%EB%A1%9C%20%EB%A7%8C%EB%82%98%20%EC%B9%9C%EA%B5%AC%EA%B0%80%20%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4/%E1%84%86%E1%85%B5%E1%84%85%E1%85%B5%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5__%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_03.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EA%B0%80%EC%A1%B1%EC%9C%BC%EB%A1%9C%20%EB%A7%8C%EB%82%98%20%EC%B9%9C%EA%B5%AC%EA%B0%80%20%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4/%E1%84%86%E1%85%B5%E1%84%85%E1%85%B5%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5__%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_04.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EA%B0%80%EC%A1%B1%EC%9C%BC%EB%A1%9C%20%EB%A7%8C%EB%82%98%20%EC%B9%9C%EA%B5%AC%EA%B0%80%20%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4/%E1%84%86%E1%85%B5%E1%84%85%E1%85%B5%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5__%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_05.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EA%B0%80%EC%A1%B1%EC%9C%BC%EB%A1%9C%20%EB%A7%8C%EB%82%98%20%EC%B9%9C%EA%B5%AC%EA%B0%80%20%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4/%E1%84%86%E1%85%B5%E1%84%85%E1%85%B5%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5__%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_06.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EA%B0%80%EC%A1%B1%EC%9C%BC%EB%A1%9C%20%EB%A7%8C%EB%82%98%20%EC%B9%9C%EA%B5%AC%EA%B0%80%20%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4/%E1%84%86%E1%85%B5%E1%84%85%E1%85%B5%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5__%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_07.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EA%B0%80%EC%A1%B1%EC%9C%BC%EB%A1%9C%20%EB%A7%8C%EB%82%98%20%EC%B9%9C%EA%B5%AC%EA%B0%80%20%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4/%E1%84%86%E1%85%B5%E1%84%85%E1%85%B5%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5__%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_08.png" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%EA%B0%80%EC%A1%B1%EC%9C%BC%EB%A1%9C%20%EB%A7%8C%EB%82%98%20%EC%B9%9C%EA%B5%AC%EA%B0%80%20%EB%90%98%EC%97%88%EC%8A%B5%EB%8B%88%EB%8B%A4/%E1%84%86%E1%85%B5%E1%84%85%E1%85%B5%E1%84%87%E1%85%A9%E1%84%80%E1%85%B5__%E1%84%91%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%B5_09.png" alt="" class="detail-inside-image"></div>
 `,
     detailBibKo: "<div class=\"contact-row\"><span>지은이</span><span>권현미, 윤여준</span></div><div class=\"contact-row\"><span>펴낸날</span><span>2025년 6월 30일</span></div><div class=\"contact-row\"><span>디자인</span><span>이응셋</span></div><div class=\"contact-row\"><span>판형</span><span>128×185mm</span></div><div class=\"contact-row\"><span>쪽수</span><span>256p</span></div><div class=\"contact-row\"><span>가격</span><span>19,500원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-93344-13-2(03810)</span></div>"
   },
@@ -406,15 +446,24 @@
     date: "2025",
     category: "에세이",
     categoryEn: "Essay",
-    summary: "아이를 낳은 뒤 잃어버린 것들을 애도하면서도, 그 작은 침입자와 함께 사는 법을 배워가는 육아 에세이.",
-    summaryEn: "A memoir of motherhood — mourning a life once whole, and learning to live alongside the tiny intruder who changed it.",
-    tags: ["미정"],
+    summary: "아이 없는 삶을 사랑했던 심리상담사의 달고 시고 짜고 매운 임신, 육아 산문집",
+    summaryEn: "A sweet, sour, salty, and spicy collection of essays on pregnancy and parenting, by a counselor who once loved her childless life.",
+    tags: ["에세이", "임출육", "여성", "돌봄", "애도"],
+    tagsEn: ["Essay", "Pregnancy & Parenting", "Women", "Caregiving", "Mourning"],
     synopsisTitle: "줄거리",
     synopsis: "책 소개가 곧 업데이트됩니다.",
     body2Title: "작가의 말",
     body2: "작가의 말이 곧 업데이트됩니다.",
     detailImage: "나의 파괴자_상세페이지 이미지.png",
     detailHtmlEn: `
+<div class="contact-row"><span>Title</span><span>Farewell, My Fair Castle</span></div>
+<div class="contact-row"><span>Author</span><span>Heejo Yang</span></div>
+<div class="contact-row"><span>Publication date</span><span>January 20, 2025</span></div>
+<div class="contact-row"><span>Format</span><span>140 &times; 205mm</span></div>
+<div class="contact-row"><span>Pages</span><span>224p</span></div>
+<div class="contact-row"><span>Binding</span><span>Perfect binding</span></div>
+<div class="contact-row"><span>Price</span><span>19,800 KRW</span></div>
+<div class="contact-row"><span>ISBN</span><span>979-11-93344-06-4(03800)</span></div>
 <p style="font-style:italic; color:var(--ink-soft);">A Story of Motherhood</p>
 <h3>Farewell, My Fair Castle</h3>
 <p>I would feel indescribably ecstatic one moment and utterly despondent the next. I would scry the twinkling sparkle of the universe within my child&rsquo;s eyes, only to feel as if I were floating through the broad expanse of space, untethered and utterly alone.</p>
@@ -426,6 +475,7 @@
 <h3>The Benefits of Pain</h3>
 <p>All I want to do is have the freedom to love my child however I wish, but these phrases keep popping up. Even when I try to swat them away, they make me doubt myself, leaving me to wonder if I&rsquo;m making the right choices. &hellip; My pain was telling me, &ldquo;You&rsquo;re not comfortable with the reality you&rsquo;re facing right now,&rdquo; advising me to reflect and think about where I was standing. It was protecting me, speaking to me to say that if I felt incredibly uncomfortable, I was more than welcome to leave.</p>
 <p>When I was wondering how long I had to keep breastfeeding, a breastfeeding expert told me that I should keep breastfeeding until I had nothing left to give if I wanted my child&rsquo;s &ldquo;teeth to come out neat and not wonky.&rdquo; Even if breastfeeding comes with all sorts of benefits, these sorts of comments are made to guilt mothers, since the best way to persuade mothers is by guilting them. No mother would want their child&rsquo;s teeth to be wonky. Those who are said to know best make intrusive comments so nonchalantly.</p>
+<div class="detail-inside-gallery"><img src="이미지/BOOK/eng_inside image/%ED%8C%8C%EA%B4%B4%EC%9E%90/%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B5%201.jpg" alt="" class="detail-inside-image"><img src="이미지/BOOK/eng_inside image/%ED%8C%8C%EA%B4%B4%EC%9E%90/%E1%84%82%E1%85%A2%E1%84%8C%E1%85%B52.jpg" alt="" class="detail-inside-image"></div>
 `,
     detailBibKo: "<div class=\"contact-row\"><span>지은이</span><span>양희조</span></div><div class=\"contact-row\"><span>펴낸날</span><span>2025년 1월 20일</span></div><div class=\"contact-row\"><span>판형</span><span>140×205mm</span></div><div class=\"contact-row\"><span>쪽수</span><span>224쪽</span></div><div class=\"contact-row\"><span>제본</span><span>무선제본</span></div><div class=\"contact-row\"><span>가격</span><span>19,800원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-93344-06-4(03800)</span></div>"
   },
@@ -435,18 +485,23 @@
     folder: "BOOK/change the image",
     color: "#33503B",
     title: "76th Rainbow",
-    titleEn: "76th Rainbow",
+    titleEn: "[Kor.ver] I slutet av regnbågen",
     author: "비테 안덴숀 (Bitte Andersson)",
     date: "2024",
     category: "장르 미정",
-    summary: "소개 문구를 준비 중입니다.",
-    tags: ["미정"],
+    categoryEn: "Graphic Novel",
+    summary: "퀴어 실버타운에서 생긴 일! 시니어 퀴어들의 발칙하고 따듯하고 사랑스러운 로맨스 코미디 그래픽 노블",
+    summaryEn: "Something's happening at the queer retirement community! A cheeky, warm, and lovable romantic comedy graphic novel about senior queers.",
+    tags: ["그래픽노블", "LGBTQ", "시니어 퀴어"],
+    tagsEn: ["Graphic Novel", "LGBTQ", "Senior Queer"],
     synopsisTitle: "줄거리",
     synopsis: "책 소개가 곧 업데이트됩니다.",
     body2Title: "작가의 말",
     body2: "작가의 말이 곧 업데이트됩니다.",
     detailImage: "76번째 여름날의 무지개_상세페이지 이미지.jpg",
-    detailBibKo: "<div class=\"contact-row\"><span>지은이</span><span>비테 안덴숀 (Bitte Andersson)</span></div><div class=\"contact-row\"><span>옮긴이</span><span>이유진</span></div><div class=\"contact-row\"><span>펴낸날</span><span>2024년 7월 10일</span></div><div class=\"contact-row\"><span>디자인</span><span>오늘의 풍경</span></div><div class=\"contact-row\"><span>판형</span><span>198×297mm</span></div><div class=\"contact-row\"><span>쪽수</span><span>180p</span></div><div class=\"contact-row\"><span>가격</span><span>24,500원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-93344-05-7 (07330)</span></div>"
+    detailBibKo: "<div class=\"contact-row\"><span>지은이</span><span>비테 안덴숀 (Bitte Andersson)</span></div><div class=\"contact-row\"><span>옮긴이</span><span>이유진</span></div><div class=\"contact-row\"><span>펴낸날</span><span>2024년 7월 10일</span></div><div class=\"contact-row\"><span>디자인</span><span>오늘의 풍경</span></div><div class=\"contact-row\"><span>판형</span><span>198×297mm</span></div><div class=\"contact-row\"><span>쪽수</span><span>180p</span></div><div class=\"contact-row\"><span>가격</span><span>24,500원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-93344-05-7 (07330)</span></div>",
+    detailIntroEn: "Something's happening at the queer retirement community. <em>76th Rainbow</em> is a cheeky, warm, and wickedly funny graphic novel that follows a group of senior queers navigating jealousy, gossip, and unexpected romance under one roof. Swedish author Bitte Andersson turns a rarely depicted chapter of queer life &mdash; growing old, out, and unapologetic &mdash; into a story bursting with mischief and heart.",
+    detailBibEn: "<div class=\"contact-row\"><span>Author</span><span>Bitte Andersson</span></div><div class=\"contact-row\"><span>Translator</span><span>Yujin Lee</span></div><div class=\"contact-row\"><span>Publication date</span><span>July 10, 2024</span></div><div class=\"contact-row\"><span>Design</span><span>Today's Scenery</span></div><div class=\"contact-row\"><span>Format</span><span>198 × 297mm</span></div><div class=\"contact-row\"><span>Pages</span><span>180p</span></div><div class=\"contact-row\"><span>Price</span><span>24,500 KRW</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-93344-05-7 (07330)</span></div>"
   }  ,
   {
     slug: "woof-woof",
@@ -454,39 +509,49 @@
     folder: "BOOK/change the image",
     color: "#B0783E",
     title: "멍멍!",
-    titleEn: "Woof Woof",
-    author: "조아나 에스트렐라",
+    titleEn: "[Kor.ver] Ao Ao",
+    author: "조아나 에스트렐라 (Joana Estrela)",
     date: "2025",
     category: "장르 미정",
-    summary: "소개 문구를 준비 중입니다.",
-    tags: ["미정"],
+    categoryEn: "Graphic Novel",
+    summary: "[볼로냐 라가치상 수상, dPictus 100선 선정] 의성어와 의태어로 전하는 어린이와 강아지의 우정담. 이번엔 함께 시골 농장으로 떠나보자!",
+    summaryEn: "[Winner of the Bologna Ragazzi Award, selected for the dPictus 100] A friendship story between a child and a dog, told through sound and motion words. This time, let's head to the countryside farm together!",
+    tags: ["그래픽노블", "강아지", "의성어의태어", "글 없는 그림책"],
+    tagsEn: ["Graphic Novel", "Dog", "Sound Words", "Wordless Picture Book"],
     synopsisTitle: "줄거리",
     synopsis: "책 소개가 곧 업데이트됩니다.",
     body2Title: "작가의 말",
     body2: "작가의 말이 곧 업데이트됩니다.",
     detailImage: "멍멍_상세페이지 이미지_수정_0331.png",
     hideFromHome: true,
-    detailBibKo: "<div class=\"contact-row\"><span>지은이</span><span>조아나 에스트렐라</span></div><div class=\"contact-row\"><span>펴낸날</span><span>2025년 8월 25일</span></div><div class=\"contact-row\"><span>디자인</span><span>스튜디오 실버라이닝</span></div><div class=\"contact-row\"><span>판형</span><span>152×177mm</span></div><div class=\"contact-row\"><span>쪽수</span><span>60쪽</span></div><div class=\"contact-row\"><span>가격</span><span>19,000원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-93344-14-9</span></div>"
+    detailBibKo: "<div class=\"contact-row\"><span>지은이</span><span>조아나 에스트렐라 (Joana Estrela)</span></div><div class=\"contact-row\"><span>펴낸날</span><span>2025년 8월 25일</span></div><div class=\"contact-row\"><span>디자인</span><span>스튜디오 실버라이닝</span></div><div class=\"contact-row\"><span>판형</span><span>152×177mm</span></div><div class=\"contact-row\"><span>쪽수</span><span>60쪽</span></div><div class=\"contact-row\"><span>가격</span><span>19,000원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-93344-14-9</span></div>",
+    detailIntroEn: "Winner of the Bologna Ragazzi Award and selected for the dPictus 100, <em>Ao Ao</em> continues Joana Estrela&rsquo;s playful exploration of friendship without words. This time, a child and their dog head out to a countryside farm, where every bark, rustle, and footstep is rendered through pure sound and motion. Told entirely through onomatopoeia, it&rsquo;s a wordless graphic novel that captures the noisy, joyful chaos of a day spent together.",
+    detailBibEn: "<div class=\"contact-row\"><span>Author</span><span>Joana Estrela</span></div><div class=\"contact-row\"><span>Publication date</span><span>August 25, 2025</span></div><div class=\"contact-row\"><span>Design</span><span>Studio Silver Lining</span></div><div class=\"contact-row\"><span>Format</span><span>152 × 177mm</span></div><div class=\"contact-row\"><span>Pages</span><span>60p</span></div><div class=\"contact-row\"><span>Price</span><span>19,000 KRW</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-93344-14-9</span></div>"
   },
   {
     slug: "meow",
     image: "야옹",
     folder: "BOOK/change the image",
     color: "#8A6E9E",
-    title: "야옹",
-    titleEn: "Meow",
-    author: "조아나 에스트렐라",
+    title: "야옹!",
+    titleEn: "[Kor.ver] Meow",
+    author: "조아나 에스트렐라 (Joana Estrela)",
     date: "2023",
     category: "장르 미정",
-    summary: "소개 문구를 준비 중입니다.",
-    tags: ["미정"],
+    categoryEn: "Graphic Novel",
+    summary: "야옹! 의성어와 의태어로 전하는 어린이와 고양이의 우정담. 두 고양이와 소녀는 함께 하루를 잘 보낼 수 있을까?",
+    summaryEn: "Meow! A friendship story between a child and a cat, told through sound and motion words. Can the two cats and the girl get through the day together?",
+    tags: ["그래픽노블", "고양이", "의성어의태어", "글 없는 그림책"],
+    tagsEn: ["Graphic Novel", "Cat", "Sound Words", "Wordless Picture Book"],
     synopsisTitle: "줄거리",
     synopsis: "책 소개가 곧 업데이트됩니다.",
     body2Title: "작가의 말",
     body2: "작가의 말이 곧 업데이트됩니다.",
     detailImage: "야옹_상세페이지 이미지.jpg",
     hideFromHome: true,
-    detailBibKo: "<div class=\"contact-row\"><span>작가</span><span>조아나 에스트렐라</span></div><div class=\"contact-row\"><span>출간일</span><span>2023년 10월 20일</span></div><div class=\"contact-row\"><span>판형</span><span>152×177mm</span></div><div class=\"contact-row\"><span>디자인</span><span>실버라이닝 스튜디오</span></div><div class=\"contact-row\"><span>정가</span><span>19,000원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-978313-9-3</span></div>"
+    detailBibKo: "<div class=\"contact-row\"><span>작가</span><span>조아나 에스트렐라 (Joana Estrela)</span></div><div class=\"contact-row\"><span>출간일</span><span>2023년 10월 20일</span></div><div class=\"contact-row\"><span>판형</span><span>152×177mm</span></div><div class=\"contact-row\"><span>디자인</span><span>실버라이닝 스튜디오</span></div><div class=\"contact-row\"><span>정가</span><span>19,000원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-978313-9-3</span></div>",
+    detailIntroEn: "In <em>Meow</em>, illustrator Joana Estrela turns an ordinary day between a girl and her two cats into a wordless comedy of sound and motion. Hisses, purrs, and clattering paws carry the entire story, as the three try &mdash; and often fail &mdash; to get through the day in harmony. Playful, funny, and utterly wordless, it&rsquo;s a graphic novel that speaks in the universal language of onomatopoeia.",
+    detailBibEn: "<div class=\"contact-row\"><span>Author</span><span>Joana Estrela</span></div><div class=\"contact-row\"><span>Publication date</span><span>October 20, 2023</span></div><div class=\"contact-row\"><span>Format</span><span>152 × 177mm</span></div><div class=\"contact-row\"><span>Design</span><span>Silver Lining Studio</span></div><div class=\"contact-row\"><span>Price</span><span>19,000 KRW</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-978313-9-3</span></div>"
   },
   {
     slug: "steal-the-sperm-whale",
@@ -494,19 +559,24 @@
     folder: "BOOK/change the image",
     color: "#2E5C6E",
     title: "향유고래를 훔쳐라",
-    titleEn: "Steal the Sperm Whale",
+    titleEn: "[Kor.ver] Steal a Cachalot",
     author: "추이차오 (Cui Chao)",
     date: "2024",
     category: "장르 미정",
-    summary: "소개 문구를 준비 중입니다.",
-    tags: ["미정"],
+    categoryEn: "Picture Book",
+    summary: "수족관에 전시된 향유고래에게 자유를 선사하기 위한 어린이들의 환상적인 실천! 어린이의 마음으로 만나는 환경 그림책.",
+    summaryEn: "A fantastical mission by children to free a sperm whale on display at an aquarium! An environmental picture book seen through a child's heart.",
+    tags: ["그림책", "환경그림책", "동물", "바다"],
+    tagsEn: ["Picture Book", "Environment", "Animals", "Ocean"],
     synopsisTitle: "줄거리",
     synopsis: "책 소개가 곧 업데이트됩니다.",
     body2Title: "작가의 말",
     body2: "작가의 말이 곧 업데이트됩니다.",
     detailImage: "향유고래를 훔쳐라_상세페이지 이미지.jpg",
     hideFromHome: true,
-    detailBibKo: "<div class=\"contact-row\"><span>지은이</span><span>추이차오 (Cui Chao)</span></div><div class=\"contact-row\"><span>옮긴이</span><span>김용재</span></div><div class=\"contact-row\"><span>펴낸날</span><span>2024년 3월 20일</span></div><div class=\"contact-row\"><span>디자인</span><span>스튜디오 실버라이닝</span></div><div class=\"contact-row\"><span>판형</span><span>210×290mm</span></div><div class=\"contact-row\"><span>쪽수</span><span>42p</span></div><div class=\"contact-row\"><span>가격</span><span>19,500원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-978313-8-6(77820)</span></div>"
+    detailBibKo: "<div class=\"contact-row\"><span>지은이</span><span>추이차오 (Cui Chao)</span></div><div class=\"contact-row\"><span>옮긴이</span><span>김용재</span></div><div class=\"contact-row\"><span>펴낸날</span><span>2024년 3월 20일</span></div><div class=\"contact-row\"><span>디자인</span><span>스튜디오 실버라이닝</span></div><div class=\"contact-row\"><span>판형</span><span>210×290mm</span></div><div class=\"contact-row\"><span>쪽수</span><span>42p</span></div><div class=\"contact-row\"><span>가격</span><span>19,500원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-978313-8-6(77820)</span></div>",
+    detailIntroEn: "When a sperm whale is put on display in an aquarium, a group of children set out on a fantastical mission to set it free. <em>Steal a Cachalot</em> is an environmental picture book told through a child&rsquo;s eyes, using imagination and quiet courage to ask hard questions about captivity, freedom, and our responsibility to the creatures we put on display. Cui Chao&rsquo;s artwork gives the whale &mdash; and the children&rsquo;s resolve &mdash; a vast, dreamlike scale.",
+    detailBibEn: "<div class=\"contact-row\"><span>Author</span><span>Cui Chao</span></div><div class=\"contact-row\"><span>Translator</span><span>Yongjae Kim</span></div><div class=\"contact-row\"><span>Publication date</span><span>March 20, 2024</span></div><div class=\"contact-row\"><span>Design</span><span>Studio Silver Lining</span></div><div class=\"contact-row\"><span>Format</span><span>210 × 290mm</span></div><div class=\"contact-row\"><span>Pages</span><span>42p</span></div><div class=\"contact-row\"><span>Price</span><span>19,500 KRW</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-978313-8-6(77820)</span></div>"
   },
   {
     slug: "grandfathers-rainbow",
@@ -514,192 +584,378 @@
     folder: "BOOK/change the image",
     color: "#7A4A2C",
     title: "할아버지가 사랑한 무지개",
-    titleEn: "The Rainbow Grandfather Loved",
+    titleEn: "[Kor.ver] Grandad's Pride",
     author: "해리 우드게이트 (Harry Woodgate)",
     date: "2023",
     category: "장르 미정",
-    summary: "소개 문구를 준비 중입니다.",
-    tags: ["미정"],
+    categoryEn: "Picture Book",
+    summary: "할아버지의 다락방에서 찾은 무지개 깃발. 그렇게 알게 된 '무지개 축제!' 자유와 존중이 함께하는 무지개 축제를 우리 동네에서도 만들어요!",
+    summaryEn: "A rainbow flag found in Grandad's attic leads to discovering 'Pride'! Let's bring a Pride festival of freedom and respect to our own neighborhood too.",
+    tags: ["그림책", "다양성그림책", "LGBTQ", "퀴어", "인권"],
+    tagsEn: ["Picture Book", "Diversity", "LGBTQ", "Queer", "Human Rights"],
     synopsisTitle: "줄거리",
     synopsis: "책 소개가 곧 업데이트됩니다.",
     body2Title: "작가의 말",
     body2: "작가의 말이 곧 업데이트됩니다.",
     detailImage: "할아버지가 사랑한 무지개_상세페이지.png",
     hideFromHome: true,
-    detailBibKo: "<div class=\"contact-row\"><span>지은이</span><span>해리 우드게이트 (Harry Woodgate)</span></div><div class=\"contact-row\"><span>펴낸날</span><span>2023년 6월 15일</span></div><div class=\"contact-row\"><span>디자인</span><span>햇빛스튜디오</span></div><div class=\"contact-row\"><span>판형</span><span>240×280mm</span></div><div class=\"contact-row\"><span>쪽수</span><span>32p</span></div><div class=\"contact-row\"><span>가격</span><span>23,000원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-978313-5-5 (77840)</span></div>"
+    detailBibKo: "<div class=\"contact-row\"><span>지은이</span><span>해리 우드게이트 (Harry Woodgate)</span></div><div class=\"contact-row\"><span>펴낸날</span><span>2023년 6월 15일</span></div><div class=\"contact-row\"><span>디자인</span><span>햇빛스튜디오</span></div><div class=\"contact-row\"><span>판형</span><span>240×280mm</span></div><div class=\"contact-row\"><span>쪽수</span><span>32p</span></div><div class=\"contact-row\"><span>가격</span><span>23,000원</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-978313-5-5 (77840)</span></div>",
+    detailIntroEn: "When a child finds a rainbow flag tucked away in Grandad&rsquo;s attic, it opens the door to a story he had never shared before: Pride. <em>Grandad&rsquo;s Pride</em> is a joyful, intergenerational picture book about discovering a hidden piece of family history, and about bringing that same freedom and respect back to their own neighborhood with a Pride festival of their own. Harry Woodgate&rsquo;s warm illustrations celebrate community, memory, and belonging across generations.",
+    detailBibEn: "<div class=\"contact-row\"><span>Author</span><span>Harry Woodgate</span></div><div class=\"contact-row\"><span>Publication date</span><span>June 15, 2023</span></div><div class=\"contact-row\"><span>Design</span><span>Sunshine Studio</span></div><div class=\"contact-row\"><span>Format</span><span>240 × 280mm</span></div><div class=\"contact-row\"><span>Pages</span><span>32p</span></div><div class=\"contact-row\"><span>Price</span><span>23,000 KRW</span></div><div class=\"contact-row\"><span>ISBN</span><span>979-11-978313-5-5 (77840)</span></div>"
   }
 ];
 
 const GOODS = [
   {
-    slug: "canvas-tote",
-    folder: "AND MORE",
-    color: "#33503B",
-    title: "쥬쥬베북스 에코백",
-    titleEn: "Jujube Books Tote Bag",
-    category: "에코백",
-    price: "18,000원",
-    summary: "두꺼운 면 캔버스에 쥬쥬베북스 로고를 스크린 인쇄한 기본 에코백.",
-    tags: ["에코백", "굿즈", "베스트"],
+    slug: "reading-sign-clip",
+    image: "main",
+    folder: "AND MORE/Reading Now",
+    galleryImages: ["0", "1", "2", "3", "4"],
+    color: "#4A5A63",
+    title: '"독서 중" 입간판 집게',
+    titleEn: '"Reading Now" Mini Sign Clip',
+    category: "북클립",
+    categoryEn: "Book Clip",
+    summary: "책을 펼칠 때 주변의 방해를 차단해주는 '독서 중' 아크릴 입간판 집게.",
+    summaryEn: 'An acrylic "Reading Now" sign clip that blocks interruptions while you read.',
+    tags: ["북클립", "굿즈", "아크릴"],
+    tagsEn: ["Book Clip", "Goods", "Acrylic"],
     synopsisTitle: "소개",
+    synopsisTitleEn: "About",
     synopsis:
-      "16수 두꺼운 면 캔버스 원단을 사용해 오래 사용할 수 있도록 제작한 에코백입니다. 안쪽 포켓이 있어 소지품을 나누어 보관하기 좋습니다.",
+      "내 독서 시간 절대 지켜! \"독서 중\" 입간판 집게.\n\n평소엔 가벼운 메모를 꽂아둘 수 있으며, 책을 펼칠 땐 주변의 방해를 미리 차단해 줍니다.\n\n한쪽 면은 'Reading Now', 다른 면은 '讀書中'(한자 버전) 혹은 '독서중!'(한글 버전)이 적혀있습니다.",
+    synopsisEn:
+      'Protect my reading time at all costs! "Reading Now" Mini Sign Clip.\n\nUsually, you can clip light notes on it, and when you open a book, it helps block interruptions in advance.\n\nOne side says \'Reading Now\', and the other side has either \'讀書中\' (Hanja version) or \'독서중!\' (Korean version).',
     body2Title: "제품 정보",
-    body2: "사이즈 38 x 42cm · 소재 100% Cotton Canvas · 세탁 시 찬물 손세탁 권장"
+    body2TitleEn: "Product Info",
+    body2: "크기: 43×57mm · 재질: 아크릴 · *보호 필름을 제거 후 사용해 주세요!",
+    body2En: "Size: 43×57mm · Material: Acrylic · *Please remove the protective film before use!"
   },
   {
-    slug: "character-badge-set",
-    folder: "AND MORE",
-    color: "#C1613A",
-    title: "캐릭터 뱃지 세트",
-    titleEn: "Character Badge Set",
-    category: "뱃지",
-    price: "9,000원",
-    summary: "「모 이야기」 속 캐릭터들을 담은 3종 에나멜 뱃지 세트.",
-    tags: ["뱃지", "굿즈", "한정판"],
+    slug: "jujube-lenticular-bookmark",
+    image: "main",
+    folder: "AND MORE/book mark_let start reading",
+    galleryImages: ["상세이미지_1", "상세이미지_2", "상세이미지_3"],
+    color: "#A8432E",
+    title: "'오늘은 여기까지만 읽자' 대추 렌티큘러 책갈피",
+    titleEn: "'Let's Stop Here for Today' Jujube Lenticular Bookmark",
+    category: "책갈피",
+    categoryEn: "Bookmark",
+    price: "3,800원",
+    priceEn: "3,800 KRW",
+    summary: "사과 대추 속 독서왕 강아지가 그려진 렌티큘러 책갈피. 기울이면 이미지가 바뀝니다.",
+    summaryEn: "A lenticular bookmark featuring a bookworm dog inside an apple jujube — tilt it to reveal a hidden image.",
+    tags: ["책갈피", "렌티큘러", "굿즈"],
+    tagsEn: ["Bookmark", "Lenticular", "Goods"],
     synopsisTitle: "소개",
+    synopsisTitleEn: "About",
     synopsis:
-      "쥬쥬베북스의 그림책 속 캐릭터들을 에나멜 뱃지로 만들었습니다. 가방, 옷깃 어디에나 어울리는 사이즈로 제작했습니다.",
+      "사과 대추 속에 사는 독서왕 강아지는 오늘도 책을 펼쳤습니다. '여기부터 다시 읽어볼까?'\n\n한참 동안 독서를 즐긴 강아지는 이제 책을 덮습니다. '오늘은 여기까지만 읽자'\n\n렌티큘러로 제작하여 책갈피를 기울이면 다른 이미지가 나타납니다. 사과 대추와 대추 속의 강아지.\n\n여름에만 나오는 사과대추를 사계절 내내 만나는 기회!",
+    synopsisEn:
+      "The bookworm dog living inside the apple jujube opened a book again today. 'Shall I start reading from here again?'\n\nAfter reading for a while, the dog now closes the book. 'Let's stop here for today.'\n\nMade with lenticular printing, a different image appears when you tilt the bookmark: the apple jujube, and the dog inside the apple jujube.\n\nAn opportunity to meet the apple jujube, which usually appears only in summer, all year round!",
     body2Title: "제품 정보",
-    body2: "사이즈 각 2.5cm · 소재 에나멜, 금속 합금(니켈 도금) · 구성 3종 세트"
+    body2TitleEn: "Product Info",
+    body2: "재질: 렌티큘러 (앞면 렌티큘러, 뒷면 컬러 인쇄) · 크기: 90×75mm · 가격: 3,800원",
+    body2En: "Material: Lenticular (lenticular front, color printed back) · Size: 90×75mm · Price: 3,800 KRW"
   },
   {
-    slug: "paperweight",
-    folder: "AND MORE",
-    color: "#8A7148",
-    title: "문진",
-    titleEn: "Paperweight",
-    category: "문구",
-    price: "24,000원",
-    summary: "책상 위에 두고 쓰는 유리 문진, 안에는 작은 종이배 한 척.",
-    tags: ["문구", "굿즈", "책상소품"],
+    slug: "photo-slot-bookmark",
+    image: "main",
+    folder: "AND MORE/book mark_photo card",
+    galleryImages: ["상세 이미지"],
+    color: "#C77B93",
+    title: "사진을 넣을 수 있는 책갈피 · 쥬쥬베북스",
+    titleEn: "Bookmark with Photo Slot · jujube books",
+    category: "책갈피",
+    categoryEn: "Bookmark",
+    price: "4,900원",
+    priceEn: "4,900 KRW",
+    summary: "포토카드나 사진을 끼워 넣을 수 있는 종이 책갈피. 미니 카드 한 장이 함께 들어있습니다.",
+    summaryEn: "A paper bookmark with a slot for photo cards or personal photos, including one mini card.",
+    tags: ["책갈피", "포토카드", "굿즈"],
+    tagsEn: ["Bookmark", "Photo Card", "Goods"],
     synopsisTitle: "소개",
+    synopsisTitleEn: "About",
     synopsis:
-      "책을 읽다 잠시 펼쳐둔 페이지를 눌러줄 수 있는 유리 문진입니다. 안에 담긴 작은 종이배는 「파란 우체통」의 한 장면에서 영감을 받았습니다.",
+      "나만의 책갈피로도, 포토카드 보관용으로도, 사진을 넣은 작은 편지지로도 사용할 수 있는 책갈피입니다. 책갈피 사이를 벌려 포토카드나, 반려동물, 애인, 가족 등의 사진을 끼워 넣을 수 있습니다. 함께 들어있는 카드와 책갈피 뒷면은 짧은 글귀를 적거나 편지를 쓰는 공간으로 사용할 수 있습니다.\n\n*미니 카드는 빨강, 파랑, 분홍 세 종류이며, 각 책갈피당 한 개씩 들어있습니다.",
+    synopsisEn:
+      "This bookmark can be used as your own personalized bookmark, a photo card holder, or a small letterhead with a picture. You can open the space between the bookmark layers to insert photo cards or photos of pets, partners, family, and more. The included card and the back of the bookmark can be used to write short notes or letters.\n\nMini cards come in three colors: red, blue, and pink. One card is included per bookmark.",
     body2Title: "제품 정보",
-    body2: "사이즈 지름 7cm · 소재 유리 · 주의 파손 위험, 완충 포장 배송"
+    body2TitleEn: "Product Info",
+    body2: "재질: 종이 · 크기: 63×88mm · 가격: 4,900원",
+    body2En: "Material: Paper · Size: 63×88mm · Price: 4,900 KRW"
   },
   {
-    slug: "postcard-set",
-    folder: "AND MORE",
-    color: "#2C4A6B",
-    title: "엽서 세트",
-    titleEn: "Postcard Set",
-    category: "엽서",
-    price: "7,000원",
-    summary: "쥬쥬베북스 표지 일러스트를 모은 8매 구성 엽서 세트.",
-    tags: ["엽서", "굿즈", "선물"],
+    slug: "jujube-ceramic-paperweight",
+    image: "main",
+    folder: "AND MORE/ceramic",
+    galleryImages: ["1", "2", "3", "4"],
+    detailCoverScale: 0.5,
+    color: "#9C5330",
+    title: "대추 도자기 문진",
+    titleEn: "Jujube Ceramic Paperweight",
+    category: "문진",
+    categoryEn: "Paperweight",
+    price: "12,000원",
+    priceEn: "12,000 KRW",
+    summary: "쥬쥬베를 닮은 대추 모양 도자기 문진. 손으로 하나하나 빚어 모양이 조금씩 다릅니다.",
+    summaryEn: "A jujube-shaped ceramic paperweight, handmade so each piece is slightly unique.",
+    tags: ["문진", "도자기", "핸드메이드"],
+    tagsEn: ["Paperweight", "Ceramic", "Handmade"],
     synopsisTitle: "소개",
+    synopsisTitleEn: "About",
     synopsis:
-      "지난 5년간 출간된 책들의 표지 일러스트 중 여덟 장을 골라 엽서로 제작했습니다. 무광 코팅으로 필기감이 좋습니다.",
+      "쥬쥬베를 뜻하는 대추 모양 도자기 문진입니다. 매끈매끈한 표면이 만지면 기분을 좋게 해줍니다. 가벼운 것을 고정하는 문진으로 사용할 수 있으며, 테라피 스톤, 차총(차 친구)으로도 사용 가능합니다.\n\n*모두 손으로 만들어, 모양 및 색상이 상이합니다.",
+    synopsisEn:
+      "A ceramic paperweight shaped like a jujube, symbolizing jujube books. Its smooth surface feels pleasant to touch. It can be used as a paperweight to hold down light items, and can also be used as a therapy stone or a tea pet (tea companion).\n\n*All items are handmade, so shapes and colors may vary.",
     body2Title: "제품 정보",
-    body2: "사이즈 10 x 15cm · 구성 8매 · 종이 랑데부 210g"
-  },
-  {
-    slug: "masking-tape",
-    folder: "AND MORE",
-    color: "#5C3A56",
-    title: "마스킹 테이프",
-    titleEn: "Masking Tape",
-    category: "문구",
-    price: "5,000원",
-    summary: "「나무의 계절」 패턴을 담은 마스킹 테이프.",
-    tags: ["문구", "굿즈", "다이어리"],
-    synopsisTitle: "소개",
-    synopsis:
-      "그림책 「나무의 계절」 속 사계절 패턴을 그대로 담은 마스킹 테이프입니다. 다이어리 꾸미기, 선물 포장 어디에나 잘 어울립니다.",
-    body2Title: "제품 정보",
-    body2: "사이즈 폭 1.5cm x 길이 5m · 소재 화지 테이프"
-  },
-  {
-    slug: "bookmark-set",
-    folder: "AND MORE",
-    color: "#3E6B4F",
-    title: "책갈피 세트",
-    titleEn: "Bookmark Set",
-    category: "문구",
-    price: "6,000원",
-    summary: "얇은 황동으로 제작한 클립형 책갈피 3종 세트.",
-    tags: ["문구", "굿즈", "책갈피"],
-    synopsisTitle: "소개",
-    synopsis:
-      "가볍고 얇은 황동 소재로 제작해 책장을 상하지 않게 고정할 수 있는 클립형 책갈피입니다. 쥬쥬베북스의 로고 문양을 새겼습니다.",
-    body2Title: "제품 정보",
-    body2: "사이즈 3.2cm · 소재 황동 · 구성 3종 세트"
+    body2TitleEn: "Product Info",
+    body2: "재질: 도자기 · 크기: 지름 약 5cm (핸드메이드로 모두 크기가 상이합니다.) · 가격: 12,000원",
+    body2En: "Material: Ceramic · Size: Diameter approx. 5cm (each item varies in size due to being handmade) · Price: 12,000 KRW"
   }
 ];
 
-const NEWS = [
+const NEWS_FALLBACK = [
   {
+    date: "2026.07",
+    slug: "mapo-chaeksodong-2026-07",
+    title: "[행사 참여] 마포 책소동 참가",
+    titleEn: "[Event] Participated in Mapo Chaeksodong Book Fair"
+  },
+  {
+    date: "2026.06",
+    slug: "changbi-children",
+    title: "창비 어린이",
+    titleEn: "Changbi Children's"
+  },
+  {
+    date: "2026.06",
     slug: "seoul-book-fair-2026",
-    folder: "NEWS",
-    color: "#7A4A2C",
-    date: "2026.06.10",
-    title: "2026 서울국제도서전 참가 안내",
-    titleEn: "Jujube Books at Seoul International Book Fair 2026",
-    summary: "쥬쥬베북스가 올해 서울국제도서전에 참가합니다. 부스 번호와 이벤트 일정을 안내드립니다.",
-    synopsisTitle: "내용",
-    synopsis:
-      "쥬쥬베북스는 2026년 6월 서울국제도서전(코엑스)에 참가합니다. 부스에서는 신간 「파란 우체통」을 포함한 전 도서를 만나보실 수 있으며, 현장 구매 시 한정 굿즈를 증정합니다.",
-    body2Title: "현장 이벤트",
-    body2: "행사 기간 동안 매일 오후 2시, 작가와의 짧은 만남 시간을 준비했습니다. 자세한 시간표는 현장 안내 데스크에서 확인하실 수 있습니다."
+    title: "[행사 참여] 2026 서울국제도서전 참가",
+    titleEn: "[Event] Participated in the 2026 Seoul International Book Fair"
   },
   {
-    slug: "mo-story-2nd-print",
-    folder: "NEWS",
-    color: "#4E7057",
-    date: "2026.03.02",
-    title: "「모 이야기」 2쇄 출간 소식",
-    titleEn: "Mo Story — Second Print Run",
-    summary: "많은 사랑을 받은 「모 이야기」가 2쇄를 찍었습니다.",
-    synopsisTitle: "내용",
-    synopsis:
-      "2024년 출간된 「모 이야기」가 독자분들의 꾸준한 사랑에 힘입어 2쇄를 인쇄했습니다. 초판과 동일한 판형, 동일한 종이로 제작되었으며, 전국 서점 및 온라인몰에서 순차 입고됩니다.",
-    body2Title: "감사의 말",
-    body2: "책을 아껴주신 독자분들께 깊이 감사드립니다. 앞으로도 좋은 이야기로 찾아뵙겠습니다."
+    date: "2026.06",
+    title: "라우더비디오 유튜브 출연",
+    titleEn: "Appeared on Louder Video's YouTube Channel",
+    link: "https://youtu.be/6v5n5m1T9YI?si=PXgVdWjeXUIWqxjg"
   },
   {
-    slug: "blue-mailbox-book-talk",
-    folder: "NEWS",
-    color: "#2C4A6B",
-    date: "2026.01.24",
-    title: "신간 「파란 우체통」 북토크 안내",
-    titleEn: "Book Talk for The Blue Mailbox",
-    summary: "한지민 작가와 함께하는 「파란 우체통」 출간 기념 북토크가 열립니다.",
-    synopsisTitle: "내용",
-    synopsis:
-      "2월 15일 오후 4시, 연희동의 한 서점에서 「파란 우체통」 출간을 기념하는 북토크가 진행됩니다. 저자와의 대화, 사인회 순서로 진행되며 참가 신청은 쥬쥬베북스 인스타그램을 통해 받습니다.",
-    body2Title: "참가 안내",
-    body2: "선착순 30명으로 좌석이 제한되어 있으니 서둘러 신청해 주세요."
+    date: "2026.04",
+    slug: "tree-exhibition-thanksbooks",
+    title: "<나는 정말 나무가 되었다> 원화전 @땡스북스",
+    titleEn: "&lt;I Have Become A Tree&gt; Original Art Exhibition @Thanks Books"
   },
   {
-    slug: "summer-holiday-notice",
-    folder: "NEWS",
-    color: "#8A7148",
-    date: "2025.08.01",
-    title: "쥬쥬베북스 여름 휴점 안내",
-    titleEn: "Summer Holiday Notice",
-    summary: "8월 11일부터 15일까지 쥬쥬베북스 사무실이 휴점합니다.",
-    synopsisTitle: "내용",
-    synopsis:
-      "무더운 여름, 쥬쥬베북스도 잠시 숨을 고르려 합니다. 8월 11일(월)부터 15일(금)까지 사무실 운영과 문의 응대가 일시 중단되며, 온라인 주문은 16일부터 순차적으로 처리됩니다.",
-    body2Title: "안내",
-    body2: "휴점 기간 중 문의는 이메일로 남겨주시면 업무 재개 후 순서대로 답변드리겠습니다."
+    date: "2026.04",
+    title: "[언론 보도] '나무를 쓰고, 그리다가... 끝내 나무가 된 작가들' 오마이뉴스",
+    titleEn: "[Press] “Writing and Drawing Trees… Until the Authors Became Trees Themselves” — OhmyNews",
+    link: "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003226445&CMPT_CD=P0010&utm_source=naver&utm_medium=newsearch&utm_campaign=naver_news"
   },
   {
-    slug: "indie-bookstore-list-update",
-    folder: "NEWS",
-    color: "#5C3A56",
-    date: "2025.05.19",
-    title: "독립서점 입고 리스트 업데이트",
-    titleEn: "Updated Independent Bookstore List",
-    summary: "쥬쥬베북스 도서를 만나볼 수 있는 전국 독립서점 리스트를 갱신했습니다.",
-    synopsisTitle: "내용",
-    synopsis:
-      "전국 24곳의 독립서점에서 쥬쥬베북스의 책을 만나보실 수 있습니다. 이번 업데이트에서는 대구, 전주, 강릉 지역 서점 다섯 곳이 새롭게 추가되었습니다.",
-    body2Title: "리스트 확인",
-    body2: "자세한 서점 명단과 위치는 CONTACT 페이지 또는 인스타그램 하이라이트에서 확인하실 수 있습니다."
-  }
+    date: "2026.04",
+    title: "[언론 보도] '시기와 불안에 흔들림 없는 나무로 산다면' 경향신문",
+    titleEn: "[Press] “Living as a Tree, Unshaken by Envy and Anxiety” — The Kyunghyang Shinmun",
+    link: "https://www.khan.co.kr/article/202604021958005#ENT"
+  },
+  {
+    date: "2026.04",
+    title: "[언론 보도] '나무가 된 사람 이야기, 식목일에 아이들과 읽어보세요' 오마이뉴스",
+    titleEn: "[Press] “A Story of a Person Who Became a Tree — Read It with Your Kids on Arbor Day” — OhmyNews",
+    link: "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003220261&CMPT_CD=P0010&utm_source=naver&utm_medium=newsearch&utm_campaign=naver_news"
+  },
+  {
+    date: "2026.04",
+    slug: "taiwan-golden-book-award-2026",
+    title: "타이완 Golden book Picture Book Award 시상식 참석 및 강연 진행",
+    titleEn: "Attended the Taiwan Golden Book Picture Book Award Ceremony and Gave a Talk"
+  },
+  {
+    date: "2026.03",
+    slug: "jeju-book-fair-2026-03",
+    title: "제주북페어 참여",
+    titleEn: "Participated in Jeju Book Fair"
+  },
+  {
+    date: "2026.03",
+    slug: "kaohsiung-yangyang-exhibition",
+    title: "타이완 가오슝 서점 '洋洋本屋' <그곳은 따듯한가요>, <작은 빛> 원화 전시 및 강연",
+    titleEn: "&lt;Is It Warm There&gt; &amp; &lt;A Small Light&gt; Original Art Exhibition and Talk at Yang Yang Bookstore (洋洋本屋), Kaohsiung, Taiwan"
+  },
+  {
+    date: "2026.03",
+    slug: "taipei-art-book-fair-2026",
+    title: "타이페이아트북페어 참여",
+    titleEn: "Participated in Taipei Art Book Fair"
+  },
+  {
+    date: "2026.02",
+    slug: "bplatform-exhibition",
+    title: "쥬쥬베북스 브랜드 전시 @bplatform",
+    titleEn: "Jujube Books Brand Exhibition @bplatform"
+  },
+  {
+    date: "2025.12",
+    title: "[언론 보도] '[큐레이션] 서로의 손을 잡고 나아갈 수 있다면' 체널 예스",
+    titleEn: "[Press] “[Curation] If We Can Move Forward Holding Each Other’s Hands” — Channel Yes",
+    link: "https://ch.yes24.com/Article/Details/81747"
+  },
+  {
+    date: "2025.12",
+    slug: "ground-cover-plotroom",
+    title: "<빈자리에 머무르기> @plot room",
+    titleEn: "&lt;Dwelling in the Empty&gt; @plot room"
+  },
+  {
+    date: "2025.11",
+    title: "[언론보도] '‘무엇이 진실인가’라는 질문 대신 [새로 나온 책]' 시사IN",
+    titleEn: "[Press] “Instead of Asking ‘What Is the Truth’ [New Releases]” — SisaIN",
+    link: "https://www.sisain.co.kr/news/articleView.html?idxno=56846"
+  },
+  {
+    date: "2025.11",
+    title: "[언론보도] '그렇게 우리 광장에 함께 앉아 이겨냈다' 경향신문",
+    titleEn: "[Press] “That’s How We Sat Together in the Square and Won” — The Kyunghyang Shinmun",
+    link: "https://www.khan.co.kr/article/202511062229005#ENT"
+  },
+  {
+    date: "2025.11",
+    slug: "seoul-art-book-fair-ue17",
+    title: "서울아트북페어 UE17 참여",
+    titleEn: "Participated in Seoul Art Book Fair UNLIMITED EDITION 17"
+  },
+  {
+    date: "2025.10",
+    title: "[언론 보도] '‘여적여’라는 오래된 루머' 여성신문",
+    titleEn: "[Press] “The Old Rumor Called ‘Women Against Women’” — Women’s News",
+    link: "https://www.womennews.co.kr/news/articleView.html?idxno=268283"
+  },
+  {
+    date: "2025.07",
+    slug: "radio-yeoseongsidae",
+    title: "라디오 여성시대 출연",
+    titleEn: "Appeared on the Radio Show “Yeoseong Sidae” (Women’s Era)"
+  },
+  {
+    date: "2025.08",
+    slug: "gunsan-book-fair-2025",
+    title: "군산북페어 참여",
+    titleEn: "Participated in Gunsan Book Fair"
+  },
+  {
+    date: "2025.05",
+    slug: "mapo-chaeksodong-2025-05",
+    title: "마포 책소동 참여",
+    titleEn: "Participated in Mapo Chaeksodong Book Fair"
+  },
+  {
+    date: "2025.06",
+    slug: "seoul-book-fair-2025",
+    title: "2025 서울국제도서전 참여",
+    titleEn: "Participated in the 2025 Seoul International Book Fair"
+  },
+  {
+    date: "2025.03",
+    title: "[언론보도] '나에서 아이로 삶의 중심이 달라졌을 때' 오마이뉴스",
+    titleEn: "[Press] “When the Center of Life Shifts from Me to My Child” — OhmyNews",
+    link: "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003108138&CMPT_CD=P0010&utm_source=naver&utm_medium=newsearch&utm_campaign=naver_news"
+  },
+  {
+    date: "2024.11",
+    slug: "seoul-art-book-fair-ue16",
+    title: "서울아트북페어 UE16 참여",
+    titleEn: "Participated in Seoul Art Book Fair UNLIMITED EDITION 16"
+  },
+  {
+    date: "2024.10",
+    title: "[언론 보도] '[소규모 출판사 쥬쥬베북스의 어린이 책] 대담하고 담대하게' 독서신문",
+    titleEn: "[Press] “[Small Publisher Jujube Books’ Children’s Books] Bold and Daring” — Doksuh Shinmun",
+    link: "https://www.readersnews.com/news/articleView.html?idxno=113343"
+  },
+  {
+    date: "2024.08",
+    slug: "jeju-eotteonbaram-exhibition",
+    title: "<그곳은 따듯한가요>, <작은 빛> 전시 @어떤바람 제주",
+    titleEn: "&lt;Is It Warm There&gt; &amp; &lt;A Small Light&gt; Exhibition @Eotteon Baram, Jeju"
+  },
+  {
+    date: "2024.08",
+    title: "[언론 보도] 이달의 출판 만화 선정",
+    titleEn: "[Press] Selected as Comic of the Month",
+    link: "https://gamefocus.co.kr/detail.php?number=158067"
+  },
+  {
+    date: "2024.07",
+    title: "[언론 보도] '[주간책타래] 76번째 여름날의 무지개 外' 여성신문",
+    titleEn: "[Press] “[Weekly Book Reel] 76th Rainbow and More” — Women’s News",
+    link: "https://www.womennews.co.kr/news/articleView.html?idxno=249910"
+  },
+  {
+    date: "2024.06",
+    slug: "seoul-book-fair-2024",
+    title: "2024 서울국제도서전 참여",
+    titleEn: "Participated in the 2024 Seoul International Book Fair"
+  },
+  {
+    date: "2024.06",
+    title: "[언론 보도]'할아버지의 옛 무지개 축제 깃발이 펼쳐진 미래' 일다",
+    titleEn: "[Press] “The Future Unfolded by Grandad’s Old Pride Flag” — Ilda",
+    link: "https://www.ildaro.com/9938"
+  },
+  {
+    date: "2024.05",
+    title: "[언론 보도] '우리의 바다, 우리의 책임' 어린이 동아",
+    titleEn: "[Press] “Our Sea, Our Responsibility” — Donga Kids",
+    link: "https://kids.donga.com/news/articleView.html?idxno=162722"
+  },
+  {
+    date: "2024.03",
+    title: "[언론 보도] '‘성평등 도서’ 공격에 맞서 더 다양하게 더 빨간책 [책&생각]', 한겨례 신문",
+    titleEn: "[Press] “Against Attacks on ‘Gender-Equal Books,’ More Diverse, More Red Books [Books & Thoughts]” — The Hankyoreh",
+    link: "https://www.hani.co.kr/arti/culture/book/1134360.html"
+  },
+  {
+    date: "2024.03",
+    title: "[언론 보도] '[신간] 『향유고래를 훔쳐라』, 독서신문",
+    titleEn: "[Press] “[New Release] Steal a Cachalot” — Doksuh Shinmun",
+    link: "https://www.readersnews.com/news/articleView.html?idxno=111653"
+  },
+  {
+    date: "2024.01",
+    slug: "to-say-i-love-you-exhibition",
+    title: "<사랑을 한다는 건> 출간 기념 전시 @땡스북스",
+    titleEn: "&lt;To Say I Love You&gt; Publication Celebration Exhibition @Thanks Books"
+  },
+  {
+    date: "2024.01",
+    title: "[언론 보도] '[신간] 『사랑을 한다는 건』, 독서신문",
+    titleEn: "[Press] “[New Release] To Say I Love You” — Doksuh Shinmun",
+    link: "https://www.readersnews.com/news/articleView.html?idxno=111072"
+  },
+  {
+    date: "2023.12",
+    title: "[언론 보도] '‘양육 은퇴’ ‘정년퇴직’ 시니어, 그림책으로 독서 재입문', 동아일보",
+    titleEn: "[Press] “Seniors in ‘Parenting Retirement’ Return to Reading Through Picture Books” — The Dong-A Ilbo",
+    link: "https://www.donga.com/news/Culture/article/all/20231227/122802492/1"
+  },
+  {
+    date: "2023.11",
+    slug: "seoul-art-book-fair-ue15",
+    title: "서울아트북페어 UE15 참여",
+    titleEn: "Participated in Seoul Art Book Fair UNLIMITED EDITION 15"
+  },
+  {
+    date: "2023.05",
+    slug: "seoul-happy-creditunion-exhibition",
+    title: "<그곳은 따듯한가요> , <작은 빛> 원화 전시 @서울행복신협",
+    titleEn: "&lt;Is It Warm There&gt; &amp; &lt;A Small Light&gt; Original Art Exhibition @Seoul Happy Credit Union"
+  },
+  {
+    date: "2023.03",
+    slug: "jeju-book-fair-2023",
+    title: "제주북페어 참여",
+    titleEn: "Participated in Jeju Book Fair"
+  },
 ];
 
 /* ==========================================================================
@@ -958,7 +1214,6 @@ function renderCardGrid(containerId, items, hrefBuilder) {
   if (!el) return;
   el.innerHTML = items
     .map((item) => {
-      const price = item.price ? '<div class="tag">' + item.price + "</div>" : "";
       return (
         '<a class="card" href="' + hrefBuilder(item) + '">' +
         '<div class="card-cover">' + coverBlockHTML(item) + "</div>" +
@@ -966,7 +1221,6 @@ function renderCardGrid(containerId, items, hrefBuilder) {
         '<div class="card-desc">' + pickText(item, "summary", "summaryEn") + "</div>" +
         '<div class="tag-row">' +
         pickTags(item).map((t) => '<div class="tag">#' + t + "</div>").join("") +
-        price +
         "</div>" +
         "</a>"
       );
@@ -989,6 +1243,45 @@ function renderNewsList(containerId, items, hrefBuilder) {
         '<div class="news-desc">' + pickText(item, "summary", "summaryEn") + "</div>" +
         "</div>" +
         "</a>"
+    )
+    .join("");
+}
+
+/* ---- NEWS list page (simple dated log — external link if the item has one,
+   plain unlinked row otherwise) ---- */
+function renderNewsRows(containerId, items) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  el.innerHTML = items
+    .map((item) => {
+      const inner =
+        '<div class="news-row-date">' + item.date + "</div>" +
+        '<div class="news-row-title">' + pickText(item, "title", "titleEn") + "</div>";
+      if (item.link) {
+        return (
+          '<a class="news-row-simple news-row-external" href="' + item.link + '" target="_blank" rel="noopener noreferrer">' +
+          inner +
+          "</a>"
+        );
+      }
+      if (item.slug) {
+        return '<a class="news-row-simple" href="news-detail.html?slug=' + item.slug + '">' + inner + "</a>";
+      }
+      return '<div class="news-row-simple">' + inner + "</div>";
+    })
+    .join("");
+}
+
+/* ---- simple page-number pagination (?page=N in the URL, 10 items per page) ---- */
+function renderNewsPagination(containerId, totalItems, pageSize, currentPage) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
+  el.innerHTML = Array.from({ length: totalPages }, (_, i) => i + 1)
+    .map((n) =>
+      n === currentPage
+        ? '<span class="news-page current">' + n + "</span>"
+        : '<a class="news-page" href="news.html?page=' + n + '">' + n + "</a>"
     )
     .join("");
 }
@@ -1036,4 +1329,164 @@ function renderDetail(item, fields) {
   document.title = pickText(item, "title", "titleEn") + " — JUJUBE BOOKS";
 }
 
-document.addEventListener("DOMContentLoaded", initLangToggle);
+function matchScrollbarGutter() {
+  const probe = document.createElement("div");
+  probe.style.cssText = "position:absolute; top:-9999px; left:-9999px; width:100px; height:100px; overflow:scroll;";
+  document.body.appendChild(probe);
+  const scrollbarWidth = probe.offsetWidth - probe.clientWidth;
+  document.body.removeChild(probe);
+  document.documentElement.style.setProperty("--scrollbar-w", scrollbarWidth + "px");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initLangToggle();
+  matchScrollbarGutter();
+});
+
+/* ==========================================================================
+   NEWS via Google Sheet (optional) — lets non-developers add news rows in a
+   spreadsheet instead of editing this file. Korean-only columns; English
+   translations are added here by hand as they're written, keyed by
+   "date|title" so a row can be translated any time after it's added.
+   ========================================================================== */
+
+const NEWS_TRANSLATIONS = {
+  "2026.06|서평 '나무의 삶에서 배운다' 창비어린이 93호": {
+    titleEn: "Book Review: ‘Learning from the Life of a Tree’ — Changbi Children Issue 93",
+    bodyEn: "A review of <I Have Become A Tree> was featured in Changbi Children Issue 93, Summer 2026.\n\nIt was written by Nam Yoon-jeong, an editorial committee member of Today’s Children’s Books and a children’s book curator. She wrote such a wonderful review that we wanted to share the whole thing. We read it several times together with the authors, sharing gratitude and joy. Thank you again.\n\nChangbi Children is a children’s and young adult literature criticism journal founded in 2003. It’s a series we often turn to when studying picture books — full of wonderful work, criticism, and reviews, so we recommend taking a look."
+  },
+  "2026.07|[행사 참여] 마포 책소동 참가": { titleEn: "[Event] Participated in Mapo Chaeksodong Book Fair" },
+  "2026.06|창비 어린이": { titleEn: "Changbi Children's" },
+  "2026.06|[행사 참여] 2026 서울국제도서전 참가": { titleEn: "[Event] Participated in the 2026 Seoul International Book Fair" },
+  "2026.06|라우더비디오 유튜브 출연": { titleEn: "Appeared on Louder Video's YouTube Channel" },
+  "2026.04|<나는 정말 나무가 되었다> 원화전 @땡스북스": { titleEn: "&lt;I Have Become A Tree&gt; Original Art Exhibition @Thanks Books" },
+  "2026.04|[언론 보도] '나무를 쓰고, 그리다가... 끝내 나무가 된 작가들' 오마이뉴스": { titleEn: "[Press] “Writing and Drawing Trees… Until the Authors Became Trees Themselves” — OhmyNews" },
+  "2026.04|[언론 보도] '시기와 불안에 흔들림 없는 나무로 산다면' 경향신문": { titleEn: "[Press] “Living as a Tree, Unshaken by Envy and Anxiety” — The Kyunghyang Shinmun" },
+  "2026.04|[언론 보도] '나무가 된 사람 이야기, 식목일에 아이들과 읽어보세요' 오마이뉴스": { titleEn: "[Press] “A Story of a Person Who Became a Tree — Read It with Your Kids on Arbor Day” — OhmyNews" },
+  "2026.04|타이완 Golden book Picture Book Award 시상식 참석 및 강연 진행": { titleEn: "Attended the Taiwan Golden Book Picture Book Award Ceremony and Gave a Talk" },
+  "2026.03|제주북페어 참여": { titleEn: "Participated in Jeju Book Fair" },
+  "2026.03|타이완 가오슝 서점 '洋洋本屋' <그곳은 따듯한가요>, <작은 빛> 원화 전시 및 강연": { titleEn: "&lt;Is It Warm There&gt; &amp; &lt;A Small Light&gt; Original Art Exhibition and Talk at Yang Yang Bookstore (洋洋本屋), Kaohsiung, Taiwan" },
+  "2026.03|타이페이아트북페어 참여": { titleEn: "Participated in Taipei Art Book Fair" },
+  "2026.02|쥬쥬베북스 브랜드 전시 @bplatform": { titleEn: "Jujube Books Brand Exhibition @bplatform" },
+  "2025.12|[언론 보도] '[큐레이션] 서로의 손을 잡고 나아갈 수 있다면' 체널 예스": { titleEn: "[Press] “[Curation] If We Can Move Forward Holding Each Other’s Hands” — Channel Yes" },
+  "2025.12|<빈자리에 머무르기> @plot room": { titleEn: "&lt;Dwelling in the Empty&gt; @plot room" },
+  "2025.11|[언론보도] '‘무엇이 진실인가’라는 질문 대신 [새로 나온 책]' 시사IN": { titleEn: "[Press] “Instead of Asking ‘What Is the Truth’ [New Releases]” — SisaIN" },
+  "2025.11|[언론보도] '그렇게 우리 광장에 함께 앉아 이겨냈다' 경향신문": { titleEn: "[Press] “That’s How We Sat Together in the Square and Won” — The Kyunghyang Shinmun" },
+  "2025.11|서울아트북페어 UE17 참여": { titleEn: "Participated in Seoul Art Book Fair UNLIMITED EDITION 17" },
+  "2025.10|[언론 보도] '‘여적여’라는 오래된 루머' 여성신문": { titleEn: "[Press] “The Old Rumor Called ‘Women Against Women’” — Women’s News" },
+  "2025.07|라디오 여성시대 출연": { titleEn: "Appeared on the Radio Show “Yeoseong Sidae” (Women’s Era)" },
+  "2025.08|군산북페어 참여": { titleEn: "Participated in Gunsan Book Fair" },
+  "2025.05|마포 책소동 참여": { titleEn: "Participated in Mapo Chaeksodong Book Fair" },
+  "2025.06|2025 서울국제도서전 참여": { titleEn: "Participated in the 2025 Seoul International Book Fair" },
+  "2025.03|[언론보도] '나에서 아이로 삶의 중심이 달라졌을 때' 오마이뉴스": { titleEn: "[Press] “When the Center of Life Shifts from Me to My Child” — OhmyNews" },
+  "2024.11|서울아트북페어 UE16 참여": { titleEn: "Participated in Seoul Art Book Fair UNLIMITED EDITION 16" },
+  "2024.10|[언론 보도] '[소규모 출판사 쥬쥬베북스의 어린이 책] 대담하고 담대하게' 독서신문": { titleEn: "[Press] “[Small Publisher Jujube Books’ Children’s Books] Bold and Daring” — Doksuh Shinmun" },
+  "2024.08|<그곳은 따듯한가요>, <작은 빛> 전시 @어떤바람 제주": { titleEn: "&lt;Is It Warm There&gt; &amp; &lt;A Small Light&gt; Exhibition @Eotteon Baram, Jeju" },
+  "2024.08|[언론 보도] 이달의 출판 만화 선정": { titleEn: "[Press] Selected as Comic of the Month" },
+  "2024.07|[언론 보도] '[주간책타래] 76번째 여름날의 무지개 外' 여성신문": { titleEn: "[Press] “[Weekly Book Reel] 76th Rainbow and More” — Women’s News" },
+  "2024.06|2024 서울국제도서전 참여": { titleEn: "Participated in the 2024 Seoul International Book Fair" },
+  "2024.06|[언론 보도]'할아버지의 옛 무지개 축제 깃발이 펼쳐진 미래' 일다": { titleEn: "[Press] “The Future Unfolded by Grandad’s Old Pride Flag” — Ilda" },
+  "2024.05|[언론 보도] '우리의 바다, 우리의 책임' 어린이 동아": { titleEn: "[Press] “Our Sea, Our Responsibility” — Donga Kids" },
+  "2024.03|[언론 보도] '‘성평등 도서’ 공격에 맞서 더 다양하게 더 빨간책 [책&생각]', 한겨례 신문": { titleEn: "[Press] “Against Attacks on ‘Gender-Equal Books,’ More Diverse, More Red Books [Books & Thoughts]” — The Hankyoreh" },
+  "2024.03|[언론 보도] '[신간] 『향유고래를 훔쳐라』, 독서신문": { titleEn: "[Press] “[New Release] Steal a Cachalot” — Doksuh Shinmun" },
+  "2024.01|<사랑을 한다는 건> 출간 기념 전시 @땡스북스": { titleEn: "&lt;To Say I Love You&gt; Publication Celebration Exhibition @Thanks Books" },
+  "2024.01|[언론 보도] '[신간] 『사랑을 한다는 건』, 독서신문": { titleEn: "[Press] “[New Release] To Say I Love You” — Doksuh Shinmun" },
+  "2023.12|[언론 보도] '‘양육 은퇴’ ‘정년퇴직’ 시니어, 그림책으로 독서 재입문', 동아일보": { titleEn: "[Press] “Seniors in ‘Parenting Retirement’ Return to Reading Through Picture Books” — The Dong-A Ilbo" },
+  "2023.11|서울아트북페어 UE15 참여": { titleEn: "Participated in Seoul Art Book Fair UNLIMITED EDITION 15" },
+  "2023.05|<그곳은 따듯한가요> , <작은 빛> 원화 전시 @서울행복신협": { titleEn: "&lt;Is It Warm There&gt; &amp; &lt;A Small Light&gt; Original Art Exhibition @Seoul Happy Credit Union" },
+  "2023.03|제주북페어 참여": { titleEn: "Participated in Jeju Book Fair" },
+};
+
+function parseCSV(text) {
+  const rows = [];
+  let row = [];
+  let field = "";
+  let inQuotes = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (inQuotes) {
+      if (c === '"') {
+        if (text[i + 1] === '"') {
+          field += '"';
+          i++;
+        } else {
+          inQuotes = false;
+        }
+      } else {
+        field += c;
+      }
+    } else if (c === '"') {
+      inQuotes = true;
+    } else if (c === ",") {
+      row.push(field);
+      field = "";
+    } else if (c === "\n" || c === "\r") {
+      if (c === "\r" && text[i + 1] === "\n") i++;
+      row.push(field);
+      field = "";
+      rows.push(row);
+      row = [];
+    } else {
+      field += c;
+    }
+  }
+  if (field.length || row.length) {
+    row.push(field);
+    rows.push(row);
+  }
+  return rows.filter((r) => r.length > 1 || r[0] !== "");
+}
+
+function csvRowsToObjects(rows) {
+  const header = rows[0].map((h) => h.trim());
+  return rows.slice(1).map((r) => {
+    const obj = {};
+    header.forEach((key, i) => {
+      obj[key] = (r[i] || "").trim();
+    });
+    return obj;
+  });
+}
+
+async function fetchNewsFromSheet(csvUrl) {
+  const res = await fetch(csvUrl);
+  const text = await res.text();
+  const objs = csvRowsToObjects(parseCSV(text));
+  return objs
+    .filter((o) => o.date && o.title)
+    .map((o, i) => {
+      const tr = NEWS_TRANSLATIONS[o.date + "|" + o.title] || {};
+      const item = {
+        date: o.date,
+        title: o.title,
+        titleEn: tr.titleEn,
+        slug: o.slug || "sheet-" + i
+      };
+      if (o.link) item.link = o.link;
+      if (o.folder) item.folder = o.folder;
+      if (o.photos) {
+        item.photos = o.photos.split(",").map((s) => s.trim()).filter(Boolean);
+      }
+      if (o.body) {
+        item.body = o.body;
+        item.bodyEn = tr.bodyEn;
+      }
+      return item;
+    });
+}
+
+const NEWS_SHEET_CSV_URL =
+  "https://docs.google.com/spreadsheets/d/10kjI4gEI82YYSCJhv6erbVzF0p0IkZVaq7xHFelBWgc/export?format=csv&gid=0";
+
+// tries the live sheet first so new rows show up without a code change;
+// quietly falls back to the last-known-good copy built into the site if the
+// sheet can't be reached (offline, sheet made private, etc.)
+async function loadNews() {
+  try {
+    const items = await fetchNewsFromSheet(NEWS_SHEET_CSV_URL);
+    if (items.length) return items;
+  } catch (e) {
+    /* fall through to local copy */
+  }
+  return NEWS_FALLBACK;
+}

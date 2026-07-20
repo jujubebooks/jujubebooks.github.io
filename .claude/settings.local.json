@@ -6,7 +6,8 @@
       "Bash(python3 -)",
       "Bash(node -e \"require\\('puppeteer'\\)\")",
       "Bash(open -a \"Google Chrome\" \"http://localhost:8791/index.html\")",
-      "Bash(open \"http://localhost:8791/index.html\")"
+      "Bash(open \"http://localhost:8791/index.html\")",
+      "Bash(SCRATCH=/private/tmp/claude-502/-Users-yeojuneyoon-Desktop--------yeojune--MacBook-Pro-jujube-books-website/ed85deea-477b-4805-9bb1-22413e1d0f49/scratchpad python3 -c ' *)"
     ]
   }
 }

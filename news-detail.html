@@ -17,25 +17,16 @@
 </header>
 
 <main>
-  <section class="detail-hero">
-    <div class="detail-cover" id="detail-cover"></div>
+  <section class="detail-hero news-detail-hero">
     <div class="detail-kicker" id="detail-kicker"></div>
     <h1 id="detail-title"></h1>
     <div class="detail-meta" id="detail-meta"></div>
   </section>
 
-  <section class="detail-body">
-    <h2 id="synopsis-title"></h2>
-    <p id="synopsis-text"></p>
-  </section>
+  <div class="detail-rich" id="news-image-block" style="display:none;"></div>
 
-  <div class="detail-image">
-    <div class="cover-block" id="detail-image-block"></div>
-  </div>
-
-  <section class="detail-body">
-    <h2 id="body2-title"></h2>
-    <p id="body2-text"></p>
+  <section class="detail-body" id="news-body-section" style="display:none;">
+    <p id="news-body-text"></p>
   </section>
 
   <a class="back-link" href="news.html" data-ko="← 목록으로" data-en="← Back to list">← 목록으로</a>
@@ -57,10 +48,31 @@
 
 <script src="script.js"></script>
 <script>
-  const newsItem = findBySlug(NEWS, getSlugFromQuery());
-  renderDetail(newsItem, {
-    kicker: newsItem.date,
-    meta: newsItem.date
+  loadNews().then((allNews) => {
+    const newsItem = findBySlug(allNews, getSlugFromQuery());
+    renderDetail(newsItem, {
+      kicker: newsItem.date,
+      meta: ""
+    });
+
+    // optional photo(s) for this news item — folder is just the subfolder name,
+    // photos live under 이미지/NEWS/<folder>/ (same convention as BOOK/AND MORE).
+    // "main" always shows first; the sheet's "photos" column can list extra
+    // filenames (comma-separated, no extension) to show more after it.
+    if (newsItem.folder) {
+      const imageBlock = document.getElementById("news-image-block");
+      const folderPath = "NEWS/" + newsItem.folder;
+      const photoNames = [newsItem.image || "main"].concat(newsItem.photos || []);
+      imageBlock.innerHTML = photoNames.map((name) => realImageTag(folderPath, name)).join("");
+      imageBlock.style.display = "";
+    }
+
+    // optional longer write-up for this news item — only shown when provided
+    const newsBody = pickText(newsItem, "body", "bodyEn");
+    if (newsBody) {
+      document.getElementById("news-body-text").textContent = newsBody;
+      document.getElementById("news-body-section").style.display = "";
+    }
   });
 </script>
 </body>
