@@ -401,7 +401,7 @@ const BOOKS_FALLBACK = [
     folder: "BOOK/change the image",
     color: "#C1613A",
     title: "가족으로 만나 친구가 되었습니다",
-    titleEn: "Almost Friends, Always Family",
+    titleEn: "We Met as Family and Became Friends",
     author: "권현미, 윤여준",
     date: "2025",
     category: "에세이",
@@ -416,7 +416,7 @@ const BOOKS_FALLBACK = [
     body2: "작가의 말이 곧 업데이트됩니다.",
     detailImage: "가족으로 만나 친구가 되었습니다_상세페이지_수정.png",
     detailHtmlEn: `
-<div class="contact-row"><span>Title</span><span>Almost Friends, Always Family</span></div>
+<div class="contact-row"><span>Title</span><span>We Met as Family and Became Friends</span></div>
 <div class="contact-row"><span>Author</span><span>Hyunmi Kwon, Yeojune Yoon</span></div>
 <div class="contact-row"><span>Publication date</span><span>June 30, 2025</span></div>
 <div class="contact-row"><span>Design</span><span>Three Circle</span></div>

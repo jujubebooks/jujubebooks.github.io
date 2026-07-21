@@ -600,7 +600,7 @@ a.news-row-external .news-row-title::after {
 .book-detail-page .detail-cover { box-shadow: none; }
 .book-page .card:hover { background: #ffffff; }
 .book-page .nav-grid a:hover, .book-page .footer-grid a:hover { background: #ffffff; }
-.book-page .card[href$="slug=tree"] .cover-block img { transform: rotate(-20deg) scale(0.8); }
+.book-page .card[href$="slug=tree"] .cover-block img { transform: rotate(5deg) scale(0.8); }
 .book-page .card[href$="slug=inga"] .cover-block img { transform: rotate(10deg); }
 .book-page .card[href$="slug=ground-cover"] .cover-block img { transform: rotate(10deg) scale(0.9); }
 .book-page .card[href$="slug=meow"] .cover-block img { transform: scale(1.3); }
