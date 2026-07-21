@@ -1027,7 +1027,7 @@ function initLangToggle() {
    named after the item's slug (e.g. 이미지/BOOK/sand-city.jpg) and it will
    be picked up automatically — no code changes needed. Until a file exists,
    the colored placeholder block below shows instead. */
-const IMG_EXTENSIONS = ["jpg", "jpeg", "png", "webp"];
+const IMG_EXTENSIONS = ["png", "jpg", "jpeg", "webp"];
 
 // sheet-provided folder/file names and on-disk folder/file names aren't
 // always the same Unicode normalization form for Korean text (macOS Finder
