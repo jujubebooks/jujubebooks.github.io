@@ -527,6 +527,7 @@ a.news-row-external .news-row-title::after {
 .contact-row span:first-child { color: #009465; }
 .contact-row a { font-weight: 600; }
 .contact-row a:hover { color: var(--green); }
+.contact-row a[href*="instagram.com"]:hover { color: #edfc75; }
 
 /* --------------------------------------------------------------------------
    Catalog page
