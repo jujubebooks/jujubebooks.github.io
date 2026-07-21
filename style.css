@@ -332,7 +332,7 @@ html[lang="ko"] .hero h1 {
 
 .detail-body { max-width: 720px; margin: 0 auto; padding: 40px 28px 20px; }
 .detail-body h2 { font-size: 20px; font-weight: 700; margin-bottom: 16px; }
-.detail-body p { color: var(--ink); margin-bottom: 1.4em; }
+.detail-body p { color: var(--ink); margin-bottom: 1.4em; white-space: pre-wrap; }
 .detail-body p:last-child { margin-bottom: 0; }
 .detail-body + .detail-body { padding-top: 0; }
 
@@ -348,6 +348,7 @@ html[lang="ko"] .hero h1 {
 
 .detail-rich { max-width: 720px; margin: 0 auto; padding: 0 28px 40px; }
 .detail-rich-image { width: 100%; height: auto; display: block; border-radius: 3px; }
+#detail-rich > img { width: 100%; height: auto; display: block; border-radius: 3px; }
 #news-image-block img { width: 100%; height: auto; display: block; border-radius: 3px; }
 #news-image-block img + img { margin-top: 14px; }
 .detail-bib-ko { margin-top: 2em; }
@@ -465,6 +466,15 @@ html[lang="en"] .detail-rich .contact-row { max-width: 75%; margin-left: auto; m
 }
 
 a.news-row-simple:hover { background: #ffffff; }
+.news-row-pinned { background: #009465; }
+.news-row-pinned .news-row-date,
+.news-row-pinned .news-row-title { color: #ffffff; }
+a.news-row-external.news-row-pinned .news-row-title::after { color: #ffffff; }
+
+a.news-row-simple.news-row-pinned:hover { background: #ffffff; }
+a.news-row-simple.news-row-pinned:hover .news-row-date,
+a.news-row-simple.news-row-pinned:hover .news-row-title { color: #009465; }
+a.news-row-external.news-row-pinned:hover .news-row-title::after { color: #009465; }
 
 .news-row-date {
   flex: 0 0 84px;
@@ -546,6 +556,44 @@ a.news-row-external .news-row-title::after {
 .catalog-note { margin-top: 22px; font-size: 13px; color: var(--ink-soft); }
 
 .home-page { background: #edfc75; }
+
+.home-marquee {
+  background: #edfc75;
+  border-top: 1px solid #009465;
+  border-bottom: 1px solid #009465;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.home-marquee-track {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  padding: 14px 0;
+  animation: home-marquee-scroll 26s linear infinite;
+}
+
+.home-marquee-track span {
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: #009465;
+  white-space: nowrap;
+}
+
+.home-marquee-dot {
+  margin: 0 28px;
+  font-size: 11px;
+  color: #009465;
+}
+
+@keyframes home-marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-marquee-track { animation: none; }
+}
 
 .book-page { background: #edfc75; }
 .book-page .card { border-color: #009465; }

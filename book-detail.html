@@ -63,7 +63,8 @@
 
 <script src="script.js"></script>
 <script>
-  const book = findBySlug(BOOKS, getSlugFromQuery());
+loadBooks().then((books) => {
+  const book = findBySlug(books, getSlugFromQuery());
   if (book.detailBackground) document.body.style.background = book.detailBackground;
   const bookAuthor = pickText(book, "author", "authorEn");
   const bookCategory = pickText(book, "category", "categoryEn");
@@ -82,8 +83,17 @@
   const fallbackEl = document.getElementById("detail-fallback");
   const lang = currentLang();
   let usedRich = false;
-  const detailImageTag = book.detailImage
-    ? '<img src="이미지/BOOK/detail_image/' + encodeURIComponent(book.detailImage) + '" alt="" class="detail-rich-image">'
+
+  // sheet-driven books keep their detail image in their own folder (like
+  // AND MORE/NEWS); the original hand-built books use a shared legacy folder
+  const detailImageTag = !book.detailImage
+    ? ""
+    : book.detailImageFolder
+      ? realImageTag(book.detailImageFolder, book.detailImage)
+      : '<img src="이미지/BOOK/detail_image/' + encodeURIComponent(book.detailImage) + '" alt="" class="detail-rich-image">';
+
+  const galleryHtml = (book.galleryImages && book.galleryImages.length && book.folder)
+    ? '<div class="detail-inside-gallery">' + book.galleryImages.map((name) => realImageTag(book.folder, name)).join("") + "</div>"
     : "";
 
   if (lang === "en" && book.detailHtmlEn) {
@@ -92,7 +102,7 @@
   } else if (lang === "en" && book.detailImage && book.detailBibEn) {
     // translated works with no separate English edition — same artwork, English bibliographic info
     const introHtml = book.detailIntroEn ? '<p style="margin-top:1.6em;">' + book.detailIntroEn + '</p>' : '';
-    richEl.innerHTML = detailImageTag + '<div class="detail-bib-ko">' + book.detailBibEn + introHtml + '</div>';
+    richEl.innerHTML = detailImageTag + '<div class="detail-bib-ko">' + book.detailBibEn + introHtml + '</div>' + galleryHtml;
     usedRich = true;
   } else if (lang !== "en" && book.detailImage) {
     richEl.innerHTML = detailImageTag + (book.detailBibKo ? '<div class="detail-bib-ko">' + book.detailBibKo + '</div>' : '');
@@ -103,6 +113,7 @@
   } else {
     richEl.style.display = "none";
   }
+});
 </script>
 </body>
 </html>

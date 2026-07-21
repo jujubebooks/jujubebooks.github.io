@@ -36,7 +36,7 @@
 
 <script src="script.js"></script>
 <script>
-  renderCardGrid("goods-grid", GOODS, (item) => "goods-detail.html?slug=" + item.slug);
+  loadGoods().then((goods) => renderCardGrid("goods-grid", goods, (item) => "goods-detail.html?slug=" + item.slug));
 </script>
 </body>
 </html>

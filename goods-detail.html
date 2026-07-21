@@ -57,32 +57,34 @@
 
 <script src="script.js"></script>
 <script>
-  const good = findBySlug(GOODS, getSlugFromQuery());
-  const goodCategory = pickText(good, "category", "categoryEn");
-  const goodPrice = pickText(good, "price", "priceEn");
-  renderDetail(good, {
-    kicker: goodCategory,
-    meta: goodPrice ? goodCategory + " · " + goodPrice : goodCategory
-  });
+  loadGoods().then((allGoods) => {
+    const good = findBySlug(allGoods, getSlugFromQuery());
+    const goodCategory = pickText(good, "category", "categoryEn");
+    const goodPrice = pickText(good, "price", "priceEn");
+    renderDetail(good, {
+      kicker: goodCategory,
+      meta: goodPrice ? goodCategory + " · " + goodPrice : goodCategory
+    });
 
-  if (good.detailCoverScale) {
-    document.getElementById("detail-cover").style.width =
-      "calc(min(360px, 70vw) * " + good.detailCoverScale + ")";
-  }
-
-  // extra product photos from the item's own folder (thumbnail/main image excluded —
-  // that one already appears once, in the hero cover above the title)
-  const galleryEl = document.getElementById("detail-image-block");
-  if (galleryEl) {
-    if (good.folder && good.galleryImages && good.galleryImages.length) {
-      galleryEl.innerHTML =
-        '<div class="detail-inside-gallery">' +
-        good.galleryImages.map((name) => realImageTag(good.folder, name)).join("") +
-        "</div>";
-    } else {
-      galleryEl.style.display = "none";
+    if (good.detailCoverScale) {
+      document.getElementById("detail-cover").style.width =
+        "calc(min(360px, 70vw) * " + good.detailCoverScale + ")";
     }
-  }
+
+    // extra product photos from the item's own folder (thumbnail/main image excluded —
+    // that one already appears once, in the hero cover above the title)
+    const galleryEl = document.getElementById("detail-image-block");
+    if (galleryEl) {
+      if (good.folder && good.galleryImages && good.galleryImages.length) {
+        galleryEl.innerHTML =
+          '<div class="detail-inside-gallery">' +
+          good.galleryImages.map((name) => realImageTag(good.folder, name)).join("") +
+          "</div>";
+      } else {
+        galleryEl.style.display = "none";
+      }
+    }
+  });
 </script>
 </body>
 </html>

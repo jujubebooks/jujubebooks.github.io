@@ -49,7 +49,9 @@
   loadNews().then((allNews) => {
     const newsPage = Math.max(1, parseInt(new URLSearchParams(location.search).get("page") || "1", 10));
     const newsStart = (newsPage - 1) * NEWS_PAGE_SIZE;
-    renderNewsRows("news-list", allNews.slice(newsStart, newsStart + NEWS_PAGE_SIZE));
+    const pageItems = allNews.slice(newsStart, newsStart + NEWS_PAGE_SIZE);
+    const displayItems = newsPage === 1 ? NEWS_PINNED.concat(pageItems) : pageItems;
+    renderNewsRows("news-list", displayItems);
     renderNewsPagination("news-pagination", allNews.length, NEWS_PAGE_SIZE, newsPage);
   });
 </script>

@@ -4,7 +4,7 @@
    every "cover" is just a CSS color block with a title, no image files needed.
    ========================================================================== */
 
-const BOOKS = [
+const BOOKS_FALLBACK = [
   {
     slug: "tree",
     image: "tree_re_01",
@@ -605,7 +605,7 @@ const BOOKS = [
   }
 ];
 
-const GOODS = [
+const GOODS_FALLBACK = [
   {
     slug: "reading-sign-clip",
     image: "main",
@@ -625,7 +625,7 @@ const GOODS = [
     synopsis:
       "내 독서 시간 절대 지켜! \"독서 중\" 입간판 집게.\n\n평소엔 가벼운 메모를 꽂아둘 수 있으며, 책을 펼칠 땐 주변의 방해를 미리 차단해 줍니다.\n\n한쪽 면은 'Reading Now', 다른 면은 '讀書中'(한자 버전) 혹은 '독서중!'(한글 버전)이 적혀있습니다.",
     synopsisEn:
-      'Protect my reading time at all costs! "Reading Now" Mini Sign Clip.\n\nUsually, you can clip light notes on it, and when you open a book, it helps block interruptions in advance.\n\nOne side says \'Reading Now\', and the other side has either \'讀書中\' (Hanja version) or \'독서중!\' (Korean version).',
+      'Protect my reading time at all costs! "Reading Now" Mini Sign Clip.\n\nUsually, you can clip light notes on it, and when you open a book, it helps block interruptions in advance.\n\nOne side says \'Reading Now\', and the other side has either \'讀書中\' (Chinese version) or \'독서중!\' (Korean version).',
     body2Title: "제품 정보",
     body2TitleEn: "Product Info",
     body2: "크기: 43×57mm · 재질: 아크릴 · *보호 필름을 제거 후 사용해 주세요!",
@@ -744,7 +744,7 @@ const NEWS_FALLBACK = [
     date: "2026.04",
     slug: "tree-exhibition-thanksbooks",
     title: "<나는 정말 나무가 되었다> 원화전 @땡스북스",
-    titleEn: "&lt;I Have Become A Tree&gt; Original Art Exhibition @Thanks Books"
+    titleEn: "<I Have Become A Tree> Original Art Exhibition @Thanks Books"
   },
   {
     date: "2026.04",
@@ -780,7 +780,7 @@ const NEWS_FALLBACK = [
     date: "2026.03",
     slug: "kaohsiung-yangyang-exhibition",
     title: "타이완 가오슝 서점 '洋洋本屋' <그곳은 따듯한가요>, <작은 빛> 원화 전시 및 강연",
-    titleEn: "&lt;Is It Warm There&gt; &amp; &lt;A Small Light&gt; Original Art Exhibition and Talk at Yang Yang Bookstore (洋洋本屋), Kaohsiung, Taiwan"
+    titleEn: "<Is It Warm There> & <A Small Light> Original Art Exhibition and Talk at Yang Yang Bookstore (洋洋本屋), Kaohsiung, Taiwan"
   },
   {
     date: "2026.03",
@@ -804,7 +804,7 @@ const NEWS_FALLBACK = [
     date: "2025.12",
     slug: "ground-cover-plotroom",
     title: "<빈자리에 머무르기> @plot room",
-    titleEn: "&lt;Dwelling in the Empty&gt; @plot room"
+    titleEn: "<Dwelling in the Empty> @plot room"
   },
   {
     date: "2025.11",
@@ -876,7 +876,7 @@ const NEWS_FALLBACK = [
     date: "2024.08",
     slug: "jeju-eotteonbaram-exhibition",
     title: "<그곳은 따듯한가요>, <작은 빛> 전시 @어떤바람 제주",
-    titleEn: "&lt;Is It Warm There&gt; &amp; &lt;A Small Light&gt; Exhibition @Eotteon Baram, Jeju"
+    titleEn: "<Is It Warm There> & <A Small Light> Exhibition @Eotteon Baram, Jeju"
   },
   {
     date: "2024.08",
@@ -924,7 +924,7 @@ const NEWS_FALLBACK = [
     date: "2024.01",
     slug: "to-say-i-love-you-exhibition",
     title: "<사랑을 한다는 건> 출간 기념 전시 @땡스북스",
-    titleEn: "&lt;To Say I Love You&gt; Publication Celebration Exhibition @Thanks Books"
+    titleEn: "<To Say I Love You> Publication Celebration Exhibition @Thanks Books"
   },
   {
     date: "2024.01",
@@ -948,7 +948,7 @@ const NEWS_FALLBACK = [
     date: "2023.05",
     slug: "seoul-happy-creditunion-exhibition",
     title: "<그곳은 따듯한가요> , <작은 빛> 원화 전시 @서울행복신협",
-    titleEn: "&lt;Is It Warm There&gt; &amp; &lt;A Small Light&gt; Original Art Exhibition @Seoul Happy Credit Union"
+    titleEn: "<Is It Warm There> & <A Small Light> Original Art Exhibition @Seoul Happy Credit Union"
   },
   {
     date: "2023.03",
@@ -1022,9 +1022,22 @@ function initLangToggle() {
    the colored placeholder block below shows instead. */
 const IMG_EXTENSIONS = ["jpg", "jpeg", "png", "webp"];
 
+// sheet-provided folder/file names and on-disk folder/file names aren't
+// always the same Unicode normalization form for Korean text (macOS Finder
+// tends to save NFD-decomposed jamo, while text typed/pasted elsewhere is
+// usually NFC-precomposed) — the filesystem treats these as different names
+// even though they look identical, so every candidate is tried in both forms
 function imageCandidates(folder, filename) {
-  const encodedFolder = folder.split("/").map(encodeURIComponent).join("/");
-  return IMG_EXTENSIONS.map((ext) => "이미지/" + encodedFolder + "/" + encodeURIComponent(filename) + "." + ext);
+  const path = folder + "/" + filename;
+  const forms = [path.normalize("NFC"), path.normalize("NFD")];
+  const candidates = [];
+  forms.forEach((form) => {
+    const encodedPath = form.split("/").map(encodeURIComponent).join("/");
+    IMG_EXTENSIONS.forEach((ext) => {
+      candidates.push("이미지/" + encodedPath + "." + ext);
+    });
+  });
+  return candidates;
 }
 
 function handleImgFallback(img) {
@@ -1085,11 +1098,11 @@ const FIRST_VISIT_LAYOUT = [
   { left: 0.92, top: 0.54, rotate: 3 }
 ];
 
-function renderHomeBookImages(containerId) {
+function renderHomeBookImages(containerId, books) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
-  const homeBooks = BOOKS.filter((book) => !book.hideFromHome);
+  const homeBooks = books.filter((book) => !book.hideFromHome);
 
   // uniform size for every item, matched to "to say I love you.png" (790 x 1242px)
   const ITEM_WIDTH = 275;
@@ -1103,8 +1116,9 @@ function renderHomeBookImages(containerId) {
   const colWidth = mobile ? (container.clientWidth - gap * 3) / 2 : 0;
   const colHeight = mobile ? colWidth * ASPECT : 0;
 
-  const isFirstVisit = !localStorage.getItem("jb-home-visited");
-  localStorage.setItem("jb-home-visited", "1");
+  const today = new Date().toDateString();
+  const isFirstVisit = localStorage.getItem("jb-home-visited") !== today;
+  localStorage.setItem("jb-home-visited", today);
 
   const stage = container.closest(".hero-stage");
   if (mobile) {
@@ -1254,20 +1268,22 @@ function renderNewsRows(containerId, items) {
   if (!el) return;
   el.innerHTML = items
     .map((item) => {
+      const dateText = escapeHtml(item.date || pickText(item, "label", "labelEn") || "");
+      const pinnedClass = item.pinned ? " news-row-pinned" : "";
       const inner =
-        '<div class="news-row-date">' + item.date + "</div>" +
-        '<div class="news-row-title">' + pickText(item, "title", "titleEn") + "</div>";
+        '<div class="news-row-date">' + dateText + "</div>" +
+        '<div class="news-row-title">' + escapeHtml(pickText(item, "title", "titleEn")) + "</div>";
       if (item.link) {
         return (
-          '<a class="news-row-simple news-row-external" href="' + item.link + '" target="_blank" rel="noopener noreferrer">' +
+          '<a class="news-row-simple news-row-external' + pinnedClass + '" href="' + item.link + '" target="_blank" rel="noopener noreferrer">' +
           inner +
           "</a>"
         );
       }
       if (item.slug) {
-        return '<a class="news-row-simple" href="news-detail.html?slug=' + item.slug + '">' + inner + "</a>";
+        return '<a class="news-row-simple' + pinnedClass + '" href="news-detail.html?slug=' + item.slug + '">' + inner + "</a>";
       }
-      return '<div class="news-row-simple">' + inner + "</div>";
+      return '<div class="news-row-simple' + pinnedClass + '">' + inner + "</div>";
     })
     .join("");
 }
@@ -1351,6 +1367,18 @@ document.addEventListener("DOMContentLoaded", () => {
    ========================================================================== */
 
 const NEWS_TRANSLATIONS = {
+  "jeju-mulsori-booktalk": {
+    titleEn: "<I Have Become A Tree> Book Talk @Jeju Mulsori",
+    bodyEn: "A book talk for &lt;I Have Become A Tree&gt; was held at Mulsori, a beautiful space in Jeju. It was even more special as a book talk held together with trees. We hope it was a time of comfort and inspiration for everyone who came. Thank you."
+  },
+  "thanksbooks-booktalk-2026-04": {
+    titleEn: "<I Have Become A Tree> Book Talk @Thanks Books",
+    bodyEn: "A book talk celebrating the &lt;I Have Become A Tree&gt; original art exhibition was held. So many people came, making it a truly joyful and delightful book talk. Thank you for joining us.\n\nPhoto: Thanks Books"
+  },
+  "taiwan-golden-book-award-2026": {
+    titleEn: "Attended the Taiwan Golden Picture Book Award Ceremony and Gave a Talk",
+    bodyEn: "Jujube Human, who runs Jujube Books, was invited as a presenter and speaker to Taiwan's Golden Picture Book Award. It was a chance to encounter wonderful Taiwanese books and share stories about publishing in Korea. It was a warm and grateful experience!"
+  },
   "2026.06|서평 '나무의 삶에서 배운다' 창비어린이 93호": {
     titleEn: "Book Review: ‘Learning from the Life of a Tree’ — Changbi Children Issue 93",
     bodyEn: "A review of <I Have Become A Tree> was featured in Changbi Children Issue 93, Summer 2026.\n\nIt was written by Nam Yoon-jeong, an editorial committee member of Today’s Children’s Books and a children’s book curator. She wrote such a wonderful review that we wanted to share the whole thing. We read it several times together with the authors, sharing gratitude and joy. Thank you again.\n\nChangbi Children is a children’s and young adult literature criticism journal founded in 2003. It’s a series we often turn to when studying picture books — full of wonderful work, criticism, and reviews, so we recommend taking a look."
@@ -1359,17 +1387,17 @@ const NEWS_TRANSLATIONS = {
   "2026.06|창비 어린이": { titleEn: "Changbi Children's" },
   "2026.06|[행사 참여] 2026 서울국제도서전 참가": { titleEn: "[Event] Participated in the 2026 Seoul International Book Fair" },
   "2026.06|라우더비디오 유튜브 출연": { titleEn: "Appeared on Louder Video's YouTube Channel" },
-  "2026.04|<나는 정말 나무가 되었다> 원화전 @땡스북스": { titleEn: "&lt;I Have Become A Tree&gt; Original Art Exhibition @Thanks Books" },
+  "2026.04|<나는 정말 나무가 되었다> 원화전 @땡스북스": { titleEn: "<I Have Become A Tree> Original Art Exhibition @Thanks Books" },
   "2026.04|[언론 보도] '나무를 쓰고, 그리다가... 끝내 나무가 된 작가들' 오마이뉴스": { titleEn: "[Press] “Writing and Drawing Trees… Until the Authors Became Trees Themselves” — OhmyNews" },
   "2026.04|[언론 보도] '시기와 불안에 흔들림 없는 나무로 산다면' 경향신문": { titleEn: "[Press] “Living as a Tree, Unshaken by Envy and Anxiety” — The Kyunghyang Shinmun" },
   "2026.04|[언론 보도] '나무가 된 사람 이야기, 식목일에 아이들과 읽어보세요' 오마이뉴스": { titleEn: "[Press] “A Story of a Person Who Became a Tree — Read It with Your Kids on Arbor Day” — OhmyNews" },
   "2026.04|타이완 Golden book Picture Book Award 시상식 참석 및 강연 진행": { titleEn: "Attended the Taiwan Golden Book Picture Book Award Ceremony and Gave a Talk" },
   "2026.03|제주북페어 참여": { titleEn: "Participated in Jeju Book Fair" },
-  "2026.03|타이완 가오슝 서점 '洋洋本屋' <그곳은 따듯한가요>, <작은 빛> 원화 전시 및 강연": { titleEn: "&lt;Is It Warm There&gt; &amp; &lt;A Small Light&gt; Original Art Exhibition and Talk at Yang Yang Bookstore (洋洋本屋), Kaohsiung, Taiwan" },
+  "2026.03|타이완 가오슝 서점 '洋洋本屋' <그곳은 따듯한가요>, <작은 빛> 원화 전시 및 강연": { titleEn: "<Is It Warm There> & <A Small Light> Original Art Exhibition and Talk at Yang Yang Bookstore (洋洋本屋), Kaohsiung, Taiwan" },
   "2026.03|타이페이아트북페어 참여": { titleEn: "Participated in Taipei Art Book Fair" },
   "2026.02|쥬쥬베북스 브랜드 전시 @bplatform": { titleEn: "Jujube Books Brand Exhibition @bplatform" },
   "2025.12|[언론 보도] '[큐레이션] 서로의 손을 잡고 나아갈 수 있다면' 체널 예스": { titleEn: "[Press] “[Curation] If We Can Move Forward Holding Each Other’s Hands” — Channel Yes" },
-  "2025.12|<빈자리에 머무르기> @plot room": { titleEn: "&lt;Dwelling in the Empty&gt; @plot room" },
+  "2025.12|<빈자리에 머무르기> @plot room": { titleEn: "<Dwelling in the Empty> @plot room" },
   "2025.11|[언론보도] '‘무엇이 진실인가’라는 질문 대신 [새로 나온 책]' 시사IN": { titleEn: "[Press] “Instead of Asking ‘What Is the Truth’ [New Releases]” — SisaIN" },
   "2025.11|[언론보도] '그렇게 우리 광장에 함께 앉아 이겨냈다' 경향신문": { titleEn: "[Press] “That’s How We Sat Together in the Square and Won” — The Kyunghyang Shinmun" },
   "2025.11|서울아트북페어 UE17 참여": { titleEn: "Participated in Seoul Art Book Fair UNLIMITED EDITION 17" },
@@ -1381,7 +1409,7 @@ const NEWS_TRANSLATIONS = {
   "2025.03|[언론보도] '나에서 아이로 삶의 중심이 달라졌을 때' 오마이뉴스": { titleEn: "[Press] “When the Center of Life Shifts from Me to My Child” — OhmyNews" },
   "2024.11|서울아트북페어 UE16 참여": { titleEn: "Participated in Seoul Art Book Fair UNLIMITED EDITION 16" },
   "2024.10|[언론 보도] '[소규모 출판사 쥬쥬베북스의 어린이 책] 대담하고 담대하게' 독서신문": { titleEn: "[Press] “[Small Publisher Jujube Books’ Children’s Books] Bold and Daring” — Doksuh Shinmun" },
-  "2024.08|<그곳은 따듯한가요>, <작은 빛> 전시 @어떤바람 제주": { titleEn: "&lt;Is It Warm There&gt; &amp; &lt;A Small Light&gt; Exhibition @Eotteon Baram, Jeju" },
+  "2024.08|<그곳은 따듯한가요>, <작은 빛> 전시 @어떤바람 제주": { titleEn: "<Is It Warm There> & <A Small Light> Exhibition @Eotteon Baram, Jeju" },
   "2024.08|[언론 보도] 이달의 출판 만화 선정": { titleEn: "[Press] Selected as Comic of the Month" },
   "2024.07|[언론 보도] '[주간책타래] 76번째 여름날의 무지개 外' 여성신문": { titleEn: "[Press] “[Weekly Book Reel] 76th Rainbow and More” — Women’s News" },
   "2024.06|2024 서울국제도서전 참여": { titleEn: "Participated in the 2024 Seoul International Book Fair" },
@@ -1389,11 +1417,11 @@ const NEWS_TRANSLATIONS = {
   "2024.05|[언론 보도] '우리의 바다, 우리의 책임' 어린이 동아": { titleEn: "[Press] “Our Sea, Our Responsibility” — Donga Kids" },
   "2024.03|[언론 보도] '‘성평등 도서’ 공격에 맞서 더 다양하게 더 빨간책 [책&생각]', 한겨례 신문": { titleEn: "[Press] “Against Attacks on ‘Gender-Equal Books,’ More Diverse, More Red Books [Books & Thoughts]” — The Hankyoreh" },
   "2024.03|[언론 보도] '[신간] 『향유고래를 훔쳐라』, 독서신문": { titleEn: "[Press] “[New Release] Steal a Cachalot” — Doksuh Shinmun" },
-  "2024.01|<사랑을 한다는 건> 출간 기념 전시 @땡스북스": { titleEn: "&lt;To Say I Love You&gt; Publication Celebration Exhibition @Thanks Books" },
+  "2024.01|<사랑을 한다는 건> 출간 기념 전시 @땡스북스": { titleEn: "<To Say I Love You> Publication Celebration Exhibition @Thanks Books" },
   "2024.01|[언론 보도] '[신간] 『사랑을 한다는 건』, 독서신문": { titleEn: "[Press] “[New Release] To Say I Love You” — Doksuh Shinmun" },
   "2023.12|[언론 보도] '‘양육 은퇴’ ‘정년퇴직’ 시니어, 그림책으로 독서 재입문', 동아일보": { titleEn: "[Press] “Seniors in ‘Parenting Retirement’ Return to Reading Through Picture Books” — The Dong-A Ilbo" },
   "2023.11|서울아트북페어 UE15 참여": { titleEn: "Participated in Seoul Art Book Fair UNLIMITED EDITION 15" },
-  "2023.05|<그곳은 따듯한가요> , <작은 빛> 원화 전시 @서울행복신협": { titleEn: "&lt;Is It Warm There&gt; &amp; &lt;A Small Light&gt; Original Art Exhibition @Seoul Happy Credit Union" },
+  "2023.05|<그곳은 따듯한가요> , <작은 빛> 원화 전시 @서울행복신협": { titleEn: "<Is It Warm There> & <A Small Light> Original Art Exhibition @Seoul Happy Credit Union" },
   "2023.03|제주북페어 참여": { titleEn: "Participated in Jeju Book Fair" },
 };
 
@@ -1442,7 +1470,9 @@ function csvRowsToObjects(rows) {
   return rows.slice(1).map((r) => {
     const obj = {};
     header.forEach((key, i) => {
-      obj[key] = (r[i] || "").trim();
+      // no trimming here — folder names on disk sometimes have a trailing
+      // space, and stripping it would silently break the match
+      obj[key] = r[i] || "";
     });
     return obj;
   });
@@ -1453,9 +1483,20 @@ async function fetchNewsFromSheet(csvUrl) {
   const text = await res.text();
   const objs = csvRowsToObjects(parseCSV(text));
   return objs
+    .map((o) => ({
+      date: (o.date || "").trim(),
+      title: (o.title || "").trim(),
+      link: (o.link || "").trim(),
+      folder: o.folder, // not trimmed — some folder names really do end in a space
+      photos: o.photos,
+      body: (o.body || "").trim(),
+      slug: (o.slug || "").trim()
+    }))
     .filter((o) => o.date && o.title)
     .map((o, i) => {
-      const tr = NEWS_TRANSLATIONS[o.date + "|" + o.title] || {};
+      // prefer looking up by slug (stable across title edits); fall back
+      // to date+title for older/slugless entries
+      const tr = NEWS_TRANSLATIONS[o.slug] || NEWS_TRANSLATIONS[o.date + "|" + o.title] || {};
       const item = {
         date: o.date,
         title: o.title,
@@ -1465,7 +1506,10 @@ async function fetchNewsFromSheet(csvUrl) {
       if (o.link) item.link = o.link;
       if (o.folder) item.folder = o.folder;
       if (o.photos) {
-        item.photos = o.photos.split(",").map((s) => s.trim()).filter(Boolean);
+        item.photos = o.photos
+          .split(",")
+          .map((s) => s.trim())
+          .filter((s) => s && s.toLowerCase() !== "main");
       }
       if (o.body) {
         item.body = o.body;
@@ -1490,3 +1534,194 @@ async function loadNews() {
   }
   return NEWS_FALLBACK;
 }
+
+// always-on-top notice — shown only on NEWS page 1, above the sheet-driven
+// list; does not count toward pagination or come from the sheet
+const NEWS_PINNED = [
+  {
+    slug: "jube-seasonal-diary",
+    pinned: true,
+    label: "공지",
+    labelEn: "Notice",
+    title: "'쥬베 씨의 제철 일기'로 쥬쥬베북스의 소식을 가장 먼저 받아보세요.",
+    titleEn: "Get Jujube Books' news first, through 'Jube's Seasonal Diary.'",
+    link: "https://jubessi-diary.stibee.com/"
+  }
+];
+
+/* ==========================================================================
+   BOOK via Google Sheet (optional) — same idea as NEWS: non-developers add
+   rows in a spreadsheet instead of editing this file. Both Korean and
+   English are filled in on the sheet directly this time (no translation
+   lookup needed). Photos still live in local folders, same as always —
+   the sheet only ever references a folder name + filenames.
+   ========================================================================== */
+
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+// turns "Label: value" lines (one per line) into the .contact-row markup
+// used throughout the book/goods detail pages
+function bibTextToRows(text) {
+  if (!text) return "";
+  return text
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean)
+    .map((line) => {
+      const i = line.indexOf(":");
+      const label = i === -1 ? line : line.slice(0, i).trim();
+      const value = i === -1 ? "" : line.slice(i + 1).trim();
+      return (
+        '<div class="contact-row"><span>' + escapeHtml(label) + "</span><span>" + escapeHtml(value) + "</span></div>"
+      );
+    })
+    .join("");
+}
+
+// turns freeform text into an escaped, paragraph-spaced HTML fragment —
+// no <p> tags of its own, since callers already wrap this in one (nested
+// <p> tags are invalid HTML and get silently split/broken by the browser)
+function textToParagraphs(text) {
+  if (!text) return "";
+  return text
+    .split(/\n\s*\n/)
+    .map((para) => para.trim())
+    .filter(Boolean)
+    .map((para) => escapeHtml(para).replace(/\n/g, "<br>"))
+    .join("<br><br>");
+}
+
+async function fetchBooksFromSheet(csvUrl) {
+  const res = await fetch(csvUrl);
+  const text = await res.text();
+  const objs = csvRowsToObjects(parseCSV(text));
+  return objs
+    .map((o) => ({ ...o, slug: (o.slug || "").trim(), title: (o.title || "").trim() }))
+    .filter((o) => o.slug && o.title)
+    .map((o) => {
+      const book = {
+        slug: o.slug,
+        folder: o.folder, // not trimmed — folder names can genuinely end in a space
+        image: "main",
+        color: "#4A5A63",
+        hideFromHome: String(o.showOnHome || "").trim().toLowerCase() !== "yes",
+        title: o.title,
+        titleEn: (o.titleEn || "").trim(),
+        author: (o.author || "").trim(),
+        authorEn: (o.authorEn || "").trim(),
+        date: (o.date || "").trim(),
+        category: (o.category || "").trim(),
+        categoryEn: (o.categoryEn || "").trim(),
+        summary: (o.summary || "").trim(),
+        summaryEn: (o.summaryEn || "").trim(),
+        tags: (o.tags || "").split(",").map((s) => s.trim()).filter(Boolean),
+        tagsEn: (o.tagsEn || "").split(",").map((s) => s.trim()).filter(Boolean),
+        detailImage: o.detailImage || undefined,
+        detailImageFolder: o.folder
+      };
+      if (o.bibKo) book.detailBibKo = bibTextToRows(o.bibKo);
+      if (o.bibEn) book.detailBibEn = bibTextToRows(o.bibEn);
+      if (o.introEn) book.detailIntroEn = textToParagraphs(o.introEn);
+      if (o.galleryImages) {
+        book.galleryImages = o.galleryImages
+          .split(",")
+          .map((s) => s.trim())
+          .filter((s) => s && s.toLowerCase() !== "main");
+      }
+      return book;
+    });
+}
+
+const BOOK_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/1rrPF7t5qdz14diCo0xz-3vo2vwU3azA_YQIkgOVgTp8/export?format=csv&gid=0";
+
+// combines the built-in list with sheet rows, matched by slug — a sheet
+// row with a new slug is added, one that reuses an existing slug replaces it
+function mergeBySlug(fallbackItems, sheetItems) {
+  const merged = fallbackItems.slice();
+  sheetItems.forEach((item) => {
+    const idx = merged.findIndex((existing) => existing.slug === item.slug);
+    if (idx === -1) merged.push(item);
+    else merged[idx] = item;
+  });
+  return merged;
+}
+
+async function loadBooks() {
+  if (!BOOK_SHEET_CSV_URL) return BOOKS_FALLBACK;
+  try {
+    const sheetItems = await fetchBooksFromSheet(BOOK_SHEET_CSV_URL);
+    return mergeBySlug(BOOKS_FALLBACK, sheetItems);
+  } catch (e) {
+    return BOOKS_FALLBACK;
+  }
+}
+/* ==========================================================================
+   AND MORE via Google Sheet (optional) — Korean-only columns, like NEWS.
+   English translations are added here by hand, keyed by slug (stable, so
+   editing the Korean title later doesn\'t orphan the translation).
+   ========================================================================== */
+
+const GOODS_TRANSLATIONS = {};
+
+async function fetchGoodsFromSheet(csvUrl) {
+  const res = await fetch(csvUrl);
+  const text = await res.text();
+  const objs = csvRowsToObjects(parseCSV(text));
+  return objs
+    .map((o) => ({ ...o, slug: (o.slug || "").trim(), title: (o.title || "").trim() }))
+    .filter((o) => o.slug && o.title)
+    .map((o) => {
+      const tr = GOODS_TRANSLATIONS[o.slug] || {};
+      const good = {
+        slug: o.slug,
+        folder: o.folder, // not trimmed — folder names can genuinely end in a space
+        image: "main",
+        color: "#4A5A63",
+        title: o.title,
+        titleEn: tr.titleEn,
+        category: (o.category || "").trim(),
+        categoryEn: tr.categoryEn,
+        price: (o.price || "").trim() || undefined,
+        priceEn: tr.priceEn,
+        summary: (o.summary || "").trim(),
+        summaryEn: tr.summaryEn,
+        tags: (o.tags || "").split(",").map((s) => s.trim()).filter(Boolean),
+        tagsEn: tr.tagsEn || [],
+        synopsisTitle: "소개",
+        synopsisTitleEn: "About",
+        synopsis: o.synopsis,
+        synopsisEn: tr.synopsisEn,
+        body2Title: "제품 정보",
+        body2TitleEn: "Product Info",
+        body2: o.body2,
+        body2En: tr.body2En
+      };
+      if (o.photos) {
+        // "main" is always shown automatically as the hero image already —
+        // drop it here so it can't accidentally appear a second time
+        good.galleryImages = o.photos
+          .split(",")
+          .map((s) => s.trim())
+          .filter((s) => s && s.toLowerCase() !== "main");
+      }
+      return good;
+    });
+}
+
+const GOODS_SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/1IfQdSNmFwHQB_0YbVeEMw7_t5OZJBKZ6RP2B6F8pJdM/export?format=csv&gid=0";
+
+async function loadGoods() {
+  if (!GOODS_SHEET_CSV_URL) return GOODS_FALLBACK;
+  try {
+    const sheetItems = await fetchGoodsFromSheet(GOODS_SHEET_CSV_URL);
+    return mergeBySlug(GOODS_FALLBACK, sheetItems);
+  } catch (e) {
+    return GOODS_FALLBACK;
+  }
+}
+

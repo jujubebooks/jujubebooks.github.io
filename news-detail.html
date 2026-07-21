@@ -48,10 +48,9 @@
 
 <script src="script.js"></script>
 <script>
-  loadNews().then((allNews) => {
-    const newsItem = findBySlug(allNews, getSlugFromQuery());
+  function showNewsItem(newsItem) {
     renderDetail(newsItem, {
-      kicker: newsItem.date,
+      kicker: pickText(newsItem, "label", "labelEn") || newsItem.date || "",
       meta: ""
     });
 
@@ -73,7 +72,16 @@
       document.getElementById("news-body-text").textContent = newsBody;
       document.getElementById("news-body-section").style.display = "";
     }
-  });
+  }
+
+  // pinned notices are hardcoded (not sheet-driven), so a match here skips
+  // the network fetch entirely
+  const pinnedItem = NEWS_PINNED.find((i) => i.slug === getSlugFromQuery());
+  if (pinnedItem) {
+    showNewsItem(pinnedItem);
+  } else {
+    loadNews().then((allNews) => showNewsItem(findBySlug(allNews, getSlugFromQuery())));
+  }
 </script>
 </body>
 </html>
