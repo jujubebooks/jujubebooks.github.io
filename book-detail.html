@@ -110,6 +110,13 @@ loadBooks().then((books) => {
     richEl.innerHTML = detailImageTag + (book.detailBibKo ? '<div class="detail-bib-ko">' + book.detailBibKo + '</div>' : '');
     usedRich = true;
   }
+  // some titles offer a downloadable sample for foreign-rights readers —
+  // English side only, appended after whichever rich layout was used above
+  if (lang === "en" && book.foreignSampleUrl) {
+    richEl.innerHTML += '<div style="margin-top:2.4em; text-align:center;"><a class="pill-btn" href="' + escapeHtml(book.foreignSampleUrl) + '" target="_blank" rel="noopener">Download Foreign Language Sample</a></div>';
+    usedRich = true;
+  }
+
   if (usedRich) {
     fallbackEl.style.display = "none";
   } else {

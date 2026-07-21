@@ -7,6 +7,7 @@
 const BOOKS_FALLBACK = [
   {
     slug: "tree",
+    foreignSampleUrl: "",
     image: "tree_re_01",
     folder: "BOOK/change the image",
     color: "#4A6FA5",
@@ -63,6 +64,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "is-it-there-warm",
+    foreignSampleUrl: "",
     image: "is it there warm_re_01",
     folder: "BOOK/change the image",
     color: "#B08A3E",
@@ -107,6 +109,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "inga",
+    foreignSampleUrl: "",
     image: "inga_01",
     folder: "BOOK/change the image",
     color: "#1F2A2E",
@@ -156,6 +159,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "the-right-ways-to-sit-wrong",
+    foreignSampleUrl: "",
     image: "the right ways to sit wroung_01",
     folder: "BOOK/change the image",
     color: "#3E6B4F",
@@ -193,6 +197,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "to-say-i-love-you",
+    foreignSampleUrl: "",
     image: "to say I love you_01",
     folder: "BOOK/change the image",
     color: "#6B4226",
@@ -391,6 +396,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "always-friends",
+    foreignSampleUrl: "",
     image: "Always friends_01",
     folder: "BOOK/change the image",
     color: "#C1613A",
@@ -437,6 +443,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "castle",
+    foreignSampleUrl: "",
     image: "castle_01",
     folder: "BOOK/change the image",
     color: "#2C4A6B",
@@ -1661,6 +1668,7 @@ async function fetchBooksFromSheet(csvUrl) {
       // interior-page gallery images often live in their own separate folder,
       // distinct from both the thumbnail folder and the detail image folder
       if (o.galleryFolder) book.galleryFolder = o.galleryFolder.trim();
+      if (o.foreignSampleUrl) book.foreignSampleUrl = o.foreignSampleUrl.trim();
       return book;
     });
 }
