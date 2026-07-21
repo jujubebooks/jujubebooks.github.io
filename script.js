@@ -1706,7 +1706,18 @@ async function loadBooks() {
    editing the Korean title later doesn\'t orphan the translation).
    ========================================================================== */
 
-const GOODS_TRANSLATIONS = {};
+const GOODS_TRANSLATIONS = {
+  "reading-sign-clip": {
+    titleEn: '"Reading Now" Mini Sign Clip',
+    categoryEn: "Book Clip",
+    priceEn: "5,900 KRW",
+    summaryEn: 'An acrylic "Reading Now" sign clip that blocks interruptions while you read.',
+    tagsEn: ["Book Clip", "Goods", "Acrylic"],
+    synopsisEn:
+      'Protect my reading time at all costs! "Reading Now" Mini Sign Clip.\n\nUsually, you can clip light notes on it, and when you open a book, it helps block interruptions in advance.\n\nOne side says \'Reading Now\', and the other side has either \'讀書中\' (Chinese version) or \'독서중!\' (Korean version).',
+    body2En: "Size: 43×57mm · Material: Acrylic · *Please remove the protective film before use!"
+  }
+};
 
 async function fetchGoodsFromSheet(csvUrl) {
   const res = await fetch(csvUrl);
