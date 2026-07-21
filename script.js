@@ -1042,6 +1042,10 @@ function imageCandidates(folder, filename) {
     const encodedPath = form.split("/").map(encodeURIComponent).join("/");
     IMG_EXTENSIONS.forEach((ext) => {
       candidates.push("이미지/" + encodedPath + "." + ext);
+      // macOS's local filesystem is case-insensitive, so an uploaded ".JPG"
+      // file works fine when testing locally — but GitHub Pages serves from
+      // a case-sensitive Linux filesystem, where it 404s. Try uppercase too.
+      candidates.push("이미지/" + encodedPath + "." + ext.toUpperCase());
     });
   });
   return candidates;
