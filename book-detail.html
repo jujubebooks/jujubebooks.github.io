@@ -92,17 +92,19 @@ loadBooks().then((books) => {
       ? realImageTag(book.detailImageFolder, book.detailImage)
       : '<img src="이미지/BOOK/detail_image/' + encodeURIComponent(book.detailImage) + '" alt="" class="detail-rich-image">';
 
-  const galleryHtml = (book.galleryImages && book.galleryImages.length && book.folder)
-    ? '<div class="detail-inside-gallery">' + book.galleryImages.map((name) => realImageTag(book.folder, name)).join("") + "</div>"
+  const galleryFolder = book.galleryFolder || book.folder;
+  const galleryHtml = (book.galleryImages && book.galleryImages.length && galleryFolder)
+    ? '<div class="detail-inside-gallery">' + book.galleryImages.map((name) => realImageTag(galleryFolder, name)).join("") + "</div>"
     : "";
 
   if (lang === "en" && book.detailHtmlEn) {
     richEl.innerHTML = book.detailHtmlEn;
     usedRich = true;
-  } else if (lang === "en" && book.detailImage && book.detailBibEn) {
-    // translated works with no separate English edition — same artwork, English bibliographic info
+  } else if (lang === "en" && book.detailBibEn) {
+    // English side shows bibliographic info + intro text + interior-page
+    // gallery only — no Korean marketing spread image
     const introHtml = book.detailIntroEn ? '<div style="margin-top:1.6em;">' + book.detailIntroEn + '</div>' : '';
-    richEl.innerHTML = detailImageTag + '<div class="detail-bib-ko">' + book.detailBibEn + introHtml + '</div>' + galleryHtml;
+    richEl.innerHTML = '<div class="detail-bib-ko">' + book.detailBibEn + introHtml + '</div>' + galleryHtml;
     usedRich = true;
   } else if (lang !== "en" && book.detailImage) {
     richEl.innerHTML = detailImageTag + (book.detailBibKo ? '<div class="detail-bib-ko">' + book.detailBibKo + '</div>' : '');

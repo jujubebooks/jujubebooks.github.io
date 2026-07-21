@@ -1658,6 +1658,9 @@ async function fetchBooksFromSheet(csvUrl) {
           .map((s) => s.trim())
           .filter((s) => s && s.toLowerCase() !== "main");
       }
+      // interior-page gallery images often live in their own separate folder,
+      // distinct from both the thumbnail folder and the detail image folder
+      if (o.galleryFolder) book.galleryFolder = o.galleryFolder.trim();
       return book;
     });
 }
