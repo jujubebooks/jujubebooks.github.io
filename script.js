@@ -1564,6 +1564,13 @@ function escapeHtml(str) {
     .replace(/>/g, "&gt;");
 }
 
+// realImageTag() appends its own extension while guessing, so a filename
+// typed into the sheet with an extension already on it (".png", etc.) would
+// otherwise end up doubled ("photo.png.jpg") and never match any real file
+function stripImageExtension(filename) {
+  return filename.replace(/\.(jpg|jpeg|png|webp)$/i, "");
+}
+
 // turns "Label: value" lines (one per line) into the .contact-row markup
 // used throughout the book/goods detail pages
 function bibTextToRows(text) {
@@ -1583,17 +1590,32 @@ function bibTextToRows(text) {
     .join("");
 }
 
-// turns freeform text into an escaped, paragraph-spaced HTML fragment —
-// no <p> tags of its own, since callers already wrap this in one (nested
-// <p> tags are invalid HTML and get silently split/broken by the browser)
-function textToParagraphs(text) {
+// turns freeform sheet text into HTML, supporting a little bit of markdown
+// so a longer essay (headings, quotes) can be written from a plain sheet
+// cell — blocks are separated by a blank line:
+//   ## Heading              -> <h3>Heading</h3>
+//   > quoted line            -> <blockquote><p>quoted line</p></blockquote>
+//   anything else            -> <p>paragraph</p> (a single line break inside becomes <br>)
+function introTextToHtml(text) {
   if (!text) return "";
   return text
     .split(/\n\s*\n/)
-    .map((para) => para.trim())
+    .map((block) => block.trim())
     .filter(Boolean)
-    .map((para) => escapeHtml(para).replace(/\n/g, "<br>"))
-    .join("<br><br>");
+    .map((block) => {
+      if (block.startsWith("## ")) {
+        return "<h3>" + escapeHtml(block.slice(3).trim()) + "</h3>";
+      }
+      if (block.startsWith(">")) {
+        const quoted = block
+          .split("\n")
+          .map((line) => line.replace(/^>\s?/, ""))
+          .join("\n");
+        return "<blockquote><p>" + escapeHtml(quoted).replace(/\n/g, "<br>") + "</p></blockquote>";
+      }
+      return "<p>" + escapeHtml(block).replace(/\n/g, "<br>") + "</p>";
+    })
+    .join("");
 }
 
 async function fetchBooksFromSheet(csvUrl) {
@@ -1607,7 +1629,7 @@ async function fetchBooksFromSheet(csvUrl) {
       const book = {
         slug: o.slug,
         folder: o.folder, // not trimmed — folder names can genuinely end in a space
-        image: "main",
+        image: (o.image || "").trim() || "main",
         color: "#4A5A63",
         hideFromHome: String(o.showOnHome || "").trim().toLowerCase() !== "yes",
         title: o.title,
@@ -1621,12 +1643,15 @@ async function fetchBooksFromSheet(csvUrl) {
         summaryEn: (o.summaryEn || "").trim(),
         tags: (o.tags || "").split(",").map((s) => s.trim()).filter(Boolean),
         tagsEn: (o.tagsEn || "").split(",").map((s) => s.trim()).filter(Boolean),
-        detailImage: o.detailImage || undefined,
-        detailImageFolder: o.folder
+        detailImage: o.detailImage ? stripImageExtension(o.detailImage.trim()) : undefined,
+        // usually the same folder as the thumbnail — but some older books keep
+        // their detail spread image in a separate shared folder, so an
+        // explicit "detailImageFolder" column (if present) wins
+        detailImageFolder: (o.detailImageFolder || "").trim() || o.folder
       };
       if (o.bibKo) book.detailBibKo = bibTextToRows(o.bibKo);
       if (o.bibEn) book.detailBibEn = bibTextToRows(o.bibEn);
-      if (o.introEn) book.detailIntroEn = textToParagraphs(o.introEn);
+      if (o.introEn) book.detailIntroEn = introTextToHtml(o.introEn);
       if (o.galleryImages) {
         book.galleryImages = o.galleryImages
           .split(",")

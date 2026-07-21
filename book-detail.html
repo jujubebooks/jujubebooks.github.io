@@ -101,7 +101,7 @@ loadBooks().then((books) => {
     usedRich = true;
   } else if (lang === "en" && book.detailImage && book.detailBibEn) {
     // translated works with no separate English edition — same artwork, English bibliographic info
-    const introHtml = book.detailIntroEn ? '<p style="margin-top:1.6em;">' + book.detailIntroEn + '</p>' : '';
+    const introHtml = book.detailIntroEn ? '<div style="margin-top:1.6em;">' + book.detailIntroEn + '</div>' : '';
     richEl.innerHTML = detailImageTag + '<div class="detail-bib-ko">' + book.detailBibEn + introHtml + '</div>' + galleryHtml;
     usedRich = true;
   } else if (lang !== "en" && book.detailImage) {
