@@ -19,7 +19,15 @@
       "Skill(fewer-permission-prompts:*)",
       "Bash(ls -t ~/.claude/projects/*/*.jsonl 2>/dev/null | head -50 | wc -l *)",
       "Read(//Users/yeojuneyoon/.claude/projects/**)",
-      "Bash(curl -s *)"
+      "Bash(curl -s *)",
+      "Bash(curl -sI \"https://jujubebooks.github.io/news.html\")",
+      "Bash(curl -s \"https://jujubebooks.github.io/index.html\")",
+      "Bash(curl -sI \"https://jujubebooks.github.io/index.html\")",
+      "Bash(curl -sL \"https://docs.google.com/spreadsheets/d/1rrPF7t5qdz14diCo0xz-3vo2vwU3azA_YQIkgOVgTp8/export?format=csv&gid=0\")",
+      "Bash(curl -s -o /dev/null -w \"Live Server: %{http_code}\\\\n\" \"http://127.0.0.1:5500/index.html\")",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --enable-logging=stderr --v=1 --virtual-time-budget=8000 --dump-dom https://jujubebooks.github.io/index.html)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --enable-logging=stderr --v=1 --virtual-time-budget=7000 --dump-dom http://127.0.0.1:5500/books.html)",
+      "Read(//private/tmp/**)"
     ]
   }
 }
