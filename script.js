@@ -7,7 +7,7 @@
 const BOOKS_FALLBACK = [
   {
     slug: "tree",
-    foreignSampleUrl: "",
+    foreignSampleUrl: "https://drive.google.com/drive/folders/1n2OM4D66-NpSYi52PA9uFCnjvGMS0pJD?usp=sharing",
     image: "tree_re_01",
     folder: "BOOK/change the image",
     color: "#4A6FA5",
@@ -64,7 +64,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "is-it-there-warm",
-    foreignSampleUrl: "",
+    foreignSampleUrl: "https://drive.google.com/drive/folders/13BNxHL6DPZNPFY_7SaBxclJkOmOP0TBB?usp=sharing",
     image: "is it there warm_re_01",
     folder: "BOOK/change the image",
     color: "#B08A3E",
@@ -109,7 +109,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "inga",
-    foreignSampleUrl: "",
+    foreignSampleUrl: "https://drive.google.com/drive/folders/1IO1MFeGtpyXYheCOIwtFlnVN1dsynf3l?usp=drive_link",
     image: "inga_01",
     folder: "BOOK/change the image",
     color: "#1F2A2E",
@@ -197,7 +197,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "to-say-i-love-you",
-    foreignSampleUrl: "",
+    foreignSampleUrl: "https://drive.google.com/open?id=1ALgvvWDhDViUQhDuH0iBk5-vKhTswKtF&usp=drive_copy",
     image: "to say I love you_01",
     folder: "BOOK/change the image",
     color: "#6B4226",
@@ -396,7 +396,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "always-friends",
-    foreignSampleUrl: "",
+    foreignSampleUrl: "https://drive.google.com/open?id=1TTyguWubKeEtRRuICMQwuVrDV3YxBxKl&usp=drive_copy",
     image: "Always friends_01",
     folder: "BOOK/change the image",
     color: "#C1613A",
@@ -443,7 +443,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "castle",
-    foreignSampleUrl: "",
+    foreignSampleUrl: "https://drive.google.com/drive/folders/10jeVboX6iVYt5MlrG7Vxkc32M3jbR4ic?usp=drive_link",
     image: "castle_01",
     folder: "BOOK/change the image",
     color: "#2C4A6B",
