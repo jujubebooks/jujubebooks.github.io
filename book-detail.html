@@ -87,8 +87,12 @@ loadBooks().then((books) => {
   });
 
   if (book.detailCoverScale) {
-    document.getElementById("detail-cover").style.width =
-      "calc(min(360px, 70vw) * " + book.detailCoverScale + ")";
+    // scales the artwork itself within the normal-size cover box (cropped by
+    // the box's overflow:hidden) — some source images have a lot of empty
+    // padding baked in, so enlarging the outer box just made that padding
+    // bigger too; zooming the image crops that padding away instead
+    const coverImg = document.querySelector("#detail-cover img");
+    if (coverImg) coverImg.style.transform = "scale(" + book.detailCoverScale + ")";
   }
 
   // richer, hand-formatted detail content when available: a tall illustrated
