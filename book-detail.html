@@ -86,6 +86,11 @@ loadBooks().then((books) => {
     meta: bookMeta
   });
 
+  if (book.detailCoverScale) {
+    document.getElementById("detail-cover").style.width =
+      "calc(min(360px, 70vw) * " + book.detailCoverScale + ")";
+  }
+
   // richer, hand-formatted detail content when available: a tall illustrated
   // spread image for Korean, full editorial copy for English — falls back to
   // the plain synopsis/body2 fields above when a book doesn't have this yet

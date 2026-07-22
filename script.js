@@ -564,6 +564,7 @@ const BOOKS_FALLBACK = [
     slug: "steal-the-sperm-whale",
     image: "향유고래_정면",
     folder: "BOOK/change the image",
+    detailCoverScale: 2,
     color: "#2E5C6E",
     title: "향유고래를 훔쳐라",
     titleEn: "[Kor.ver] Steal a Cachalot",
