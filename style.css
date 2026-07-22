@@ -304,6 +304,12 @@ html[lang="ko"] .hero h1 {
   .card-grid { grid-template-columns: 1fr; }
   .card { border-right: none !important; }
   #goods-grid { grid-template-columns: 1fr; }
+
+  /* nav/footer cells use fixed 22px side padding, which is wider than some
+     phone screens can fit across 4 equal columns (e.g. the ENG button in
+     the language toggle getting clipped off the right edge) */
+  .nav-grid a, .footer-grid > * { padding: 18px 10px; }
+  .lang-toggle { gap: 6px; }
 }
 
 /* --------------------------------------------------------------------------
