@@ -117,7 +117,7 @@ loadBooks().then((books) => {
     : "";
 
   if (lang === "en" && book.detailHtmlEn) {
-    richEl.innerHTML = book.detailHtmlEn;
+    richEl.innerHTML = book.detailHtmlEn + galleryHtml;
     usedRich = true;
   } else if (lang === "en" && book.detailBibEn) {
     // English side shows bibliographic info + intro text + interior-page
