@@ -64,7 +64,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "is-it-there-warm",
-    purchaseLinkKo: "",
+    purchaseLinkKo: "https://aladin.kr/p/1QZDZ",
     galleryFolder: "BOOK/eng_inside image/그곳은 따듯한가요",
     galleryImages: ["본문 이미지_1", "본문 이미지_2", "본문 이미지_3", "본문 이미지_4", "본문 이미지_5", "본문 이미지_6", "본문 이미지_7", "본문 이미지_8"],
     foreignSampleUrl: "https://drive.google.com/drive/folders/13BNxHL6DPZNPFY_7SaBxclJkOmOP0TBB?usp=sharing",
@@ -112,7 +112,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "inga",
-    purchaseLinkKo: "",
+    purchaseLinkKo: "https://aladin.kr/p/MqEix",
     galleryFolder: "BOOK/eng_inside image/잉아의 순우리말 그림 사전",
     galleryImages: ["1", "2", "3", "4", "5", "6", "7", "8"],
     foreignSampleUrl: "https://drive.google.com/drive/folders/1IO1MFeGtpyXYheCOIwtFlnVN1dsynf3l?usp=drive_link",
@@ -165,7 +165,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "the-right-ways-to-sit-wrong",
-    purchaseLinkKo: "",
+    purchaseLinkKo: "https://aladin.kr/p/pCMux",
     galleryFolder: "BOOK/eng_inside image/앉는 걸 멈추지 마",
     galleryImages: ["앉멈_내지 이미지_1", "앉멈_내지 이미지_2", "앉멈_내지 이미지_3", "앉멈_내지 이미지_4", "앉멈_내지 이미지_5", "앉멈_내지 이미지_6", "앉멈_내지 이미지_7"],
     foreignSampleUrl: "",
@@ -206,7 +206,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "to-say-i-love-you",
-    purchaseLinkKo: "",
+    purchaseLinkKo: "https://aladin.kr/p/iQnk4",
     galleryFolder: "BOOK/eng_inside image/사랑을 한다는 건",
     galleryImages: ["사랑을 한다는 건_내지_1", "사랑을 한다는 건_내지_2", "사랑을 한다는 건_내지_3", "사랑을 한다는 건_내지_5"],
     foreignSampleUrl: "https://drive.google.com/open?id=1ALgvvWDhDViUQhDuH0iBk5-vKhTswKtF&usp=drive_copy",
@@ -251,7 +251,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "ground-cover",
-    purchaseLinkKo: "",
+    purchaseLinkKo: "https://aladin.kr/p/4Ebud",
     galleryFolder: "BOOK/eng_inside image/빈자리에 머무르기",
     galleryImages: ["빈자리_스프레드_1", "빈자리_스프레드_2", "빈자리_스프레드_3", "빈자리_스프레드_4", "빈자리_스프레드_5", "빈자리_스프레드_6", "빈자리_스프레드_7", "빈자리_스프레드_8"],
     image: "ground_cover_01",
@@ -291,7 +291,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "a-small-light",
-    purchaseLinkKo: "",
+    purchaseLinkKo: "https://aladin.kr/p/nfXfC",
     galleryFolder: "BOOK/eng_inside image/작은 빛",
     galleryImages: ["작은 빛_내지_1", "작은 빛_내지_2", "작은 빛_내지_3", "작은 빛_내지_4", "작은 빛_내지_5", "작은 빛_내지_6", "작은 빛_내지_7", "작은 빛_내지_8", "작은 빛_내지_9", "작은 빛_내지_10"],
     image: "a small light_01",
@@ -335,7 +335,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "lesson-reject",
-    purchaseLinkKo: "",
+    purchaseLinkKo: "https://aladin.kr/p/mSwYe",
     galleryFolder: "BOOK/eng_inside image/제1강거절하는 바업",
     galleryImages: ["내지__페이지_01", "내지__페이지_02", "내지__페이지_03", "내지__페이지_04", "내지__페이지_05", "내지__페이지_06", "내지__페이지_07", "내지__페이지_08", "내지__페이지_09"],
     image: "lesson reject_01",
@@ -417,7 +417,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "always-friends",
-    purchaseLinkKo: "",
+    purchaseLinkKo: "https://aladin.kr/p/PRfkP",
     galleryFolder: "BOOK/eng_inside image/가족으로 만나 친구가 되었습니다",
     galleryImages: ["미리보기__페이지_01", "미리보기__페이지_02", "미리보기__페이지_03", "미리보기__페이지_04", "미리보기__페이지_05", "미리보기__페이지_06", "미리보기__페이지_07", "미리보기__페이지_08", "미리보기__페이지_09"],
     foreignSampleUrl: "https://drive.google.com/open?id=1TTyguWubKeEtRRuICMQwuVrDV3YxBxKl&usp=drive_copy",
@@ -467,7 +467,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "castle",
-    purchaseLinkKo: "",
+    purchaseLinkKo: "https://aladin.kr/p/4RKWh",
     galleryFolder: "BOOK/eng_inside image/파괴자",
     galleryImages: ["내지 1", "내지2"],
     foreignSampleUrl: "https://drive.google.com/drive/folders/10jeVboX6iVYt5MlrG7Vxkc32M3jbR4ic?usp=drive_link",
@@ -515,7 +515,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "76-rainbow",
-    purchaseLinkKo: "",
+    purchaseLinkKo: "https://aladin.kr/p/2qUiO",
     image: "76th rainbow_01",
     folder: "BOOK/change the image",
     color: "#33503B",
@@ -540,7 +540,7 @@ const BOOKS_FALLBACK = [
   }  ,
   {
     slug: "woof-woof",
-    purchaseLinkKo: "",
+    purchaseLinkKo: "https://aladin.kr/p/gChSH",
     image: "멍멍",
     folder: "BOOK/change the image",
     color: "#B0783E",
@@ -566,7 +566,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "meow",
-    purchaseLinkKo: "",
+    purchaseLinkKo: "https://aladin.kr/p/74YkM",
     image: "야옹",
     folder: "BOOK/change the image",
     detailCoverScale: 2,
@@ -593,7 +593,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "steal-the-sperm-whale",
-    purchaseLinkKo: "",
+    purchaseLinkKo: "https://aladin.kr/p/GQNgl",
     image: "향유고래_정면",
     folder: "BOOK/change the image",
     detailCoverScale: 2,
@@ -620,7 +620,7 @@ const BOOKS_FALLBACK = [
   },
   {
     slug: "grandfathers-rainbow",
-    purchaseLinkKo: "",
+    purchaseLinkKo: "https://aladin.kr/p/94Oby",
     image: "할아버지가 사랑한 무지개",
     folder: "BOOK/change the image",
     detailCoverScale: 2,
