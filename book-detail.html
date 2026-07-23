@@ -136,6 +136,12 @@ loadBooks().then((books) => {
     usedRich = true;
   }
 
+  // Korean side only: a direct link to where the book can be purchased
+  if (lang !== "en" && book.purchaseLinkKo) {
+    richEl.innerHTML += '<div style="margin-top:2.4em; text-align:center;"><a class="pill-btn" href="' + escapeHtml(book.purchaseLinkKo) + '" target="_blank" rel="noopener">구매 페이지로 이동</a></div>';
+    usedRich = true;
+  }
+
   if (usedRich) {
     fallbackEl.style.display = "none";
   } else {
