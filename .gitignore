@@ -9,3 +9,7 @@ index_backup.html
 
 # 강의 자료 (웹사이트와 무관, 용량 큼)
 바이브코딩_강의안_최종.pdf
+
+# Node / wrangler(Cloudflare 배포 도구) 관련
+node_modules/
+.wrangler/

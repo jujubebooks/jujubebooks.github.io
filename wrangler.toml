@@ -1,0 +1,10 @@
+name = "jujube-link-preview"
+main = "cloudflare-worker.js"
+compatibility_date = "2026-07-24"
+
+# 이 두 경로로 들어오는 요청만 워커가 가로채 og:image/og:title를 각 항목 이미지로 교체합니다.
+# 그 외 모든 요청은 워커가 그대로 통과시키므로 사이트 동작에는 영향이 없습니다.
+routes = [
+  { pattern = "jujubebooks.com/book-detail.html*", zone_name = "jujubebooks.com" },
+  { pattern = "jujubebooks.com/goods-detail.html*", zone_name = "jujubebooks.com" },
+]
