@@ -93,6 +93,20 @@ button { font: inherit; cursor: pointer; }
   gap: 14px;
 }
 
+/* slim baseline credit line under the footer grid — matches the thin green
+   divider language of the nav/footer, kept small and quiet so it reads as a
+   baseline rather than competing with the footer links */
+.footer-credit {
+  width: 100%;
+  text-align: center;
+  padding: 11px 22px;
+  border-top: 1px solid #009465;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #009465;
+}
+
 .lang-toggle {
   display: inline-flex;
   gap: 10px;
