@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# Claude Code 로컬 설정
+.claude/
+
+# 빈 백업 파일
+index_backup.html
+
+# 강의 자료 (웹사이트와 무관, 용량 큼)
+바이브코딩_강의안_최종.pdf
