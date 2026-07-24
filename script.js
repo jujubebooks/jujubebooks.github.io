@@ -1100,10 +1100,13 @@ function handleImgFallback(img) {
   }
 }
 
-function realImageTag(folder, filename) {
+function realImageTag(folder, filename, alt) {
   const candidates = imageCandidates(folder, filename);
+  // escapeHtml doesn't touch quotes; alt sits in a double-quoted attribute and
+  // some titles contain quotes (e.g. "독서 중" 입간판 집게), so guard those too
+  const altText = escapeHtml(alt || "").replace(/"/g, "&quot;");
   return (
-    '<img src="' + candidates[0] + '" alt="" loading="lazy" draggable="false" ' +
+    '<img src="' + candidates[0] + '" alt="' + altText + '" loading="lazy" draggable="false" ' +
     "data-candidates='" + JSON.stringify(candidates) + "' data-i=\"0\" " +
     'onerror="handleImgFallback(this)">'
   );
@@ -1112,7 +1115,7 @@ function realImageTag(folder, filename) {
 /* ---- cover placeholder builder ---- */
 function coverBlockHTML(item) {
   const hasImage = Boolean(item.folder);
-  const image = hasImage ? realImageTag(item.folder, item.image || item.slug) : "";
+  const image = hasImage ? realImageTag(item.folder, item.image || item.slug, pickText(item, "title", "titleEn")) : "";
   return (
     '<div class="cover-block' + (hasImage ? " has-image" : "") + '" style="--c:' + item.color + '">' +
     image +
@@ -1212,7 +1215,7 @@ function renderHomeBookImages(containerId, books) {
     }
     return (
       '<a class="drag-item" href="book-detail.html?slug=' + book.slug + '" draggable="false" style="' + style + '">' +
-      realImageTag(book.folder, book.image || book.slug) +
+      realImageTag(book.folder, book.image || book.slug, pickText(book, "title", "titleEn")) +
       "</a>"
     );
   }).join("");
