@@ -416,6 +416,14 @@ html[lang="ko"] .hero h1 {
 .detail-inside-gallery { margin-top: 2.4em; display: flex; flex-direction: column; gap: 14px; }
 .detail-inside-image { width: 100%; height: auto; display: block; border-radius: 3px; }
 html[lang="en"] .detail-rich .contact-row { max-width: 75%; margin-left: auto; margin-right: auto; }
+/* keep space between a row's label and its value so a long title (or any value
+   that fills the row) doesn't butt right up against its label */
+.detail-rich .contact-row { gap: 1.4em; }
+/* breathing room between the bib block and the body text/heading that follows —
+   the ISBN row otherwise sits flush against the first paragraph */
+.detail-rich .contact-row + p,
+.detail-rich .contact-row + h3,
+.detail-rich .contact-row + h4 { margin-top: 1.6em; }
 .detail-rich h3 { font-size: 19px; font-weight: 700; margin: 2em 0 0.8em; }
 .detail-rich h4 { font-size: 16px; font-weight: 700; margin: 1.6em 0 0.4em; }
 .detail-rich p { margin-bottom: 1.4em; }
