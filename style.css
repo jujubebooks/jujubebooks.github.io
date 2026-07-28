@@ -419,11 +419,11 @@ html[lang="en"] .detail-rich .contact-row { max-width: 75%; margin-left: auto; m
 /* keep space between a row's label and its value so a long title (or any value
    that fills the row) doesn't butt right up against its label */
 .detail-rich .contact-row { gap: 1.4em; }
-/* breathing room between the bib block and the body text/heading that follows —
-   the ISBN row otherwise sits flush against the first paragraph */
-.detail-rich .contact-row + p,
-.detail-rich .contact-row + h3,
-.detail-rich .contact-row + h4 { margin-top: 1.6em; }
+/* clear break between the bib block and the body that follows it — works no
+   matter how the body is authored: a <p>/<h3> straight after the rows
+   (detailHtmlEn) or a wrapped intro <div> (detailBibEn). :not(.contact-row)
+   targets just the first non-row element after the run of rows. */
+.detail-rich .contact-row + :not(.contact-row) { margin-top: 2.6em; }
 .detail-rich h3 { font-size: 19px; font-weight: 700; margin: 2em 0 0.8em; }
 .detail-rich h4 { font-size: 16px; font-weight: 700; margin: 1.6em 0 0.4em; }
 .detail-rich p { margin-bottom: 1.4em; }

@@ -135,7 +135,7 @@ loadBooks().then((books) => {
   } else if (lang === "en" && book.detailBibEn) {
     // English side shows bibliographic info + intro text + interior-page
     // gallery only — no Korean marketing spread image
-    const introHtml = book.detailIntroEn ? '<div style="margin-top:1.6em;">' + book.detailIntroEn + '</div>' : '';
+    const introHtml = book.detailIntroEn ? '<div class="detail-intro">' + book.detailIntroEn + '</div>' : '';
     richEl.innerHTML = '<div class="detail-bib-ko">' + book.detailBibEn + introHtml + '</div>' + galleryHtml;
     usedRich = true;
   } else if (lang !== "en" && book.detailImage) {
