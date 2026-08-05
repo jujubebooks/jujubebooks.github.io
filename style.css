@@ -327,9 +327,10 @@ html[lang="ko"] .hero h1 {
 
 .card:nth-child(3n) { border-right: none; }
 
-#goods-grid { grid-template-columns: repeat(2, 1fr); }
+#goods-grid { grid-template-columns: repeat(4, 1fr); }
+#goods-grid .card:nth-child(2n) { border-right: 1px solid #009465; }
 #goods-grid .card:nth-child(3n) { border-right: 1px solid #009465; }
-#goods-grid .card:nth-child(2n) { border-right: none; }
+#goods-grid .card:nth-child(4n) { border-right: none; }
 #goods-grid .card[href$="slug=jujube-ceramic-paperweight"] .cover-block img { transform: scale(0.5); }
 .goods-page .card { border-color: #009465; }
 
@@ -354,6 +355,11 @@ html[lang="ko"] .hero h1 {
   .card-grid { grid-template-columns: repeat(2, 1fr); }
   .card:nth-child(3n) { border-right: 1px solid var(--line); }
   .card:nth-child(2n) { border-right: none; }
+
+  #goods-grid { grid-template-columns: repeat(2, 1fr); }
+  #goods-grid .card:nth-child(3n) { border-right: 1px solid #009465; }
+  #goods-grid .card:nth-child(2n) { border-right: none; }
+  #goods-grid .card:nth-child(4n) { border-right: none; }
 }
 @media (max-width: 560px) {
   .card-grid { grid-template-columns: 1fr; }
