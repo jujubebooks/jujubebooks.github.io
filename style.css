@@ -333,6 +333,8 @@ html[lang="ko"] .hero h1 {
 #goods-grid .card:nth-child(4n) { border-right: none; }
 #goods-grid .card[href$="slug=jujube-ceramic-paperweight"] .cover-block img { transform: scale(0.5); }
 .goods-page .card { border-color: #009465; }
+.goods-page .card:hover { background: #edfc75; }
+.goods-page .card:hover h3 { color: #009465; }
 
 .card .card-cover { aspect-ratio: 4 / 5; margin-bottom: 18px; border-radius: 2px; overflow: hidden; }
 
