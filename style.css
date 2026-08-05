@@ -327,10 +327,18 @@ html[lang="ko"] .hero h1 {
 
 .card:nth-child(3n) { border-right: none; }
 
-#goods-grid { grid-template-columns: repeat(4, 1fr); }
-#goods-grid .card:nth-child(2n) { border-right: 1px solid #009465; }
-#goods-grid .card:nth-child(3n) { border-right: 1px solid #009465; }
-#goods-grid .card:nth-child(4n) { border-right: none; }
+/* 4단 굿즈 그리드: main 높이만큼 채우고, 단 구분선을 배경 세로선으로 그려
+   카드가 없는 아래 빈 영역에서도 선이 푸터까지 이어지도록 한다. */
+#goods-grid {
+  grid-template-columns: repeat(4, 1fr);
+  min-height: 100%;
+  align-content: start;
+  background:
+    linear-gradient(#009465, #009465) 25% 0 / 1px 100% no-repeat,
+    linear-gradient(#009465, #009465) 50% 0 / 1px 100% no-repeat,
+    linear-gradient(#009465, #009465) 75% 0 / 1px 100% no-repeat;
+}
+#goods-grid .card { border-right: none; }
 #goods-grid .card[href$="slug=jujube-ceramic-paperweight"] .cover-block img { transform: scale(0.5); }
 .goods-page .card { border-color: #009465; }
 .goods-page .card:hover { background: #edfc75; }
@@ -358,15 +366,15 @@ html[lang="ko"] .hero h1 {
   .card:nth-child(3n) { border-right: 1px solid var(--line); }
   .card:nth-child(2n) { border-right: none; }
 
-  #goods-grid { grid-template-columns: repeat(2, 1fr); }
-  #goods-grid .card:nth-child(3n) { border-right: 1px solid #009465; }
-  #goods-grid .card:nth-child(2n) { border-right: none; }
-  #goods-grid .card:nth-child(4n) { border-right: none; }
+  #goods-grid {
+    grid-template-columns: repeat(2, 1fr);
+    background: linear-gradient(#009465, #009465) 50% 0 / 1px 100% no-repeat;
+  }
 }
 @media (max-width: 560px) {
   .card-grid { grid-template-columns: 1fr; }
   .card { border-right: none !important; }
-  #goods-grid { grid-template-columns: 1fr; }
+  #goods-grid { grid-template-columns: 1fr; background: none; }
 
   /* nav/footer cells use fixed 22px side padding, which is wider than some
      phone screens can fit across 4 equal columns (e.g. the ENG button in
