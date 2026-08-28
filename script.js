@@ -1416,6 +1416,10 @@ document.addEventListener("DOMContentLoaded", () => {
    ========================================================================== */
 
 const NEWS_TRANSLATIONS = {
+  "2026.08|[행사 참여] 2026 군산북페어 참가": {
+    titleEn: "[Event] Participating in the 2026 Gunsan Book Fair",
+    bodyEn: "Jujube Books is joining the Gunsan Book Fair💚🖤🤍\nThe fair takes place this weekend, August 29–30, at Gunsan Hall! When we took part last year, it felt like a book fair with a bold spirit and a clear sense of direction. It is a fair filled with good energy, and we are excited to be back!!\nThis year's program looks even more varied and full of fun ideas. We can hardly imagine how fun it will be! On the last weekend of August, see you in Gunsan!"
+  },
   "jeju-mulsori-booktalk": {
     titleEn: "<I Have Become A Tree> Book Talk @Jeju Mulsori",
     bodyEn: "A book talk for &lt;I Have Become A Tree&gt; was held at Mulsori, a beautiful space in Jeju. It was even more special as a book talk held together with trees. We hope it was a time of comfort and inspiration for everyone who came. Thank you."
