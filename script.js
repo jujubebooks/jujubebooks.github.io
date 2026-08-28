@@ -1416,7 +1416,7 @@ document.addEventListener("DOMContentLoaded", () => {
    ========================================================================== */
 
 const NEWS_TRANSLATIONS = {
-  "2026.08|[행사 참여] 2026 군산북페어 참가": {
+  "gunsan-book-fair-2026": {
     titleEn: "[Event] Participating in the 2026 Gunsan Book Fair",
     bodyEn: "Jujube Books is joining the Gunsan Book Fair💚🖤🤍\nThe fair takes place this weekend, August 29–30, at Gunsan Hall! When we took part last year, it felt like a book fair with a bold spirit and a clear sense of direction. It is a fair filled with good energy, and we are excited to be back!!\nThis year's program looks even more varied and full of fun ideas. We can hardly imagine how fun it will be! On the last weekend of August, see you in Gunsan!"
   },
@@ -1758,6 +1758,16 @@ const GOODS_TRANSLATIONS = {
     tagsEn: ["Book Clip", "Goods", "Acrylic"],
     synopsisEn:
       'Protect my reading time at all costs! "Reading Now" Mini Sign Clip.\n\nUsually, you can clip light notes on it, and when you open a book, it helps block interruptions in advance.\n\nOne side says \'Reading Now\', and the other side has either \'讀書中\' (Chinese version) or \'독서중!\' (Korean version).',
+    body2En: "Size: 43×57mm · Material: Acrylic · *Please remove the protective film before use!"
+  },
+  "sleeping-now-clip": {
+    titleEn: '"Thinking Now" Mini Sign Clip',
+    categoryEn: "Book Clip",
+    priceEn: "5,900 KRW",
+    summaryEn: "Not sleeping! Just thinking!",
+    tagsEn: ["Book Clip", "Goods", "Acrylic"],
+    synopsisEn:
+      'The "I\'m Not Sleeping" Mini Sign Clip!😴\n\nEven with a book over your face, even slumped over your desk — you\'re not sleeping. You\'re thinking.\n\nBetween one deep thought and the next, the "I\'m Not Sleeping" sign clip stands by you.',
     body2En: "Size: 43×57mm · Material: Acrylic · *Please remove the protective film before use!"
   }
 };
