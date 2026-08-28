@@ -1064,6 +1064,11 @@ function initLangToggle() {
    the colored placeholder block below shows instead. */
 const IMG_EXTENSIONS = ["png", "jpg", "jpeg", "webp"];
 
+// bump to invalidate visitors' cached image responses — Cloudflare serves even
+// 404s with max-age=14400, so a browser that saw a missing photo keeps seeing
+// it for up to 4h unless the URL changes
+const IMG_CACHE_BUST = "?v=20260828";
+
 // sheet-provided folder/file names and on-disk folder/file names aren't
 // always the same Unicode normalization form for Korean text (macOS Finder
 // tends to save NFD-decomposed jamo, while text typed/pasted elsewhere is
@@ -1076,11 +1081,11 @@ function imageCandidates(folder, filename) {
   forms.forEach((form) => {
     const encodedPath = form.split("/").map(encodeURIComponent).join("/");
     IMG_EXTENSIONS.forEach((ext) => {
-      candidates.push("이미지/" + encodedPath + "." + ext);
+      candidates.push("이미지/" + encodedPath + "." + ext + IMG_CACHE_BUST);
       // macOS's local filesystem is case-insensitive, so an uploaded ".JPG"
       // file works fine when testing locally — but GitHub Pages serves from
       // a case-sensitive Linux filesystem, where it 404s. Try uppercase too.
-      candidates.push("이미지/" + encodedPath + "." + ext.toUpperCase());
+      candidates.push("이미지/" + encodedPath + "." + ext.toUpperCase() + IMG_CACHE_BUST);
     });
   });
   return candidates;
