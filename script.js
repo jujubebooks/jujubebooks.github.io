@@ -1421,6 +1421,9 @@ document.addEventListener("DOMContentLoaded", () => {
    ========================================================================== */
 
 const NEWS_TRANSLATIONS = {
+  "2026.09|[예매 신청] <제1강: 거절하는 방법> 낭독회 신청": {
+    titleEn: "[RSVP] <Lesson 1: How to Decline> Reading Event"
+  },
   "gunsan-book-fair-2026": {
     titleEn: "[Event] Participating in the 2026 Gunsan Book Fair",
     bodyEn: "Jujube Books is joining the Gunsan Book Fair💚🖤🤍\nThe fair takes place this weekend, August 29–30, at Gunsan Hall! When we took part last year, it felt like a book fair with a bold spirit and a clear sense of direction. It is a fair filled with good energy, and we are excited to be back!!\nThis year's program looks even more varied and full of fun ideas. We can hardly imagine how fun it will be! On the last weekend of August, see you in Gunsan!"
